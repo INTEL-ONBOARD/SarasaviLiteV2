@@ -1,0 +1,92 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="View\apple-logo.png" />
+    <None Remove="View\apple-pay.png" />
+    <None Remove="View\arrow-circle-right.png" />
+    <None Remove="View\back.png" />
+    <None Remove="View\caret-square-left.png" />
+    <None Remove="View\cart.png" />
+    <None Remove="View\cash.png" />
+    <None Remove="View\cashier.png" />
+    <None Remove="View\circle-user.png" />
+    <None Remove="View\close.png" />
+    <None Remove="View\gift-card.png" />
+    <None Remove="View\gmail.png" />
+    <None Remove="View\google-pay.png" />
+    <None Remove="View\google.png" />
+    <None Remove="View\Group %281%29.png" />
+    <None Remove="View\Group.png" />
+    <None Remove="View\lock.png" />
+    <None Remove="View\login.png" />
+    <None Remove="View\MASTER.png" />
+    <None Remove="View\password.png" />
+    <None Remove="View\price-tag.png" />
+    <None Remove="View\profile.png" />
+    <None Remove="View\qr-code.png" />
+    <None Remove="View\sarasavi-book-shop-logo-849DCED3EE-seeklogo.com.png" />
+    <None Remove="View\scanner.png" />
+    <None Remove="View\shopping-bag.png" />
+    <None Remove="View\shopping-cart-add.png" />
+    <None Remove="View\sign-in-alt.png" />
+    <None Remove="View\visa.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.5">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.5">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Controller\" />
+    <Folder Include="Models\" />
+    <Folder Include="Resources\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="View\apple-logo.png" />
+    <Resource Include="View\apple-pay.png" />
+    <Resource Include="View\arrow-circle-right.png" />
+    <Resource Include="View\back.png" />
+    <Resource Include="View\cart.png" />
+    <Resource Include="View\cash.png" />
+    <Resource Include="View\cashier.png" />
+    <Resource Include="View\circle-user.png" />
+    <Resource Include="View\close.png" />
+    <Resource Include="View\gift-card.png" />
+    <Resource Include="View\gmail.png" />
+    <Resource Include="View\google-pay.png" />
+    <Resource Include="View\google.png" />
+    <Resource Include="View\Group (1).png" />
+    <Resource Include="View\Group.png" />
+    <Resource Include="View\lock.png" />
+    <Resource Include="View\login.png" />
+    <Resource Include="View\MASTER.png" />
+    <Resource Include="View\password.png" />
+    <Resource Include="View\price-tag.png" />
+    <Resource Include="View\profile.png" />
+    <Resource Include="View\qr-code.png" />
+    <Resource Include="View\sarasavi-book-shop-logo-849DCED3EE-seeklogo.com.png" />
+    <Resource Include="View\scanner.png" />
+    <Resource Include="View\shopping-bag.png" />
+    <Resource Include="View\shopping-cart-add.png" />
+    <Resource Include="View\sign-in-alt.png" />
+    <Resource Include="View\visa.png" />
+  </ItemGroup>
+
+</Project>
