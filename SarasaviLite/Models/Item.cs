@@ -31,5 +31,8 @@ namespace SarasaviLite.Models
         public string Image {  get; set; }
 
         public string Name { get; set; }
+
+        public string ItemType { get; set; }
+        public int ItemId { get; set; }
     }
 }
