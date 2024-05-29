@@ -1073,9 +1073,9 @@ ItemContainerStyle="{DynamicResource theComboBoxItem}" Height="40" VerticalConte
 
                         </ComboBox>
 
-                        <TextBox x:Name="txtBookISBN" HorizontalAlignment="Left" Margin="396,62,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-                        <TextBox x:Name="txtBookTitle" HorizontalAlignment="Left" Margin="396,95,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-                        <TextBox x:Name="txtBookYear" HorizontalAlignment="Left" Margin="396,128,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                        <TextBox x:Name="txtBookISBN" HorizontalAlignment="Left" Margin="396,62,0,0" TextWrapping="Wrap" Text="isbn" VerticalAlignment="Top" Width="120"/>
+                        <TextBox x:Name="txtBookTitle" HorizontalAlignment="Left" Margin="396,95,0,0" TextWrapping="Wrap" Text="title" VerticalAlignment="Top" Width="120"/>
+                        <TextBox x:Name="txtBookYear" HorizontalAlignment="Left" Margin="396,128,0,0" TextWrapping="Wrap" Text="year" VerticalAlignment="Top" Width="120"/>
 
                         <ComboBox 
                             x:Name="selectBookAuthor" 
