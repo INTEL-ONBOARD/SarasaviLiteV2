@@ -195,7 +195,7 @@
         </Button>
 
         <!--Employee Login-->
-        <Grid x:Name="CustomerLogin" Margin="0,47,0,66" Panel.ZIndex="1" Visibility="Hidden">
+        <Grid x:Name="CustomerLogin" Margin="0,47,0,66" Panel.ZIndex="1" Visibility="Visible">
 
             <Label Content="SCAN AND GO" HorizontalAlignment="Center" Margin="0,209,0,0" VerticalAlignment="Top"
                    FontSize="48" FontFamily="Bahnschrift SemiLight" FontWeight="Bold" Foreground="#FF2C1D9C"/>
@@ -446,7 +446,7 @@
         </Grid>
 
         <!--Scan Window-->
-        <Grid x:Name="CustomerPayment" Margin="0,47,0,66" Panel.ZIndex="1" Visibility="Visible">
+        <Grid x:Name="CustomerPayment" Margin="0,47,0,66" Panel.ZIndex="1" Visibility="Hidden">
             <Grid.Background>
                 <SolidColorBrush Color="Black" Opacity="0.05"/>
             </Grid.Background>
