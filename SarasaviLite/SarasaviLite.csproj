@@ -65,7 +65,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controller\" />
     <Folder Include="Migrations\" />
     <Folder Include="Resources\" />
   </ItemGroup>

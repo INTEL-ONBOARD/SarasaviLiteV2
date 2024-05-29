@@ -8,6 +8,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using SarasaviLite.Controller;
 using SarasaviLite.Data;
 using SarasaviLite.Models;
 
@@ -19,12 +20,14 @@ namespace SarasaviLite
     /// </summary>
     public partial class MainWindow : Window
     {
-        SarasaviContext context;
+        InventoryController inventoryController;
 
         public MainWindow()
         {
             InitializeComponent();
-            context = new SarasaviContext();
+
+            inventoryController = new InventoryController();
+
             loadInitData();
         }
 
@@ -191,24 +194,19 @@ namespace SarasaviLite
 
         private void btnAddBook_Click(object sender, RoutedEventArgs e)
         {
-            Book book = new Book()
+         /*   Book book = new Book()
             {
-                ISBN = 2324,
-                Title = "Test Book",
+                ISBN = Convert.ToInt32(txtBookISBN.Text),
+                Title = txtBookTitle.Text,
                 Author= context.Authors.Find(selectBookAuthor.SelectedValue),
-                Year = 2000
-            };
-
-
-            context.Books.Add(book);
-            context.SaveChanges();
-
+                Year = Convert.ToInt32(txtBookYear.Text)
+            };*/
 
         }
 
         private void loadInitData()
         {
-            var authors = context.Authors;
+            var authors = inventoryController.GetAuthors();
             foreach (var author in authors)
             {
                 selectBookAuthor.Items.Add(author.Name);
