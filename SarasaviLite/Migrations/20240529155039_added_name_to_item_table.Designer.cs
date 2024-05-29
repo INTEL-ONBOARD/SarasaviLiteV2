@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SarasaviLite.Data;
 
@@ -11,9 +12,11 @@ using SarasaviLite.Data;
 namespace SarasaviLite.Migrations
 {
     [DbContext(typeof(SarasaviContext))]
-    partial class SarasaviContextModelSnapshot : ModelSnapshot
+    [Migration("20240529155039_added_name_to_item_table")]
+    partial class added_name_to_item_table
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -48,9 +51,6 @@ namespace SarasaviLite.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<int>("AuthorId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ISBN")
                         .HasColumnType("int");
 
                     b.Property<string>("Title")
@@ -180,13 +180,6 @@ namespace SarasaviLite.Migrations
                     b.Property<decimal>("ItemCost")
                         .HasColumnType("decimal(10, 2)");
 
-                    b.Property<int>("ItemId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("ItemType")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Location")
                         .HasColumnType("nvarchar(max)");
 
@@ -259,27 +252,6 @@ namespace SarasaviLite.Migrations
                     b.ToTable("Payments");
                 });
 
-            modelBuilder.Entity("SarasaviLite.Models.Stationary", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Distributer")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Type")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Stationaries");
-                });
-
             modelBuilder.Entity("SarasaviLite.Models.User", b =>
                 {
                     b.Property<int>("Id")
@@ -329,18 +301,12 @@ namespace SarasaviLite.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("Qty")
-                        .HasColumnType("int");
-
                     b.Property<string>("Status")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("ValidUntil")
                         .HasColumnType("datetime2");
-
-                    b.Property<decimal>("Value")
-                        .HasColumnType("decimal(10, 2)");
 
                     b.HasKey("Id");
 

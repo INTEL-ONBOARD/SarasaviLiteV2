@@ -17,6 +17,7 @@ namespace SarasaviLite.Data
         public DbSet<Item> Items { get; set; }
         public DbSet<Payment> Payments{ get; set; }
         public DbSet<Voucher> Vouchers { get; set; }
+        public DbSet<Stationary> Stationaries { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

@@ -10,5 +10,10 @@ namespace SarasaviLite.Models
         public DateTime ValidUntil { get; set; }
 
         public string Status { get; set; }
+
+        [Column(TypeName = "decimal(10, 2)")]
+        public decimal Value { get; set; }
+
+        public int Qty { get; set; }
     }
 }

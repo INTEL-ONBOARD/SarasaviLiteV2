@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SarasaviLite.Data;
 
@@ -11,9 +12,11 @@ using SarasaviLite.Data;
 namespace SarasaviLite.Migrations
 {
     [DbContext(typeof(SarasaviContext))]
-    partial class SarasaviContextModelSnapshot : ModelSnapshot
+    [Migration("20240529164241_modified_some_tables")]
+    partial class modified_some_tables
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -329,18 +332,12 @@ namespace SarasaviLite.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("Qty")
-                        .HasColumnType("int");
-
                     b.Property<string>("Status")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("ValidUntil")
                         .HasColumnType("datetime2");
-
-                    b.Property<decimal>("Value")
-                        .HasColumnType("decimal(10, 2)");
 
                     b.HasKey("Id");
 

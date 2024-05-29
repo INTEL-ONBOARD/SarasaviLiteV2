@@ -3,16 +3,12 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SarasaviLite.Models
 {
-    public class Book
+    public class Stationary
     {
         public int Id { get; set; }
 
-        public int ISBN { get; set; }
+        public string Distributer { get; set; }
 
-        public string Title { get; set; }
-
-        public Author Author { get; set; }
-
-        public int Year { get; set; }
+        public string Type { get; set; }
     }
 }
