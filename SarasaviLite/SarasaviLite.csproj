@@ -45,6 +45,7 @@
     <None Remove="View\shopping-cart-add.png" />
     <None Remove="View\sign-in-alt.png" />
     <None Remove="View\stats.png" />
+    <None Remove="View\trash.png" />
     <None Remove="View\user %281%29.png" />
     <None Remove="View\visa.png" />
   </ItemGroup>
@@ -103,6 +104,7 @@
     <Resource Include="View\shopping-cart-add.png" />
     <Resource Include="View\sign-in-alt.png" />
     <Resource Include="View\stats.png" />
+    <Resource Include="View\trash.png" />
     <Resource Include="View\user (1).png" />
     <Resource Include="View\visa.png" />
   </ItemGroup>
