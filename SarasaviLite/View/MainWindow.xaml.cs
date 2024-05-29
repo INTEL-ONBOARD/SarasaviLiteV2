@@ -224,8 +224,9 @@ namespace SarasaviLite
             var items = inventoryController.GetItems();
             foreach (var item_ in items)
             {
-               iteminventory inventory = new iteminventory();
+                iteminventory inventory = new iteminventory();
                 inventory.Name = item_.Name;
+                view.Children.Add(inventory);
             }
         }
     }
