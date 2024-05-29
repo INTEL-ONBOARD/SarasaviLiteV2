@@ -234,6 +234,179 @@
 
 
 
+
+
+        <Style x:Key="ComboBoxToggleButton" TargetType="{x:Type ToggleButton}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ToggleButton}">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition Width="32" />
+                            </Grid.ColumnDefinitions>
+                            <Border
+                          x:Name="Border"
+                          Grid.ColumnSpan="2"
+                          CornerRadius="8"
+                          Background="{TemplateBinding Background}"
+                          BorderBrush="#F6F6F6"
+                          BorderThickness="1" 
+                        />
+
+                            <Path
+                            x:Name="Arrow"
+                            Grid.Column="1"    
+                            Fill="{TemplateBinding Foreground}"
+                            Stroke="{TemplateBinding Foreground}"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Data="M 0 0 L 4 4 L 8 0 Z"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <ControlTemplate x:Key="ComboBoxTextBox" TargetType="{x:Type TextBox}">
+            <Border x:Name="PART_ContentHost" Focusable="True" />
+        </ControlTemplate>
+        <Style x:Key="theComboBox" TargetType="{x:Type ComboBox}">
+            <Setter Property="Foreground" Value="#333" />
+            <Setter Property="BorderBrush" Value="Gray" />
+            <Setter Property="Background" Value="White" />
+            <Setter Property="SnapsToDevicePixels" Value="true"/>
+            <Setter Property="OverridesDefaultStyle" Value="true"/>
+            <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto"/>
+            <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto"/>
+            <Setter Property="ScrollViewer.CanContentScroll" Value="true"/>
+            <Setter Property="FontSize" Value="13" />
+            <Setter Property="MinWidth" Value="150"/>
+            <Setter Property="MinHeight" Value="35"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ComboBox}">
+                        <Grid>
+                            <ToggleButton
+                    Cursor="Hand"
+                    x:Name="ToggleButton"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    Background="{TemplateBinding Background}"
+                    Foreground="{TemplateBinding Foreground}"
+                    Style="{StaticResource ComboBoxToggleButton}"
+                    Grid.Column="2"
+                    Focusable="false"
+                    IsChecked="{Binding IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource Mode=TemplatedParent}}"
+                    ClickMode="Press"/>
+
+                            <ContentPresenter
+                    x:Name="ContentSite"
+                    IsHitTestVisible="False"
+                    Content="{TemplateBinding SelectionBoxItem}"
+                    ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}"
+                    ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}"
+                    Margin="10,3,30,3"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center" />
+                            <TextBox x:Name="PART_EditableTextBox"
+                    Style="{x:Null}"
+                    Template="{StaticResource ComboBoxTextBox}"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    Margin="3,3,23,3"
+                    Focusable="True"                               
+                    Visibility="Hidden"
+                    IsReadOnly="{TemplateBinding IsReadOnly}"/>
+                            <Popup
+                    x:Name="Popup"
+                    Placement="Bottom"
+                    IsOpen="{TemplateBinding IsDropDownOpen}"
+                    AllowsTransparency="True"
+                    Focusable="False"
+                    PopupAnimation="Slide">
+                                <Grid
+                      x:Name="DropDown"
+                      SnapsToDevicePixels="True"               
+                      MinWidth="{TemplateBinding ActualWidth}"
+                      MaxHeight="{TemplateBinding MaxDropDownHeight}">
+                                    <Border
+                            CornerRadius="8"
+                            x:Name="DropDownBorder"
+                            Background="White"
+                            BorderThickness="1"
+                            BorderBrush="#F6F6F6"
+                            />
+                                    <ScrollViewer Margin="4,6,4,6" SnapsToDevicePixels="True">
+                                        <StackPanel IsItemsHost="True" KeyboardNavigation.DirectionalNavigation="Contained" />
+                                    </ScrollViewer>
+                                </Grid>
+                            </Popup>
+
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="HasItems" Value="false">
+                                <Setter TargetName="DropDownBorder" Property="MinHeight" Value="95"/>
+                            </Trigger>
+                            <Trigger Property="IsGrouping" Value="true">
+                                <Setter Property="ScrollViewer.CanContentScroll" Value="false"/>
+                            </Trigger>
+                            <Trigger Property="IsEditable" Value="true">
+                                <Setter Property="IsTabStop" Value="false"/>
+                                <Setter TargetName="PART_EditableTextBox" Property="Visibility" Value="Visible"/>
+                                <Setter TargetName="ContentSite" Property="Visibility" Value="Hidden"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="theComboBoxItem" TargetType="{x:Type ComboBoxItem}">
+            <Setter Property="SnapsToDevicePixels" Value="true" />
+            <Setter Property="HorizontalAlignment" Value="Stretch" />
+            <Setter Property="VerticalAlignment" Value="Stretch" />
+            <Setter Property="FontSize" Value="13" />
+            <Setter Property="OverridesDefaultStyle" Value="true"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ComboBoxItem}">
+                        <Border
+                x:Name="Border"
+                Padding="5"
+                Margin="2"
+                BorderThickness="2,0,0,0"
+                CornerRadius="0"
+                Background="Transparent"
+                BorderBrush="Transparent">
+                            <TextBlock TextAlignment="Left"><InlineUIContainer>
+                    <ContentPresenter />
+                                </InlineUIContainer></TextBlock>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsHighlighted" Value="true">
+                                <Setter TargetName="Border" Property="BorderBrush" Value="#FFFF2C2C"/>
+                                <Setter TargetName="Border" Property="Background" Value="#F8FAEB"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     </Window.Resources>
 
     <Grid>
@@ -584,9 +757,13 @@
                     <ColumnDefinition Width="137*"/>
                 </Grid.ColumnDefinitions>
 
-                <ScrollViewer x:Name="inventoryView" Grid.Column="0" Margin="420,42,42,42" VerticalScrollBarVisibility="Hidden" Background="#FFF9E8E8" Grid.ColumnSpan="2">
+
+                <!--Inventory View-->
+                <ScrollViewer x:Name="inventoryView" Grid.Column="0" Margin="420,42,42,42" VerticalScrollBarVisibility="Hidden" Background="#FFF9E8E8" Grid.ColumnSpan="2" Visibility="Hidden">
                     <StackPanel x:Name="View" Width="1126" ScrollViewer.VerticalScrollBarVisibility="Hidden"/>
                 </ScrollViewer>
+
+
                 <Label Content="View Stock" HorizontalAlignment="Left" Margin="59,88,0,0" VerticalAlignment="Top" Height="64" Width="292" FontSize="48" FontFamily="Bahnschrift Light"/>
                 <Label Content=" Update | View | Remove" HorizontalAlignment="Left" Margin="36,140,0,0" VerticalAlignment="Top" Height="33" Width="292" FontFamily="Bahnschrift Light" FontSize="20" RenderTransformOrigin="0.5,0.5" VerticalContentAlignment="Center" HorizontalContentAlignment="Center">
                     <Label.RenderTransform>
@@ -601,7 +778,7 @@
 
 
 
-                <Button  x:Name="nav_Copy3" Style="{StaticResource ImageButtonStyle_noborder}" Content="" HorizontalAlignment="Left" Margin="71,184,0,0" Cursor="Hand" VerticalAlignment="Top" BorderBrush="{x:Null}" Foreground="{x:Null}" Width="35" Height="35" Click="goScan_Click" RenderTransformOrigin="0.5,0.5" >
+                <Button  x:Name="add_itemBtn" Style="{StaticResource ImageButtonStyle_noborder}" Content="" HorizontalAlignment="Left" Margin="71,184,0,0" Cursor="Hand" VerticalAlignment="Top" BorderBrush="{x:Null}" Foreground="{x:Null}" Width="35" Height="35" Click="add_item" RenderTransformOrigin="0.5,0.5" >
                     <Button.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform/>
@@ -623,6 +800,551 @@
                         </ImageBrush>
                     </Button.Background>
                 </Button>
+
+                <!--item-update-view-->
+                <Grid x:Name="edit_view_voucher" Grid.ColumnSpan="2" Margin="526,0,0,0" Visibility="Hidden" Background="#FF453FF3">
+
+
+
+                    <!--item-edit-view-->
+                    <Grid x:Name="voucher_view" Margin="0,-1,0,518">
+                        <Grid.Background>
+                            <SolidColorBrush Color="Black" Opacity="0.4"/>
+                        </Grid.Background>
+
+                        <Label Content="Item info" HorizontalAlignment="Left" Margin="741,0,0,0" VerticalAlignment="Center" Height="64" Width="292" FontSize="20" FontFamily="Bahnschrift Light" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+
+                        <TextBox HorizontalAlignment="Left" Margin="81,53,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                        <TextBox HorizontalAlignment="Left" Margin="81,81,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                        <TextBox HorizontalAlignment="Left" Margin="81,112,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                        <TextBox HorizontalAlignment="Left" Margin="81,112,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                        <TextBox HorizontalAlignment="Left" Margin="81,145,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                        <TextBox HorizontalAlignment="Left" Margin="247,53,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+
+                        <ComboBox 
+        x:Name="select_vehicle_manufacture" 
+        FontSize="13"
+        Style="{DynamicResource theComboBox}"
+        Padding="15,5,15,5"
+        HorizontalContentAlignment="Center"
+        VerticalAlignment="Top"
+        ItemContainerStyle="{DynamicResource theComboBoxItem}" Height="40" VerticalContentAlignment="Center" Margin="0,53,0,0" HorizontalAlignment="Center" Width="242" Foreground="Black" BorderBrush="#FF0C0000" Background="#FFECECEC">
+                            <ComboBoxItem Content="Nugegoda"/>
+                            <ComboBoxItem Content="Kaluthara"/>
+                            <ComboBoxItem Content="Matara"/>
+
+                        </ComboBox>
+                        <ComboBox 
+                        x:Name="select_vehicle_manufacture_Copy" 
+                        FontSize="13"
+                        Style="{DynamicResource theComboBox}"
+                        Padding="15,5,15,5"
+                        HorizontalContentAlignment="Center"
+                        VerticalAlignment="Top"
+                        ItemContainerStyle="{DynamicResource theComboBoxItem}" Height="40" VerticalContentAlignment="Center" Margin="0,112,416,0" HorizontalAlignment="Right" Width="242" Foreground="Black" BorderBrush="#FF0C0000" Background="#FFECECEC">
+                            <ComboBoxItem Content="Nugegoda"/>
+                            <ComboBoxItem Content="Kaluthara"/>
+                            <ComboBoxItem Content="Matara"/>
+
+                        </ComboBox>
+                    </Grid>
+                    <!--voucher-edit-view-->
+                    <Grid Margin="0,165,0,0">
+                        <Grid.Background>
+                            <SolidColorBrush Color="Black" Opacity="0.2"/>
+                        </Grid.Background>
+
+                        <Label Content="Voucher info" HorizontalAlignment="Left" Margin="741,0,0,0" VerticalAlignment="Center" Height="64" Width="292" FontSize="20" FontFamily="Bahnschrift Light" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+
+
+                        <ComboBox 
+                        x:Name="voucher_type" 
+                        FontSize="13"
+                        Style="{DynamicResource theComboBox}"
+                        Padding="15,5,15,5"
+                        HorizontalContentAlignment="Center"
+                        VerticalAlignment="Top"
+                        ItemContainerStyle="{DynamicResource theComboBoxItem}" Height="40" VerticalContentAlignment="Center" Margin="0,138,774,0" HorizontalAlignment="Right" Width="242" Foreground="Black" BorderBrush="#FF0C0000" Background="#FFECECEC">
+                            <ComboBoxItem Content="Nugegoda"/>
+                            <ComboBoxItem Content="Kaluthara"/>
+                            <ComboBoxItem Content="Matara"/>
+
+                        </ComboBox>
+                        <ComboBox 
+                        x:Name="status" 
+                        FontSize="13"
+                        Style="{DynamicResource theComboBox}"
+                        Padding="15,5,15,5"
+                        HorizontalContentAlignment="Center"
+                        VerticalAlignment="Top"
+                        ItemContainerStyle="{DynamicResource theComboBoxItem}" Height="40" VerticalContentAlignment="Center" Margin="0,62,774,0" HorizontalAlignment="Right" Width="242" Foreground="Black" BorderBrush="#FF0C0000" Background="#FFECECEC">
+                            <ComboBoxItem Content="Nugegoda"/>
+                            <ComboBoxItem Content="Kaluthara"/>
+                            <ComboBoxItem Content="Matara"/>
+
+                        </ComboBox>
+
+                        <TextBox HorizontalAlignment="Left" Margin="396,62,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                        <TextBox HorizontalAlignment="Left" Margin="396,95,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                        <TextBox HorizontalAlignment="Left" Margin="396,128,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+
+                        <TextBox HorizontalAlignment="Left" Margin="396,160,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                        <TextBox HorizontalAlignment="Left" Margin="396,192,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                        <Button Content="Save" HorizontalAlignment="Left" Margin="887,456,0,0" VerticalAlignment="Top" Width="123" Height="32"/>
+
+                    </Grid>
+                </Grid>
+
+
+
+                <Grid x:Name="edit_view_stationary" Grid.ColumnSpan="2" Margin="526,0,0,0" Visibility="Hidden" Background="#FF64E666">
+
+
+
+                    <!--item-edit-view-->
+                    <Grid x:Name="item_view_stationary" Margin="0,-1,0,518" >
+                        <Grid.Background>
+                            <SolidColorBrush Color="Black" Opacity="0.4"/>
+                        </Grid.Background>
+
+                        <Label Content="Item info" HorizontalAlignment="Left" Margin="741,0,0,0" VerticalAlignment="Center" Height="64" Width="292" FontSize="20" FontFamily="Bahnschrift Light" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+
+                        <TextBox HorizontalAlignment="Left" Margin="81,53,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                        <TextBox HorizontalAlignment="Left" Margin="81,81,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                        <TextBox HorizontalAlignment="Left" Margin="81,112,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                        <TextBox HorizontalAlignment="Left" Margin="81,112,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                        <TextBox HorizontalAlignment="Left" Margin="81,145,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                        <TextBox HorizontalAlignment="Left" Margin="247,53,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+
+                        <ComboBox 
+x:Name="select_vehicle_nufacture" 
+FontSize="13"
+Style="{DynamicResource theComboBox}"
+Padding="15,5,15,5"
+HorizontalContentAlignment="Center"
+VerticalAlignment="Top"
+ItemContainerStyle="{DynamicResource theComboBoxItem}" Height="40" VerticalContentAlignment="Center" Margin="0,53,0,0" HorizontalAlignment="Center" Width="242" Foreground="Black" BorderBrush="#FF0C0000" Background="#FFECECEC">
+                            <ComboBoxItem Content="Nugegoda"/>
+                            <ComboBoxItem Content="Kaluthara"/>
+                            <ComboBoxItem Content="Matara"/>
+
+                        </ComboBox>
+                        <ComboBox 
+                x:Name="select_vehicle_manufacture_Co" 
+                FontSize="13"
+                Style="{DynamicResource theComboBox}"
+                Padding="15,5,15,5"
+                HorizontalContentAlignment="Center"
+                VerticalAlignment="Top"
+                ItemContainerStyle="{DynamicResource theComboBoxItem}" Height="40" VerticalContentAlignment="Center" Margin="0,112,416,0" HorizontalAlignment="Right" Width="242" Foreground="Black" BorderBrush="#FF0C0000" Background="#FFECECEC">
+                            <ComboBoxItem Content="Nugegoda"/>
+                            <ComboBoxItem Content="Kaluthara"/>
+                            <ComboBoxItem Content="Matara"/>
+
+                        </ComboBox>
+                    </Grid>
+                    <!--stationary-edit-view-->
+                    <Grid Margin="0,165,0,0">
+                        <Grid.Background>
+                            <SolidColorBrush Color="Black" Opacity="0.2"/>
+                        </Grid.Background>
+
+                        <Label Content="STATIONARY info" HorizontalAlignment="Left" Margin="741,0,0,0" VerticalAlignment="Center" Height="64" Width="292" FontSize="20" FontFamily="Bahnschrift Light" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+
+
+                        <ComboBox 
+                x:Name="voucher_type__" 
+                FontSize="13"
+                Style="{DynamicResource theComboBox}"
+                Padding="15,5,15,5"
+                HorizontalContentAlignment="Center"
+                VerticalAlignment="Top"
+                ItemContainerStyle="{DynamicResource theComboBoxItem}" Height="40" VerticalContentAlignment="Center" Margin="0,138,774,0" HorizontalAlignment="Right" Width="242" Foreground="Black" BorderBrush="#FF0C0000" Background="#FFECECEC">
+                            <ComboBoxItem Content="Nugegoda"/>
+                            <ComboBoxItem Content="Kaluthara"/>
+                            <ComboBoxItem Content="Matara"/>
+
+                        </ComboBox>
+                        <ComboBox 
+                x:Name="stats" 
+                FontSize="13"
+                Style="{DynamicResource theComboBox}"
+                Padding="15,5,15,5"
+                HorizontalContentAlignment="Center"
+                VerticalAlignment="Top"
+                ItemContainerStyle="{DynamicResource theComboBoxItem}" Height="40" VerticalContentAlignment="Center" Margin="0,62,774,0" HorizontalAlignment="Right" Width="242" Foreground="Black" BorderBrush="#FF0C0000" Background="#FFECECEC">
+                            <ComboBoxItem Content="Nugegoda"/>
+                            <ComboBoxItem Content="Kaluthara"/>
+                            <ComboBoxItem Content="Matara"/>
+
+                        </ComboBox>
+
+                        <TextBox HorizontalAlignment="Left" Margin="396,62,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                        <TextBox HorizontalAlignment="Left" Margin="396,95,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                        <TextBox HorizontalAlignment="Left" Margin="396,128,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+
+                        <TextBox HorizontalAlignment="Left" Margin="396,160,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                        <TextBox HorizontalAlignment="Left" Margin="396,192,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                        <Button Content="Save" HorizontalAlignment="Left" Margin="887,456,0,0" VerticalAlignment="Top" Width="123" Height="32"/>
+
+                    </Grid>
+                </Grid>
+
+
+                <Grid x:Name="edit_view_book" Grid.ColumnSpan="2" Margin="526,0,0,0" Visibility="Hidden" Background="#FFE43232">
+
+
+
+                    <!--item-edit-view-->
+                    <Grid x:Name="item_view_book" Margin="0,-1,0,518" >
+                        <Grid.Background>
+                            <SolidColorBrush Color="Black" Opacity="0.4"/>
+                        </Grid.Background>
+
+                        <Label Content="Item info" HorizontalAlignment="Left" Margin="741,0,0,0" VerticalAlignment="Center" Height="64" Width="292" FontSize="20" FontFamily="Bahnschrift Light" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+
+                        <TextBox HorizontalAlignment="Left" Margin="81,53,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                        <TextBox HorizontalAlignment="Left" Margin="81,81,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                        <TextBox HorizontalAlignment="Left" Margin="81,112,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                        <TextBox HorizontalAlignment="Left" Margin="81,112,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                        <TextBox HorizontalAlignment="Left" Margin="81,145,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                        <TextBox HorizontalAlignment="Left" Margin="247,53,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+
+                        <ComboBox 
+x:Name="select_vehicle_manufactur_e" 
+FontSize="13"
+Style="{DynamicResource theComboBox}"
+Padding="15,5,15,5"
+HorizontalContentAlignment="Center"
+VerticalAlignment="Top"
+ItemContainerStyle="{DynamicResource theComboBoxItem}" Height="40" VerticalContentAlignment="Center" Margin="0,53,0,0" HorizontalAlignment="Center" Width="242" Foreground="Black" BorderBrush="#FF0C0000" Background="#FFECECEC">
+                            <ComboBoxItem Content="Nugegoda"/>
+                            <ComboBoxItem Content="Kaluthara"/>
+                            <ComboBoxItem Content="Matara"/>
+
+                        </ComboBox>
+                        <ComboBox 
+                x:Name="select_vehicle_manufacture_" 
+                FontSize="13"
+                Style="{DynamicResource theComboBox}"
+                Padding="15,5,15,5"
+                HorizontalContentAlignment="Center"
+                VerticalAlignment="Top"
+                ItemContainerStyle="{DynamicResource theComboBoxItem}" Height="40" VerticalContentAlignment="Center" Margin="0,112,416,0" HorizontalAlignment="Right" Width="242" Foreground="Black" BorderBrush="#FF0C0000" Background="#FFECECEC">
+                            <ComboBoxItem Content="Nugegoda"/>
+                            <ComboBoxItem Content="Kaluthara"/>
+                            <ComboBoxItem Content="Matara"/>
+
+                        </ComboBox>
+                    </Grid>
+                    <!--book-edit-view-->
+                    <Grid Margin="0,165,0,0">
+                        <Grid.Background>
+                            <SolidColorBrush Color="Black" Opacity="0.2"/>
+                        </Grid.Background>
+
+                        <Label Content="BOOK info" HorizontalAlignment="Left" Margin="741,0,0,0" VerticalAlignment="Center" Height="64" Width="292" FontSize="20" FontFamily="Bahnschrift Light" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+
+
+                        <ComboBox 
+                x:Name="voucher_type_" 
+                FontSize="13"
+                Style="{DynamicResource theComboBox}"
+                Padding="15,5,15,5"
+                HorizontalContentAlignment="Center"
+                VerticalAlignment="Top"
+                ItemContainerStyle="{DynamicResource theComboBoxItem}" Height="40" VerticalContentAlignment="Center" Margin="0,138,774,0" HorizontalAlignment="Right" Width="242" Foreground="Black" BorderBrush="#FF0C0000" Background="#FFECECEC" SelectionChanged="voucher_type__SelectionChanged">
+                            <ComboBoxItem Content="Nugegoda"/>
+                            <ComboBoxItem Content="Kaluthara"/>
+                            <ComboBoxItem Content="Matara"/>
+
+                        </ComboBox>
+                        <ComboBox 
+                x:Name="status_" 
+                FontSize="13"
+                Style="{DynamicResource theComboBox}"
+                Padding="15,5,15,5"
+                HorizontalContentAlignment="Center"
+                VerticalAlignment="Top"
+                ItemContainerStyle="{DynamicResource theComboBoxItem}" Height="40" VerticalContentAlignment="Center" Margin="0,62,774,0" HorizontalAlignment="Right" Width="242" Foreground="Black" BorderBrush="#FF0C0000" Background="#FFECECEC">
+                            <ComboBoxItem Content="Nugegoda"/>
+                            <ComboBoxItem Content="Kaluthara"/>
+                            <ComboBoxItem Content="Matara"/>
+
+                        </ComboBox>
+
+                        <TextBox HorizontalAlignment="Left" Margin="396,62,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                        <TextBox HorizontalAlignment="Left" Margin="396,95,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                        <TextBox HorizontalAlignment="Left" Margin="396,128,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+
+                        <TextBox HorizontalAlignment="Left" Margin="396,160,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                        <TextBox HorizontalAlignment="Left" Margin="396,192,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                        <Button Content="Save" HorizontalAlignment="Left" Margin="887,456,0,0" VerticalAlignment="Top" Width="123" Height="32"/>
+
+                    </Grid>
+
+
+                    <Grid x:Name="edit_view_book_" Grid.ColumnSpan="2" Margin="526,0,0,0" Visibility="Hidden">
+
+
+
+                        <!--item-edit-view-->
+                        <Grid x:Name="item_view_book_" Margin="0,-1,0,518" >
+                            <Grid.Background>
+                                <SolidColorBrush Color="Black" Opacity="0.4"/>
+                            </Grid.Background>
+
+                            <Label Content="Item info" HorizontalAlignment="Left" Margin="741,0,0,0" VerticalAlignment="Center" Height="64" Width="292" FontSize="20" FontFamily="Bahnschrift Light" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+
+                            <TextBox HorizontalAlignment="Left" Margin="81,53,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                            <TextBox HorizontalAlignment="Left" Margin="81,81,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                            <TextBox HorizontalAlignment="Left" Margin="81,112,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                            <TextBox HorizontalAlignment="Left" Margin="81,112,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                            <TextBox HorizontalAlignment="Left" Margin="81,145,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                            <TextBox HorizontalAlignment="Left" Margin="247,53,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+
+                            <ComboBox 
+x:Name="select_vehicle_manfacture" 
+FontSize="13"
+Style="{DynamicResource theComboBox}"
+Padding="15,5,15,5"
+HorizontalContentAlignment="Center"
+VerticalAlignment="Top"
+ItemContainerStyle="{DynamicResource theComboBoxItem}" Height="40" VerticalContentAlignment="Center" Margin="0,53,0,0" HorizontalAlignment="Center" Width="242" Foreground="Black" BorderBrush="#FF0C0000" Background="#FFECECEC">
+                                <ComboBoxItem Content="Nugegoda"/>
+                                <ComboBoxItem Content="Kaluthara"/>
+                                <ComboBoxItem Content="Matara"/>
+
+                            </ComboBox>
+                            <ComboBox 
+                x:Name="sect_vehicle_manufacture_Copy" 
+                FontSize="13"
+                Style="{DynamicResource theComboBox}"
+                Padding="15,5,15,5"
+                HorizontalContentAlignment="Center"
+                VerticalAlignment="Top"
+                ItemContainerStyle="{DynamicResource theComboBoxItem}" Height="40" VerticalContentAlignment="Center" Margin="0,112,416,0" HorizontalAlignment="Right" Width="242" Foreground="Black" BorderBrush="#FF0C0000" Background="#FFECECEC">
+                                <ComboBoxItem Content="Nugegoda"/>
+                                <ComboBoxItem Content="Kaluthara"/>
+                                <ComboBoxItem Content="Matara"/>
+
+                            </ComboBox>
+                        </Grid>
+                        <!--voucher-edit-view-->
+                        <Grid Margin="0,165,0,0">
+                            <Grid.Background>
+                                <SolidColorBrush Color="Black" Opacity="0.2"/>
+                            </Grid.Background>
+
+                            <Label Content="Voucher info" HorizontalAlignment="Left" Margin="741,0,0,0" VerticalAlignment="Center" Height="64" Width="292" FontSize="20" FontFamily="Bahnschrift Light" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+
+
+                            <ComboBox 
+                x:Name="voucher_tpe" 
+                FontSize="13"
+                Style="{DynamicResource theComboBox}"
+                Padding="15,5,15,5"
+                HorizontalContentAlignment="Center"
+                VerticalAlignment="Top"
+                ItemContainerStyle="{DynamicResource theComboBoxItem}" Height="40" VerticalContentAlignment="Center" Margin="0,138,774,0" HorizontalAlignment="Right" Width="242" Foreground="Black" BorderBrush="#FF0C0000" Background="#FFECECEC">
+                                <ComboBoxItem Content="Nugegoda"/>
+                                <ComboBoxItem Content="Kaluthara"/>
+                                <ComboBoxItem Content="Matara"/>
+
+                            </ComboBox>
+                            <ComboBox 
+                x:Name="staus" 
+                FontSize="13"
+                Style="{DynamicResource theComboBox}"
+                Padding="15,5,15,5"
+                HorizontalContentAlignment="Center"
+                VerticalAlignment="Top"
+                ItemContainerStyle="{DynamicResource theComboBoxItem}" Height="40" VerticalContentAlignment="Center" Margin="0,62,774,0" HorizontalAlignment="Right" Width="242" Foreground="Black" BorderBrush="#FF0C0000" Background="#FFECECEC">
+                                <ComboBoxItem Content="Nugegoda"/>
+                                <ComboBoxItem Content="Kaluthara"/>
+                                <ComboBoxItem Content="Matara"/>
+
+                            </ComboBox>
+
+                            <TextBox HorizontalAlignment="Left" Margin="396,62,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                            <TextBox HorizontalAlignment="Left" Margin="396,95,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                            <TextBox HorizontalAlignment="Left" Margin="396,128,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+
+                            <TextBox HorizontalAlignment="Left" Margin="396,160,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                            <TextBox HorizontalAlignment="Left" Margin="396,192,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                            <Button Content="Save" HorizontalAlignment="Left" Margin="887,456,0,0" VerticalAlignment="Top" Width="123" Height="32"/>
+
+                        </Grid>
+                    </Grid>
+                    
+                    
+                </Grid>
+
+
+
+
+                <Button Content="ADD voucher" HorizontalAlignment="Left" Margin="152,295,0,0" VerticalAlignment="Top" Width="199" Height="43" Click="add_voucher"/>
+                <Button Content="ADD stationary" HorizontalAlignment="Left" Margin="152,358,0,0" VerticalAlignment="Top" Width="199" Height="42" Click="add_stationary"/>
+                <Button Content="ADD Book" HorizontalAlignment="Left" Margin="152,421,0,0" VerticalAlignment="Top" Width="199" Height="42" Click="add_book"/>
+
+
+
+
+
+
+
+
+
+                <!--<Grid Grid.ColumnSpan="2" Margin="430,20,16,18" RenderTransformOrigin="0.5,0.5" Visibility="Hidden">
+                    <Grid.Background>
+                        <SolidColorBrush Color="Black" Opacity="0.1"/>
+                    </Grid.Background>
+
+
+
+
+
+
+                        <Label Content="Location" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="544,36,0,0">
+                            <Label.Foreground>
+                                <SolidColorBrush Color="Black" Opacity="0.6"/>
+                            </Label.Foreground>
+                            <Label.Background>
+                                <SolidColorBrush Opacity="0.445"/>
+                            </Label.Background>
+                        </Label>
+
+                        <ComboBox 
+        x:Name="select_vehicle_manufacture" 
+        FontSize="13"
+        Style="{DynamicResource theComboBox}"
+        Padding="15,5,15,5"
+        HorizontalContentAlignment="Center"
+        VerticalAlignment="Top"
+        ItemContainerStyle="{DynamicResource theComboBoxItem}" Height="40" VerticalContentAlignment="Center" Margin="0,62,552,0" HorizontalAlignment="Right" Width="242" Foreground="Black" BorderBrush="#FF0C0000" Background="#FFECECEC">
+                            <ComboBoxItem Content="Nugegoda"/>
+                            <ComboBoxItem Content="Kaluthara"/>
+                            <ComboBoxItem Content="Matara"/>
+
+                        </ComboBox>
+
+
+                        <Label Content="Inventory type" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="220,36,0,0">
+                            <Label.Foreground>
+                                <SolidColorBrush Color="Black" Opacity="0.6"/>
+                            </Label.Foreground>
+                            <Label.Background>
+                                <SolidColorBrush Opacity="0.445"/>
+                            </Label.Background>
+                        </Label>
+                        <ComboBox 
+    x:Name="select_vehicle_type" 
+    FontSize="13"
+    Style="{DynamicResource theComboBox}"
+    Padding="15,5,15,5"
+    HorizontalContentAlignment="Center"
+    VerticalAlignment="Top"
+    ItemContainerStyle="{DynamicResource theComboBoxItem}" Height="40" VerticalContentAlignment="Center" Margin="0,67,849,0" HorizontalAlignment="Right" Width="242" Foreground="Black" BorderBrush="#FF0C0000" Background="#FFECECEC">
+                            <ComboBoxItem Content="WAREHOUSE"/>
+                            <ComboBoxItem Content="BRANCH"/>
+                    </ComboBox>
+
+
+                        <Label Content="Top Speed" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="534,202,0,0">
+                            <Label.Foreground>
+                                <SolidColorBrush Color="Black" Opacity="0.6"/>
+                            </Label.Foreground>
+                            <Label.Background>
+                                <SolidColorBrush Opacity="0.445"/>
+                            </Label.Background>
+                        </Label>
+                        <TextBox x:Name="select_vehicle_speed" Style="{StaticResource CustomTextBoxStyle}" Margin="360,233,0,0" TextWrapping="Wrap" Tag="" Width="242" Height="40" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" BorderBrush="#FFD2D2D2" FontSize="14" TextChanged="recheck" HorizontalAlignment="Left" />
+
+                        <Label Content="ItemCost" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="563,281,0,0">
+                            <Label.Foreground>
+                                <SolidColorBrush Color="Black" Opacity="0.6"/>
+                            </Label.Foreground>
+                            <Label.Background>
+                                <SolidColorBrush Opacity="0.445"/>
+                            </Label.Background>
+                        </Label>
+                        <TextBox x:Name="select_vehicle_mph" Style="{StaticResource CustomTextBoxStyle}" Margin="360,311,0,0" TextWrapping="Wrap" Tag="" Width="242" Height="40" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" BorderBrush="#FFD2D2D2" FontSize="14" TextChanged="recheck" HorizontalAlignment="Left" />
+                        <TextBox x:Name="selecet_vehicle_info" Style="{StaticResource CustomTextBoxStyle}" Margin="659,56,0,0" TextWrapping="Wrap" Tag="" Width="277" Height="295" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" BorderBrush="#FFD2D2D2" FontSize="14" TextChanged="recheck" HorizontalAlignment="Left" />
+                        <Label Content="Vehicle Description" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="808,25,0,0">
+                            <Label.Foreground>
+                                <SolidColorBrush Color="Black" Opacity="0.6"/>
+                            </Label.Foreground>
+                            <Label.Background>
+                                <SolidColorBrush Opacity="0.445"/>
+                            </Label.Background>
+                        </Label>
+
+                        -->
+                <!--<Button Content="Add" Cursor="Hand" Style="{StaticResource btncutsomstyle}" HorizontalAlignment="Left" Margin="712,386,0,0" VerticalAlignment="Top" Height="40" Width="170" Background="{x:Null}"  Padding="30,30,30,30"/>-->
+                <!--
+                        <Label Content="Range" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="550,119,0,0">
+                            <Label.Foreground>
+                                <SolidColorBrush Color="Black" Opacity="0.6"/>
+                            </Label.Foreground>
+                            <Label.Background>
+                                <SolidColorBrush Opacity="0.445"/>
+                            </Label.Background>
+                        </Label>
+                        <TextBox x:Name="select_vehicle_range" Style="{StaticResource CustomTextBoxStyle}" Margin="360,147,0,0" TextWrapping="Wrap" Tag="" Width="242" Height="40" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" BorderBrush="#FFD2D2D2" FontSize="14" TextChanged="recheck" HorizontalAlignment="Left" />
+                        <Label Content="Vehicle Model" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="215,119,0,0">
+                            <Label.Foreground>
+                                <SolidColorBrush Color="Black" Opacity="0.6"/>
+                            </Label.Foreground>
+                            <Label.Background>
+                                <SolidColorBrush Opacity="0.445"/>
+                            </Label.Background>
+                        </Label>
+                        <TextBox x:Name="select_vehicle_model" Style="{StaticResource CustomTextBoxStyle}" Margin="63,149,0,0" TextWrapping="Wrap" Tag="" Width="242" Height="40" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" BorderBrush="#FFD2D2D2" FontSize="14" TextChanged="recheck" HorizontalAlignment="Left" />
+                        <Label Content="Vehicle Model year" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="189,202,0,0">
+                            <Label.Foreground>
+                                <SolidColorBrush Color="Black" Opacity="0.6"/>
+                            </Label.Foreground>
+                            <Label.Background>
+                                <SolidColorBrush Opacity="0.445"/>
+                            </Label.Background>
+                        </Label>
+                        <TextBox x:Name="select_vehicle_year" Style="{StaticResource CustomTextBoxStyle}" Margin="63,233,0,0" TextWrapping="Wrap" Tag="" Width="242" Height="40" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" BorderBrush="#FFD2D2D2" FontSize="14" TextChanged="recheck" HorizontalAlignment="Left" />
+                        <Label Content="Price" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="264,281,0,0">
+                            <Label.Foreground>
+                                <SolidColorBrush Color="Black" Opacity="0.6"/>
+                            </Label.Foreground>
+                            <Label.Background>
+                                <SolidColorBrush Opacity="0.445"/>
+                            </Label.Background>
+                        </Label>
+                        <TextBox x:Name="select_vehicle_price" Style="{StaticResource CustomTextBoxStyle}" Margin="63,311,0,0" TextWrapping="Wrap" Tag="" Width="242" Height="40" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" BorderBrush="#FFD2D2D2" FontSize="14" TextChanged="recheck" HorizontalAlignment="Left" />
+                        <Button x:Name="clearFeilds"  Cursor="Hand" Style="{StaticResource btncutsomstyle}" HorizontalAlignment="Left" Margin="883,386,0,0" VerticalAlignment="Top" Height="40" Width="53" Background="{x:Null}"  BorderBrush="{x:Null}" Click="clear_Action">
+                            <Image Height="29" Width="53" Source="/View/redo.png" RenderTransformOrigin="1.651,11.069" Opacity="0.6" ToolTip="Reset"/>
+                        </Button>
+                        <Button x:Name="addCarBtn"  Cursor="Hand" Style="{StaticResource btncutsomstyle}" HorizontalAlignment="Left" Margin="837,386,0,0" VerticalAlignment="Top" Height="40" Width="53" Background="{x:Null}"  BorderBrush="{x:Null}" Click="Add_action">
+                            <Image Height="29" Width="53" Source="/View/plus-hexagon.png" RenderTransformOrigin="1.651,11.069" Opacity="0.6" ToolTip="Add Car"/>
+                        </Button>
+
+
+
+                        -->
+                <!--error box for manage view-->
+                <!--
+                        <Border x:Name="error_box_manage_" Style="{StaticResource FadeOutLabelStyle}" Visibility="Collapsed" CornerRadius="20" BorderBrush="#FFEA1010" BorderThickness="1" HorizontalAlignment="Left" Height="40" Margin="63,386,0,0" VerticalAlignment="Top" Width="735">
+                            <Border.Background>
+                                <SolidColorBrush Color="#FFF13E19" Opacity="0.1"/>
+                            </Border.Background>
+                            <Label x:Name="error_box_manage_content_" Content="" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </Border>
+
+                    <Border x:Name="success_box_manage_" Style="{StaticResource FadeOutLabelStyle}" Visibility="Collapsed" CornerRadius="20" BorderBrush="#FF2BEA10" BorderThickness="1" HorizontalAlignment="Left" Height="40" Margin="63,386,0,0" VerticalAlignment="Top" Width="735">
+                        <Border.Background>
+                            <SolidColorBrush Color="#FF19F126" Opacity="0.1"/>
+                        </Border.Background>
+                        <Label x:Name="success_box_manage_content_" Content="Congradulation! Your request process success! A new car added to the store. Thank you. " VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </Border>
+                    
+                </Grid>-->
 
             </Grid>
 

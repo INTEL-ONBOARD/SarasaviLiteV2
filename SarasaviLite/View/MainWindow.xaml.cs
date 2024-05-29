@@ -47,13 +47,73 @@ namespace SarasaviLite
         private void backCusLoginView(object sender, RoutedEventArgs e)
         {
             CustomerSelector.Visibility = Visibility.Collapsed;
-            CustomerLogin.Visibility= Visibility.Visible;   
+            CustomerLogin.Visibility = Visibility.Visible;
         }
 
         private void backCusSelectView(object sender, RoutedEventArgs e)
         {
             CustomerPayment.Visibility = Visibility.Hidden;
-            CustomerSelector.Visibility= Visibility.Visible;
+            CustomerSelector.Visibility = Visibility.Visible;
+        }
+
+        private void add_item(object sender, RoutedEventArgs e)
+        {
+            inventoryView.Visibility = Visibility.Hidden;
+        }
+        private void recheck(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void Add_action(object sender, RoutedEventArgs e)
+        {
+
+        }
+        
+        private void clear_Action(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void TextBox_TextChanged_1(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void TextBox_TextChanged_2(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void add_voucher(object sender, RoutedEventArgs e)
+        {
+            edit_view_stationary.Visibility = Visibility.Hidden;
+            edit_view_book.Visibility = Visibility.Hidden;
+            edit_view_voucher.Visibility = Visibility.Visible;
+        }
+
+        private void add_stationary(object sender, RoutedEventArgs e)
+        {
+            edit_view_stationary.Visibility = Visibility.Visible;
+            edit_view_book.Visibility = Visibility.Hidden;
+            edit_view_voucher.Visibility = Visibility.Hidden;
+        }
+
+        private void add_book(object sender, RoutedEventArgs e)
+        {
+            edit_view_stationary.Visibility = Visibility.Hidden;
+            edit_view_book.Visibility = Visibility.Visible;
+            edit_view_voucher.Visibility = Visibility.Hidden;
+        }
+
+        private void voucher_type__SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }
