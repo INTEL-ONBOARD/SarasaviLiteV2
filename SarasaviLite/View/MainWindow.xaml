@@ -762,7 +762,7 @@
 
                 <!--Inventory View-->
                 <ScrollViewer x:Name="inventoryscrollView" Grid.Column="0" Margin="420,42,42,42" VerticalScrollBarVisibility="Hidden" Background="#FFF9E8E8" Grid.ColumnSpan="2" Visibility="Visible">
-                    <StackPanel x:Name="View" Width="1126" ScrollViewer.VerticalScrollBarVisibility="Hidden"/>
+                    <StackPanel x:Name="View" Width="1126" ScrollViewer.VerticalScrollBarVisibility="Visible"/>
                 </ScrollViewer>
 
 

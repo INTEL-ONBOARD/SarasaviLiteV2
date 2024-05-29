@@ -33,6 +33,7 @@ namespace SarasaviLite
             inventoryController = new InventoryController();
 
             loadInitData();
+            loaditemData();
 
         }
 
@@ -225,7 +226,8 @@ namespace SarasaviLite
             foreach (var item_ in items)
             {
                 ItemInventory inventory = new ItemInventory();
-                inventory.Name = item_.Name;
+                inventory.name = item_.Name;
+                Console.WriteLine(inventory.name);
                 View.Children.Add(inventory);
             }
         }
