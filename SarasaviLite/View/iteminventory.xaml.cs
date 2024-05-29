@@ -17,9 +17,9 @@ namespace SarasaviLite.View
     /// <summary>
     /// Interaction logic for item.xaml
     /// </summary>
-    public partial class item : Window
+    public partial class ItemInventory : Window
     {
-        public item()
+        public ItemInventory()
         {
             InitializeComponent();
             this.DataContext = this;
