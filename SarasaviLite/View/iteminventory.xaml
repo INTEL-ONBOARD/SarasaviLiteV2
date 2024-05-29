@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:SarasaviLite.View"
         WindowStyle="None"
         WindowStartupLocation="CenterScreen"
-        Title="MainWindow" Height="250" Width="1125">
+        Title="MainWindow" Height="350" Width="1125">
     <Window.Resources>
         <!-- Image Button Style -->
         <Style TargetType="Button" x:Key="ImageButtonStyle">
@@ -54,9 +54,9 @@
         </Style>
     </Window.Resources>
     <Grid>
-        <Image HorizontalAlignment="Left" Height="180" Margin="72,0,0,0" VerticalAlignment="Center" Width="180" Source="/View/bell.png"/>
+        <Image x:Name="item_image" HorizontalAlignment="Left" Height="290" Margin="26,0,0,0" VerticalAlignment="Center" Width="290" Source="/View/bell.png"/>
 
-        <Button  x:Name="nav_Copy2" Style="{StaticResource ImageButtonStyle}" Content="" HorizontalAlignment="Right" Margin="0,201,16,0" Cursor="Hand" VerticalAlignment="Top" BorderBrush="{x:Null}" Foreground="{x:Null}" Width="35" Height="35" RenderTransformOrigin="0.514,0.457" >
+        <Button  x:Name="deleteBtn" Style="{StaticResource ImageButtonStyle}" Content="" HorizontalAlignment="Right" Margin="0,283,23,0" Cursor="Hand" VerticalAlignment="Top" BorderBrush="{x:Null}" Foreground="{x:Null}" Width="35" Height="35" RenderTransformOrigin="0.514,0.457" Click="deleteBtn_Click" >
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -78,6 +78,103 @@
                 </ImageBrush>
             </Button.Background>
         </Button>
+        <Button  x:Name="selectBtn" Style="{StaticResource ImageButtonStyle}" Content="" HorizontalAlignment="Right" Margin="0,283,72,0" Cursor="Hand" VerticalAlignment="Top" BorderBrush="{x:Null}" Foreground="{x:Null}" Width="33" Height="40" RenderTransformOrigin="0.514,0.457" Click="select_click" >
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="180"/>
+                    <TranslateTransform X="-0.98" Y="3.01"/>
+                </TransformGroup>
+            </Button.RenderTransform>
+            <Button.Background>
+                <ImageBrush ImageSource="/View/click.png" TileMode="Tile" Stretch="UniformToFill">
+                    <ImageBrush.RelativeTransform>
+                        <TransformGroup>
+                            <ScaleTransform CenterY="0.5" CenterX="0.5"/>
+                            <SkewTransform CenterX="0.5" CenterY="0.5"/>
+                            <RotateTransform Angle="180" CenterX="0.5" CenterY="0.5"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </ImageBrush.RelativeTransform>
+                </ImageBrush>
+            </Button.Background>
+        </Button>
+
+        <Label Content="{Binding price}" HorizontalAlignment="Left" Margin="345,117,0,0" VerticalAlignment="Top" FontFamily="Bahnschrift" FontSize="48" VerticalContentAlignment="Center"/>
+        <Label Content="{Binding status}" HorizontalAlignment="Left" Margin="882,21,0,0" VerticalAlignment="Top" FontFamily="Bahnschrift" FontSize="36" Width="214" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"/>
+        <Label Content="Item Cost" HorizontalAlignment="Left" Margin="348,202,0,0" VerticalAlignment="Top" FontFamily="Bahnschrift" FontSize="18" VerticalContentAlignment="Center">
+            <Label.Foreground>
+                <SolidColorBrush Color="Black" Opacity="0.6"/>
+            </Label.Foreground>
+            <Label.Background>
+                <SolidColorBrush Opacity="0.6"/>
+            </Label.Background>
+        </Label>
+        <Label Content="{Binding inventoryType}" HorizontalAlignment="Left" Margin="888,115,0,0" VerticalAlignment="Top" FontFamily="Bahnschrift" FontSize="22" Width="207" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"/>
+        <Label Content="{Binding location}" HorizontalAlignment="Left" Margin="671,144,0,0" VerticalAlignment="Top" FontFamily="Bahnschrift" FontSize="18" VerticalContentAlignment="Center" Width="424" HorizontalContentAlignment="Right"/>
+        <Label Content="DiscountAmount" HorizontalAlignment="Left" Margin="348,249,0,0" VerticalAlignment="Top" FontFamily="Bahnschrift" FontSize="18" VerticalContentAlignment="Center">
+            <Label.Foreground>
+                <SolidColorBrush Color="Black" Opacity="0.6"/>
+            </Label.Foreground>
+            <Label.Background>
+                <SolidColorBrush Opacity="0.6"/>
+            </Label.Background>
+        </Label>
+        <Label Content="tax" HorizontalAlignment="Left" Margin="348,223,0,0" VerticalAlignment="Top" FontFamily="Bahnschrift" FontSize="18" VerticalContentAlignment="Center">
+            <Label.Foreground>
+                <SolidColorBrush Color="Black" Opacity="0.6"/>
+            </Label.Foreground>
+            <Label.Background>
+                <SolidColorBrush Opacity="0.6"/>
+            </Label.Background>
+        </Label>
+        <Label Content="{Binding qty}" HorizontalAlignment="Left" Margin="1026,61,0,0" VerticalAlignment="Top" FontFamily="Bahnschrift" FontSize="24" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" Width="69"/>
+        <Label Content="{Binding name}" HorizontalAlignment="Left" Margin="345,65,0,0" VerticalAlignment="Top" FontFamily="Bahnschrift" FontSize="22" Width="588" VerticalContentAlignment="Center"/>
+        <Label Content="{Binding itemType}" HorizontalAlignment="Left" Margin="344,32,0,0" VerticalAlignment="Top" FontFamily="Bahnschrift" FontSize="24" VerticalContentAlignment="Center"/>
+        <Label Content="{Binding itemCost}" HorizontalAlignment="Left" Margin="505,202,0,0" VerticalAlignment="Top" FontFamily="Bahnschrift" FontSize="18" VerticalContentAlignment="Center">
+            <Label.Foreground>
+                <SolidColorBrush Color="Black" Opacity="0.6"/>
+            </Label.Foreground>
+            <Label.Background>
+                <SolidColorBrush Opacity="0.6"/>
+            </Label.Background>
+        </Label>
+        <Label Content="{Binding discountAmount}"  HorizontalAlignment="Left" Margin="505,249,0,0" VerticalAlignment="Top" FontFamily="Bahnschrift" FontSize="18" VerticalContentAlignment="Center">
+            <Label.Foreground>
+                <SolidColorBrush Color="Black" Opacity="0.6"/>
+            </Label.Foreground>
+            <Label.Background>
+                <SolidColorBrush Opacity="0.6"/>
+            </Label.Background>
+        </Label>
+        <Label Content="{Binding tax}" HorizontalAlignment="Left" Margin="505,223,0,0" VerticalAlignment="Top" FontFamily="Bahnschrift" FontSize="18" VerticalContentAlignment="Center">
+            <Label.Foreground>
+                <SolidColorBrush Color="Black" Opacity="0.6"/>
+            </Label.Foreground>
+            <Label.Background>
+                <SolidColorBrush Opacity="0.6"/>
+            </Label.Background>
+        </Label>
+        <Rectangle HorizontalAlignment="Left" Height="69" Margin="499,207,0,0" VerticalAlignment="Top" Width="1" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.Stroke>
+                <SolidColorBrush Color="Black" Opacity="0.6"/>
+            </Rectangle.Stroke>
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="-1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <Rectangle HorizontalAlignment="Left" Height="1" Margin="348,106,0,0" VerticalAlignment="Top" Width="747">
+            <Rectangle.Stroke>
+                <SolidColorBrush Color="Black" Opacity="0.3"/>
+            </Rectangle.Stroke>
+        </Rectangle>
+
 
     </Grid>
 </Window>
