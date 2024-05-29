@@ -13,12 +13,17 @@
     <None Remove="View\apple-pay.png" />
     <None Remove="View\arrow-circle-right.png" />
     <None Remove="View\back.png" />
+    <None Remove="View\bell-notification-social-media.png" />
+    <None Remove="View\bell.png" />
+    <None Remove="View\boxes.png" />
     <None Remove="View\caret-square-left.png" />
     <None Remove="View\cart.png" />
     <None Remove="View\cash.png" />
     <None Remove="View\cashier.png" />
     <None Remove="View\circle-user.png" />
     <None Remove="View\close.png" />
+    <None Remove="View\dashboard-interface.png" />
+    <None Remove="View\gear.png" />
     <None Remove="View\gift-card.png" />
     <None Remove="View\gmail.png" />
     <None Remove="View\google-pay.png" />
@@ -29,14 +34,18 @@
     <None Remove="View\login.png" />
     <None Remove="View\MASTER.png" />
     <None Remove="View\password.png" />
+    <None Remove="View\plus-hexagon.png" />
     <None Remove="View\price-tag.png" />
     <None Remove="View\profile.png" />
     <None Remove="View\qr-code.png" />
     <None Remove="View\sarasavi-book-shop-logo-849DCED3EE-seeklogo.com.png" />
     <None Remove="View\scanner.png" />
+    <None Remove="View\search.png" />
     <None Remove="View\shopping-bag.png" />
     <None Remove="View\shopping-cart-add.png" />
     <None Remove="View\sign-in-alt.png" />
+    <None Remove="View\stats.png" />
+    <None Remove="View\user %281%29.png" />
     <None Remove="View\visa.png" />
   </ItemGroup>
 
@@ -63,11 +72,16 @@
     <Resource Include="View\apple-pay.png" />
     <Resource Include="View\arrow-circle-right.png" />
     <Resource Include="View\back.png" />
+    <Resource Include="View\bell-notification-social-media.png" />
+    <Resource Include="View\bell.png" />
+    <Resource Include="View\boxes.png" />
     <Resource Include="View\cart.png" />
     <Resource Include="View\cash.png" />
     <Resource Include="View\cashier.png" />
     <Resource Include="View\circle-user.png" />
     <Resource Include="View\close.png" />
+    <Resource Include="View\dashboard-interface.png" />
+    <Resource Include="View\gear.png" />
     <Resource Include="View\gift-card.png" />
     <Resource Include="View\gmail.png" />
     <Resource Include="View\google-pay.png" />
@@ -78,14 +92,18 @@
     <Resource Include="View\login.png" />
     <Resource Include="View\MASTER.png" />
     <Resource Include="View\password.png" />
+    <Resource Include="View\plus-hexagon.png" />
     <Resource Include="View\price-tag.png" />
     <Resource Include="View\profile.png" />
     <Resource Include="View\qr-code.png" />
     <Resource Include="View\sarasavi-book-shop-logo-849DCED3EE-seeklogo.com.png" />
     <Resource Include="View\scanner.png" />
+    <Resource Include="View\search.png" />
     <Resource Include="View\shopping-bag.png" />
     <Resource Include="View\shopping-cart-add.png" />
     <Resource Include="View\sign-in-alt.png" />
+    <Resource Include="View\stats.png" />
+    <Resource Include="View\user (1).png" />
     <Resource Include="View\visa.png" />
   </ItemGroup>
 
