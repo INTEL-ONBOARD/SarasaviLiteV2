@@ -8,6 +8,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using SarasaviLite.Data;
+using SarasaviLite.Models;
 
 
 namespace SarasaviLite
@@ -17,9 +19,13 @@ namespace SarasaviLite
     /// </summary>
     public partial class MainWindow : Window
     {
+        SarasaviContext context;
+
         public MainWindow()
         {
             InitializeComponent();
+            context = new SarasaviContext();
+            loadInitData();
         }
 
         private void exitApp(object sender, RoutedEventArgs e)
@@ -166,6 +172,32 @@ namespace SarasaviLite
             add_view.Visibility = Visibility.Hidden;
             search_view.Visibility = Visibility.Hidden;
             report_view.Visibility = Visibility.Visible;
+        }
+
+        private void btnAddBook_Click(object sender, RoutedEventArgs e)
+        {
+            Book book = new Book()
+            {
+                ISBN = 2324,
+                Title = "Test Book",
+                Author= context.Authors.Find(selectBookAuthor.SelectedValue),
+                Year = 2000
+            };
+
+
+            context.Books.Add(book);
+            context.SaveChanges();
+
+
+        }
+
+        private void loadInitData()
+        {
+            var authors = context.Authors;
+            foreach (var author in authors)
+            {
+                selectBookAuthor.Items.Add(author.Name);
+            }
         }
     }
 }
