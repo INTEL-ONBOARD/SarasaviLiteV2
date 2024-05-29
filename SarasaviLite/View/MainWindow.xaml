@@ -993,7 +993,7 @@ ItemContainerStyle="{DynamicResource theComboBoxItem}" Height="40" VerticalConte
                 </Grid>
 
 
-                <Grid x:Name="edit_view_book" Grid.ColumnSpan="2" Margin="526,0,0,0" Visibility="Visible" Background="#FFE43232">
+                <Grid x:Name="edit_view_book" Grid.ColumnSpan="2" Margin="526,0,0,0" Visibility="Hidden" Background="#FFE43232">
 
                     <!--item-edit-view-->
                     <Grid x:Name="item_view_book" Margin="0,-1,0,518" >
