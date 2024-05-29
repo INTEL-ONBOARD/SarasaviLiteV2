@@ -56,6 +56,11 @@ namespace SarasaviLite
             CustomerSelector.Visibility = Visibility.Visible;
         }
 
+        private void backdashboardView(object sender, RoutedEventArgs e)
+        {
+            inventoryView.Visibility = Visibility.Hidden;
+        }
+
         private void add_item(object sender, RoutedEventArgs e)
         {
             inventoryView.Visibility = Visibility.Hidden;
@@ -114,6 +119,53 @@ namespace SarasaviLite
         private void voucher_type__SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
+        }
+
+
+        private void inventoryViewAction(object sender, RoutedEventArgs e)
+        {
+            Home_view.Visibility = Visibility.Hidden;
+            add_view.Visibility= Visibility.Hidden;
+            search_view.Visibility= Visibility.Hidden;
+            report_view.Visibility=Visibility.Hidden;
+            inventory_view.Visibility=Visibility.Visible;
+        }
+
+        private void dashboardViewAction(object sender, RoutedEventArgs e)
+        {
+            inventoryView.Visibility = Visibility.Hidden;
+            Home_view.Visibility = Visibility.Visible;
+            add_view.Visibility = Visibility.Hidden;
+            search_view.Visibility = Visibility.Hidden;
+            report_view.Visibility = Visibility.Hidden;
+
+        }
+
+        private void searchViewAction(object sender, RoutedEventArgs e)
+        {
+            inventoryView.Visibility = Visibility.Hidden;
+            Home_view.Visibility = Visibility.Hidden;
+            add_view.Visibility = Visibility.Hidden;
+            search_view.Visibility = Visibility.Visible;
+            report_view.Visibility = Visibility.Hidden;
+        }
+
+        private void addViewAction(object sender, RoutedEventArgs e)
+        {
+            inventoryView.Visibility = Visibility.Hidden;
+            Home_view.Visibility = Visibility.Hidden;
+            add_view.Visibility = Visibility.Visible;
+            search_view.Visibility = Visibility.Hidden;
+            report_view.Visibility = Visibility.Hidden;
+        }
+
+        private void reportViewAction(object sender, RoutedEventArgs e)
+        {
+            inventoryView.Visibility = Visibility.Hidden;
+            Home_view.Visibility = Visibility.Hidden;
+            add_view.Visibility = Visibility.Hidden;
+            search_view.Visibility = Visibility.Hidden;
+            report_view.Visibility = Visibility.Visible;
         }
     }
 }

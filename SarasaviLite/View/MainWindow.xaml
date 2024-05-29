@@ -417,7 +417,7 @@
             </Button.Background>
         </Button>
 
-        <!--Employee Login-->
+        <!--Customer Login-->
         <Grid x:Name="CustomerLogin" Margin="0,47,0,66" Panel.ZIndex="1" Visibility="Hidden">
 
             <Label Content="SCAN AND GO" HorizontalAlignment="Center" Margin="0,209,0,0" VerticalAlignment="Top"
@@ -570,9 +570,9 @@
         <Grid x:Name="dashboard" Margin="0,47,0,66" Panel.ZIndex="1" Visibility="Visible">
 
             <!--navpane-->
-            <Grid Margin="1,0,-1,720" >
+            <Grid Margin="1,0,-1,720" Panel.ZIndex="1" >
 
-                <Button  x:Name="nav" Style="{StaticResource ImageButtonStyle_noborder}" Content="" HorizontalAlignment="Right" Margin="0,17,1478,0" Cursor="Hand" VerticalAlignment="Top" BorderBrush="{x:Null}" Foreground="{x:Null}" Width="35" Height="35" Click="goScan_Click" RenderTransformOrigin="0.5,0.5" >
+                <Button  x:Name="BellBtn" Style="{StaticResource ImageButtonStyle_noborder}" Content="" HorizontalAlignment="Right" Margin="0,17,1478,0" Cursor="Hand" VerticalAlignment="Top" BorderBrush="{x:Null}" Foreground="{x:Null}" Width="35" Height="35" Click="goScan_Click" RenderTransformOrigin="0.5,0.5" >
                     <Button.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform/>
@@ -594,7 +594,7 @@
                         </ImageBrush>
                     </Button.Background>
                 </Button>
-                <Button  x:Name="nav_Copy" Style="{StaticResource ImageButtonStyle_noborder}" Content="" HorizontalAlignment="Right" Margin="0,17,1422,0" Cursor="Hand" VerticalAlignment="Top" BorderBrush="{x:Null}" Foreground="{x:Null}" Width="36" Height="35" Click="goScan_Click" RenderTransformOrigin="0.5,0.5" >
+                <Button  x:Name="profileBtn" Style="{StaticResource ImageButtonStyle_noborder}" Content="" HorizontalAlignment="Right" Margin="0,17,1422,0" Cursor="Hand" VerticalAlignment="Top" BorderBrush="{x:Null}" Foreground="{x:Null}" Width="36" Height="35" Click="goScan_Click" RenderTransformOrigin="0.5,0.5" >
                     <Button.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform/>
@@ -616,7 +616,7 @@
                         </ImageBrush>
                     </Button.Background>
                 </Button>
-                <Button  x:Name="nav_Copy1" Style="{StaticResource ImageButtonStyle_noborder}" Content="" HorizontalAlignment="Right" Margin="0,17,930,0" Cursor="Hand" VerticalAlignment="Top" BorderBrush="{x:Null}" Foreground="{x:Null}" Width="35" Height="35" Click="goScan_Click" RenderTransformOrigin="0.5,0.5" >
+                <Button  x:Name="dashboardBtn" Style="{StaticResource ImageButtonStyle_noborder}" Content="" HorizontalAlignment="Right" Margin="0,17,930,0" Cursor="Hand" VerticalAlignment="Top" BorderBrush="{x:Null}" Foreground="{x:Null}" Width="35" Height="35" Click="dashboardViewAction" RenderTransformOrigin="0.5,0.5" >
                     <Button.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform/>
@@ -638,7 +638,7 @@
                         </ImageBrush>
                     </Button.Background>
                 </Button>
-                <Button  x:Name="nav_Copy4" Style="{StaticResource ImageButtonStyle_noborder}" Content="" HorizontalAlignment="Right" Margin="0,17,854,0" Cursor="Hand" VerticalAlignment="Top" BorderBrush="{x:Null}" Foreground="{x:Null}" Width="35" Height="35" Click="goScan_Click" RenderTransformOrigin="0.5,0.5" >
+                <Button  x:Name="searchBtn" Style="{StaticResource ImageButtonStyle_noborder}" Content="" HorizontalAlignment="Right" Margin="0,17,854,0" Cursor="Hand" VerticalAlignment="Top" BorderBrush="{x:Null}" Foreground="{x:Null}" Width="35" Height="35" Click="searchViewAction" RenderTransformOrigin="0.5,0.5" >
                     <Button.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform/>
@@ -660,7 +660,7 @@
                         </ImageBrush>
                     </Button.Background>
                 </Button>
-                <Button  x:Name="nav_Copy5" Style="{StaticResource ImageButtonStyle_noborder}" Content="" HorizontalAlignment="Right" Margin="0,17,789,0" Cursor="Hand" VerticalAlignment="Top" BorderBrush="{x:Null}" Foreground="{x:Null}" Width="35" Height="35" Click="goScan_Click" RenderTransformOrigin="0.5,0.5" >
+                <Button  x:Name="AddBtn" Style="{StaticResource ImageButtonStyle_noborder}" Content="" HorizontalAlignment="Right" Margin="0,17,789,0" Cursor="Hand" VerticalAlignment="Top" BorderBrush="{x:Null}" Foreground="{x:Null}" Width="35" Height="35" Click="addViewAction" RenderTransformOrigin="0.5,0.5" >
                     <Button.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform/>
@@ -682,7 +682,7 @@
                         </ImageBrush>
                     </Button.Background>
                 </Button>
-                <Button  x:Name="nav_Copy6" Style="{StaticResource ImageButtonStyle_noborder}" Content="" HorizontalAlignment="Right" Margin="0,17,721,0" Cursor="Hand" VerticalAlignment="Top" BorderBrush="{x:Null}" Foreground="{x:Null}" Width="35" Height="35" Click="goScan_Click" RenderTransformOrigin="0.5,0.5" >
+                <Button  x:Name="inventoryBtn" Style="{StaticResource ImageButtonStyle_noborder}" Content="" HorizontalAlignment="Right" Margin="0,17,721,0" Cursor="Hand" VerticalAlignment="Top" BorderBrush="{x:Null}" Foreground="{x:Null}" Width="35" Height="35" Click="inventoryViewAction" RenderTransformOrigin="0.5,0.5" >
                     <Button.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform/>
@@ -704,7 +704,7 @@
                         </ImageBrush>
                     </Button.Background>
                 </Button>
-                <Button  x:Name="nav_Copy7" Style="{StaticResource ImageButtonStyle_noborder}" Content="" HorizontalAlignment="Right" Margin="0,17,1367,0" Cursor="Hand" VerticalAlignment="Top" BorderBrush="{x:Null}" Foreground="{x:Null}" Width="36" Height="35" Click="goScan_Click" RenderTransformOrigin="0.5,0.5" >
+                <Button  x:Name="settingsBtn" Style="{StaticResource ImageButtonStyle_noborder}" Content="" HorizontalAlignment="Right" Margin="0,17,1367,0" Cursor="Hand" VerticalAlignment="Top" BorderBrush="{x:Null}" Foreground="{x:Null}" Width="36" Height="35" Click="goScan_Click" RenderTransformOrigin="0.5,0.5" >
                     <Button.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform/>
@@ -726,7 +726,7 @@
                         </ImageBrush>
                     </Button.Background>
                 </Button>
-                <Button  x:Name="nav_Copy2" Style="{StaticResource ImageButtonStyle_noborder}" Content="" HorizontalAlignment="Right" Margin="0,15,646,0" Cursor="Hand" VerticalAlignment="Top" BorderBrush="{x:Null}" Foreground="{x:Null}" Width="35" Height="35" Click="goScan_Click" RenderTransformOrigin="0.5,0.5" >
+                <Button  x:Name="reportBtn" Style="{StaticResource ImageButtonStyle_noborder}" Content="" HorizontalAlignment="Right" Margin="0,15,646,0" Cursor="Hand" VerticalAlignment="Top" BorderBrush="{x:Null}" Foreground="{x:Null}" Width="35" Height="35" Click="reportViewAction" RenderTransformOrigin="0.5,0.5" >
                     <Button.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform/>
@@ -750,8 +750,10 @@
                 </Button>
 
             </Grid>
+
             <!--navbodypane-->
-            <Grid x:Name="inventory_view" Background="#FF8CDA24" Margin="1,72,-1,0" >
+            <Grid x:Name="inventory_view" Background="#FF3EC3BA" Margin="1,72,-1,0" Visibility="Hidden" Panel.ZIndex="1">
+
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="263*"/>
                     <ColumnDefinition Width="137*"/>
@@ -993,8 +995,6 @@ ItemContainerStyle="{DynamicResource theComboBoxItem}" Height="40" VerticalConte
 
                 <Grid x:Name="edit_view_book" Grid.ColumnSpan="2" Margin="526,0,0,0" Visibility="Hidden" Background="#FFE43232">
 
-
-
                     <!--item-edit-view-->
                     <Grid x:Name="item_view_book" Margin="0,-1,0,518" >
                         <Grid.Background>
@@ -1176,8 +1176,8 @@ ItemContainerStyle="{DynamicResource theComboBoxItem}" Height="40" VerticalConte
 
                         </Grid>
                     </Grid>
-                    
-                    
+
+
                 </Grid>
 
 
@@ -1347,406 +1347,419 @@ ItemContainerStyle="{DynamicResource theComboBoxItem}" Height="40" VerticalConte
                 </Grid>-->
 
             </Grid>
+            <Grid x:Name="Home_view" Background="#FFDA9924" Margin="1,72,-1,0" Visibility="Hidden" Panel.ZIndex="1">
+                
+                <Label Content="Home view" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
+            </Grid>
+            <Grid x:Name="search_view" Background="#FFDAD324" Margin="1,72,-1,0" Visibility="Hidden" Panel.ZIndex="1">
+                <Label Content="search view" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Grid>
+            <Grid x:Name="add_view" Background="#FFD024DA" Margin="1,72,-1,0" Visibility="Hidden" Panel.ZIndex="1">
+                <Label Content="add view" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Grid>
+            <Grid x:Name="report_view" Background="#FF75DA24" Margin="1,72,-1,0" Visibility="Hidden" Panel.ZIndex="1">
+                <Label Content="report view" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Grid>
+            
+            
+            <!--Selector Window-->
+            <Grid x:Name="CustomerSelector" Margin="0,47,0,66" Panel.ZIndex="1" Visibility="Hidden">
 
-        </Grid>
-
-        <!--Selector Window-->
-        <Grid x:Name="CustomerSelector" Margin="0,47,0,66" Panel.ZIndex="1" Visibility="Hidden">
-
-            <Label Content="SELECT AN OPTION" HorizontalAlignment="Center" Margin="0,89,0,0" VerticalAlignment="Top"
+                <Label Content="SELECT AN OPTION" HorizontalAlignment="Center" Margin="0,89,0,0" VerticalAlignment="Top"
                    FontSize="48" FontFamily="Bahnschrift SemiLight" FontWeight="Bold" Foreground="#FF2C1D9C"/>
-            <Label Content="We are here to Assist you" HorizontalAlignment="Center" Margin="0,157,0,0" VerticalAlignment="Top"
+                <Label Content="We are here to Assist you" HorizontalAlignment="Center" Margin="0,157,0,0" VerticalAlignment="Top"
                    FontSize="24" FontFamily="Bahnschrift SemiLight" FontWeight="UltraBlack" Foreground="#FF2C1D9C" Width="327"
                    VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
 
 
-            <Image HorizontalAlignment="Left" Height="100" Margin="359,0,0,0" VerticalAlignment="Center" Width="100" Source="/View/scanner.png"/>
-            <TextBlock HorizontalAlignment="Left" Margin="319,468,0,0" TextWrapping="Wrap" Text="dummy valeusa sdg fdg jkhgkej reg hejk knjkasdf h et jkfgh jks asdf fgh jkf df]sdf kljsdf l . " VerticalAlignment="Top" Height="66" Width="220" TextAlignment="Center"/>
-            <Button  x:Name="goScan" Style="{StaticResource ImageButtonStyle}" Content="" HorizontalAlignment="Left" Margin="385,553,0,0" Cursor="Hand" VerticalAlignment="Top" BorderBrush="{x:Null}" Foreground="{x:Null}" Width="76" Height="76" Click="goScan_Click" RenderTransformOrigin="0.5,0.5" >
-                <Button.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform/>
-                        <SkewTransform/>
-                        <RotateTransform Angle="180"/>
-                        <TranslateTransform/>
-                    </TransformGroup>
-                </Button.RenderTransform>
-                <Button.Background>
-                    <ImageBrush ImageSource="/View/arrow-circle-right.png" TileMode="None" Stretch="UniformToFill">
-                        <ImageBrush.RelativeTransform>
-                            <TransformGroup>
-                                <ScaleTransform CenterY="0.5" CenterX="0.5"/>
-                                <SkewTransform CenterX="0.5" CenterY="0.5"/>
-                                <RotateTransform Angle="180" CenterX="0.5" CenterY="0.5"/>
-                                <TranslateTransform/>
-                            </TransformGroup>
-                        </ImageBrush.RelativeTransform>
-                    </ImageBrush>
-                </Button.Background>
-            </Button>
-
-            <Image HorizontalAlignment="Center" Height="100" VerticalAlignment="Center" Width="100" Source="/View/cart.png"/>
-            <TextBlock HorizontalAlignment="Left" Margin="712,468,0,0" TextWrapping="Wrap" Text="dummy valeusa sdg fdg jkhgkej reg hejk knjkasdf h et jkfgh jks asdf fgh jkf df]sdf kljsdf l . " VerticalAlignment="Top" Height="66" Width="220" TextAlignment="Center"/>
-            <Button  x:Name="goStore" Style="{StaticResource ImageButtonStyle}" Content="" HorizontalAlignment="Left" Margin="773,553,0,0" Cursor="Hand" VerticalAlignment="Top" BorderBrush="{x:Null}" Foreground="{x:Null}" Width="76" Height="76" Click="goScan_Click" RenderTransformOrigin="0.5,0.5" >
-                <Button.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform/>
-                        <SkewTransform/>
-                        <RotateTransform Angle="180"/>
-                        <TranslateTransform/>
-                    </TransformGroup>
-                </Button.RenderTransform>
-                <Button.Background>
-                    <ImageBrush ImageSource="/View/arrow-circle-right.png" TileMode="None" Stretch="UniformToFill">
-                        <ImageBrush.RelativeTransform>
-                            <TransformGroup>
-                                <ScaleTransform CenterY="0.5" CenterX="0.5"/>
-                                <SkewTransform CenterX="0.5" CenterY="0.5"/>
-                                <RotateTransform Angle="180" CenterX="0.5" CenterY="0.5"/>
-                                <TranslateTransform/>
-                            </TransformGroup>
-                        </ImageBrush.RelativeTransform>
-                    </ImageBrush>
-                </Button.Background>
-            </Button>
-
-            <Image HorizontalAlignment="Left" Height="100" VerticalAlignment="Center" Width="100" Source="/View/cashier.png" Margin="1136,0,0,0"/>
-            <TextBlock HorizontalAlignment="Left" Margin="1076,468,0,0" TextWrapping="Wrap" Text="dummy valeusa sdg fdg jkhgkej reg hejk knjkasdf h et jkfgh jks asdf fgh jkf df]sdf kljsdf l . " VerticalAlignment="Top" Height="66" Width="220" TextAlignment="Center"/>
-            <Button  x:Name="goAssistant" Style="{StaticResource ImageButtonStyle}" Content="" HorizontalAlignment="Left" Margin="1142,552,0,0" Cursor="Hand" VerticalAlignment="Top" BorderBrush="{x:Null}" Foreground="{x:Null}" Width="76" Height="76" Click="goScan_Click" RenderTransformOrigin="0.5,0.5" >
-                <Button.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform/>
-                        <SkewTransform/>
-                        <RotateTransform Angle="180"/>
-                        <TranslateTransform/>
-                    </TransformGroup>
-                </Button.RenderTransform>
-                <Button.Background>
-                    <ImageBrush ImageSource="/View/arrow-circle-right.png" TileMode="None" Stretch="UniformToFill">
-                        <ImageBrush.RelativeTransform>
-                            <TransformGroup>
-                                <ScaleTransform CenterY="0.5" CenterX="0.5"/>
-                                <SkewTransform CenterX="0.5" CenterY="0.5"/>
-                                <RotateTransform Angle="180" CenterX="0.5" CenterY="0.5"/>
-                                <TranslateTransform/>
-                            </TransformGroup>
-                        </ImageBrush.RelativeTransform>
-                    </ImageBrush>
-                </Button.Background>
-            </Button>
-
-
-            <Button x:Name="backBtn1" Style="{StaticResource ImageButtonStyle}" Content="" HorizontalAlignment="Left" Margin="135,106,0,0" Cursor="Hand" VerticalAlignment="Top" BorderBrush="{x:Null}" Foreground="{x:Null}" Width="28" Height="28" Click="backCusLoginView">
-                <Button.Background>
-                    <ImageBrush ImageSource="/View/back.png" TileMode="None" Stretch="UniformToFill" Opacity="0.5"/>
-                </Button.Background>
-            </Button>
-            <Label Content="Back to Login" HorizontalAlignment="Left" Margin="168,107,0,0" VerticalAlignment="Top">
-                <Label.Foreground>
-                    <SolidColorBrush Color="Black" Opacity="0.6"/>
-                </Label.Foreground>
-            </Label>
-
-
-
-        </Grid>
-
-        <!--Scan Window-->
-        <Grid x:Name="CustomerPayment" Margin="0,47,0,66" Panel.ZIndex="1" Visibility="Hidden">
-
-            <Grid Margin="-100,-123,1058,-170" Background="#FF5A78ED" RenderTransformOrigin="0.5,0.5">
-                <Grid.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform/>
-                        <SkewTransform/>
-                        <RotateTransform Angle="-4.705"/>
-                        <TranslateTransform/>
-                    </TransformGroup>
-                </Grid.RenderTransform>
-                <Grid Margin="100,149,35,165" RenderTransformOrigin="0.5,0.5">
-                    <Grid.RenderTransform>
+                <Image HorizontalAlignment="Left" Height="100" Margin="359,0,0,0" VerticalAlignment="Center" Width="100" Source="/View/scanner.png"/>
+                <TextBlock HorizontalAlignment="Left" Margin="319,468,0,0" TextWrapping="Wrap" Text="dummy valeusa sdg fdg jkhgkej reg hejk knjkasdf h et jkfgh jks asdf fgh jkf df]sdf kljsdf l . " VerticalAlignment="Top" Height="66" Width="220" TextAlignment="Center"/>
+                <Button  x:Name="goScan" Style="{StaticResource ImageButtonStyle}" Content="" HorizontalAlignment="Left" Margin="385,553,0,0" Cursor="Hand" VerticalAlignment="Top" BorderBrush="{x:Null}" Foreground="{x:Null}" Width="76" Height="76" Click="goScan_Click" RenderTransformOrigin="0.5,0.5" >
+                    <Button.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform/>
                             <SkewTransform/>
-                            <RotateTransform Angle="4.513"/>
+                            <RotateTransform Angle="180"/>
                             <TranslateTransform/>
                         </TransformGroup>
-                    </Grid.RenderTransform>
+                    </Button.RenderTransform>
+                    <Button.Background>
+                        <ImageBrush ImageSource="/View/arrow-circle-right.png" TileMode="None" Stretch="UniformToFill">
+                            <ImageBrush.RelativeTransform>
+                                <TransformGroup>
+                                    <ScaleTransform CenterY="0.5" CenterX="0.5"/>
+                                    <SkewTransform CenterX="0.5" CenterY="0.5"/>
+                                    <RotateTransform Angle="180" CenterX="0.5" CenterY="0.5"/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </ImageBrush.RelativeTransform>
+                        </ImageBrush>
+                    </Button.Background>
+                </Button>
 
-                    <Label Content="CHECKOUT" HorizontalAlignment="Left" Margin="127,136,0,0" VerticalAlignment="Top"
-                   FontSize="48" FontFamily="Bahnschrift SemiLight" FontWeight="Bold" Foreground="White"/>
-                    <Label Content="Feel Free to Purcase what you wish ✨" HorizontalAlignment="Left" Margin="134,197,0,0" VerticalAlignment="Top"
-                        FontSize="18" FontFamily="Bahnschrift SemiLight" FontWeight="Bold" Foreground="White"/>
-                    <Image HorizontalAlignment="Left" Height="50" Margin="377,137,0,0" VerticalAlignment="Top" Width="50" Source="/View/shopping-cart-add.png"/>
-                    <Label Content="AMOUNT" HorizontalAlignment="Left" Margin="136,264,0,0" VerticalAlignment="Top"
-                        FontSize="18" FontFamily="Bahnschrift SemiLight" FontWeight="Bold" Foreground="White"/>
-                    <Rectangle HorizontalAlignment="Left" Height="1" Margin="218,280,0,0" Stroke="White" VerticalAlignment="Top" Width="255" RenderTransformOrigin="0.5,0.5">
-                        <Rectangle.RenderTransform>
-                            <TransformGroup>
-                                <ScaleTransform ScaleY="-1"/>
-                                <SkewTransform/>
-                                <RotateTransform/>
-                                <TranslateTransform/>
-                            </TransformGroup>
-                        </Rectangle.RenderTransform>
-                    </Rectangle>
-                    <Label Content="RS. 00.00" HorizontalAlignment="Left" Margin="135,288,0,0" VerticalAlignment="Top"
-                        FontSize="36" FontFamily="Bahnschrift SemiBold" FontWeight="SemiBold" Height="50" Width="270" VerticalContentAlignment="Center">
-                        <Label.Foreground>
-                            <SolidColorBrush Color="White" Opacity="0.6"/>
-                        </Label.Foreground>
-                        <Label.Background>
-                            <SolidColorBrush Opacity="0.7"/>
-                        </Label.Background>
-                    </Label>
-                    <Label Content="OFFERS" HorizontalAlignment="Left" Margin="136,344,0,0" VerticalAlignment="Top"
-                        FontSize="16" FontFamily="Bahnschrift SemiLight" FontWeight="Bold">
-                        <Label.Foreground>
-                            <SolidColorBrush Color="White" Opacity="0.6"/>
-                        </Label.Foreground>
-                        <Label.Background>
-                            <SolidColorBrush Opacity="0.4"/>
-                        </Label.Background>
-                    </Label>
-                    <Label Content="COUPON DISCOUNT" HorizontalAlignment="Left" Margin="137,404,0,0" VerticalAlignment="Top"
-                        FontSize="16" FontFamily="Bahnschrift SemiLight" FontWeight="Bold">
-                        <Label.Foreground>
-                            <SolidColorBrush Color="White" Opacity="0.6"/>
-                        </Label.Foreground>
-                        <Label.Background>
-                            <SolidColorBrush Opacity="0.4"/>
-                        </Label.Background>
-                    </Label>
-                    <Label Content="RS 00.00" HorizontalAlignment="Left" Margin="136,367,0,0" VerticalAlignment="Top"
-                        FontSize="20" FontFamily="Bahnschrift SemiLight" FontWeight="Bold">
-                        <Label.Foreground>
-                            <SolidColorBrush Color="White" Opacity="0.6"/>
-                        </Label.Foreground>
-                        <Label.Background>
-                            <SolidColorBrush Opacity="0.4"/>
-                        </Label.Background>
-                    </Label>
-                    <Label Content="RS. 00.00" HorizontalAlignment="Left" Margin="136,424,0,0" VerticalAlignment="Top"
-                        FontSize="20" FontFamily="Bahnschrift SemiLight" FontWeight="Bold">
-                        <Label.Foreground>
-                            <SolidColorBrush Color="White" Opacity="0.6"/>
-                        </Label.Foreground>
-                        <Label.Background>
-                            <SolidColorBrush Opacity="0.4"/>
-                        </Label.Background>
-                    </Label>
-                    <Label Content="TOTAL BILL AMOUNT " HorizontalAlignment="Left" Margin="145,476,0,0" VerticalAlignment="Top"
-                        FontSize="18" FontFamily="Bahnschrift SemiLight" FontWeight="Bold" Foreground="White"/>
-                    <Rectangle HorizontalAlignment="Left" Height="1" Margin="326,492,0,0" Stroke="White" VerticalAlignment="Top" Width="156" RenderTransformOrigin="0.5,0.5">
-                        <Rectangle.RenderTransform>
-                            <TransformGroup>
-                                <ScaleTransform ScaleY="-1"/>
-                                <SkewTransform/>
-                                <RotateTransform/>
-                                <TranslateTransform/>
-                            </TransformGroup>
-                        </Rectangle.RenderTransform>
-                    </Rectangle>
-                    <Label Content="RS. 00.00" HorizontalAlignment="Left" Margin="141,503,0,0" VerticalAlignment="Top"
-                        FontSize="48" FontFamily="Bahnschrift SemiBold" FontWeight="SemiBold" Foreground="White" Height="59" Width="325" VerticalContentAlignment="Center"/>
+                <Image HorizontalAlignment="Center" Height="100" VerticalAlignment="Center" Width="100" Source="/View/cart.png"/>
+                <TextBlock HorizontalAlignment="Left" Margin="712,468,0,0" TextWrapping="Wrap" Text="dummy valeusa sdg fdg jkhgkej reg hejk knjkasdf h et jkfgh jks asdf fgh jkf df]sdf kljsdf l . " VerticalAlignment="Top" Height="66" Width="220" TextAlignment="Center"/>
+                <Button  x:Name="goStore" Style="{StaticResource ImageButtonStyle}" Content="" HorizontalAlignment="Left" Margin="773,553,0,0" Cursor="Hand" VerticalAlignment="Top" BorderBrush="{x:Null}" Foreground="{x:Null}" Width="76" Height="76" Click="goScan_Click" RenderTransformOrigin="0.5,0.5" >
+                    <Button.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="180"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Button.RenderTransform>
+                    <Button.Background>
+                        <ImageBrush ImageSource="/View/arrow-circle-right.png" TileMode="None" Stretch="UniformToFill">
+                            <ImageBrush.RelativeTransform>
+                                <TransformGroup>
+                                    <ScaleTransform CenterY="0.5" CenterX="0.5"/>
+                                    <SkewTransform CenterX="0.5" CenterY="0.5"/>
+                                    <RotateTransform Angle="180" CenterX="0.5" CenterY="0.5"/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </ImageBrush.RelativeTransform>
+                        </ImageBrush>
+                    </Button.Background>
+                </Button>
 
-                    <Button x:Name="switchAssistandft" Style="{StaticResource btncutsomstyle}" Cursor="Hand" HorizontalAlignment="Left" Margin="147,570,0,0" VerticalAlignment="Top" Height="51" Width="336" Padding="0,0,0,0" Background="White" BorderThickness="1,1,1,1" Foreground="#FFAFAFAF" Click="SwitchEmployeePane" BorderBrush="{x:Null}" >
-                        <StackPanel Orientation="Horizontal">
-                            <Image Height="66" Width="50" Source="/View/MASTER.png"/>
-                            <TextBlock Text="Debit Card Payment" FontFamily="Bahnschrift" Foreground="DimGray" Width="239" VerticalAlignment="Center" TextAlignment="Center" Height="50" ScrollViewer.CanContentScroll="True" Padding="0,20,0,0"/>
-                        </StackPanel>
-                    </Button>
-                    <Button x:Name="switchAssistandft_Copy" Style="{StaticResource btncutsomstyle}" Cursor="Hand" HorizontalAlignment="Left" Margin="147,625,0,0" VerticalAlignment="Top" Height="51" Width="336" Padding="0,0,0,0" Background="White" BorderThickness="1,1,1,1" Foreground="#FFAFAFAF" Click="SwitchEmployeePane" BorderBrush="{x:Null}" >
-                        <StackPanel Orientation="Horizontal">
-                            <Image Height="66" Width="50" Source="/View/visa.png"/>
-                            <TextBlock Text="Credit Card Payment" FontFamily="Bahnschrift" Foreground="DimGray" Width="239" VerticalAlignment="Center" TextAlignment="Center" Height="50" ScrollViewer.CanContentScroll="True" Padding="0,20,0,0"/>
-                        </StackPanel>
-                    </Button>
-                    <Button x:Name="switchAssistandft_Copy1" Style="{StaticResource btncutsomstyle}" Cursor="Hand" HorizontalAlignment="Left" Margin="147,681,0,0" VerticalAlignment="Top" Height="51" Width="336" Padding="0,0,0,0" Background="White" BorderThickness="1,1,1,1" Foreground="#FFAFAFAF" Click="SwitchEmployeePane" BorderBrush="{x:Null}" >
-                        <StackPanel Orientation="Horizontal">
-                            <Image Height="66" Width="50" Source="/View/google-pay.png"/>
-                            <TextBlock Text="GooglePay" FontFamily="Bahnschrift" Foreground="DimGray" Width="239" VerticalAlignment="Center" TextAlignment="Center" Height="50" ScrollViewer.CanContentScroll="True" Padding="0,20,0,0"/>
-                        </StackPanel>
-                    </Button>
+                <Image HorizontalAlignment="Left" Height="100" VerticalAlignment="Center" Width="100" Source="/View/cashier.png" Margin="1136,0,0,0"/>
+                <TextBlock HorizontalAlignment="Left" Margin="1076,468,0,0" TextWrapping="Wrap" Text="dummy valeusa sdg fdg jkhgkej reg hejk knjkasdf h et jkfgh jks asdf fgh jkf df]sdf kljsdf l . " VerticalAlignment="Top" Height="66" Width="220" TextAlignment="Center"/>
+                <Button  x:Name="goAssistant" Style="{StaticResource ImageButtonStyle}" Content="" HorizontalAlignment="Left" Margin="1142,552,0,0" Cursor="Hand" VerticalAlignment="Top" BorderBrush="{x:Null}" Foreground="{x:Null}" Width="76" Height="76" Click="goScan_Click" RenderTransformOrigin="0.5,0.5" >
+                    <Button.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="180"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Button.RenderTransform>
+                    <Button.Background>
+                        <ImageBrush ImageSource="/View/arrow-circle-right.png" TileMode="None" Stretch="UniformToFill">
+                            <ImageBrush.RelativeTransform>
+                                <TransformGroup>
+                                    <ScaleTransform CenterY="0.5" CenterX="0.5"/>
+                                    <SkewTransform CenterX="0.5" CenterY="0.5"/>
+                                    <RotateTransform Angle="180" CenterX="0.5" CenterY="0.5"/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </ImageBrush.RelativeTransform>
+                        </ImageBrush>
+                    </Button.Background>
+                </Button>
 
 
-                </Grid>
+                <Button x:Name="backBtn1" Style="{StaticResource ImageButtonStyle}" Content="" HorizontalAlignment="Left" Margin="135,106,0,0" Cursor="Hand" VerticalAlignment="Top" BorderBrush="{x:Null}" Foreground="{x:Null}" Width="28" Height="28" Click="backCusLoginView">
+                    <Button.Background>
+                        <ImageBrush ImageSource="/View/back.png" TileMode="None" Stretch="UniformToFill" Opacity="0.5"/>
+                    </Button.Background>
+                </Button>
+                <Label Content="Back to Login" HorizontalAlignment="Left" Margin="168,107,0,0" VerticalAlignment="Top">
+                    <Label.Foreground>
+                        <SolidColorBrush Color="Black" Opacity="0.6"/>
+                    </Label.Foreground>
+                </Label>
 
 
 
             </Grid>
 
-            <ScrollViewer x:Name="itemView" Grid.Column="0" Margin="595,45,49,139" VerticalScrollBarVisibility="Hidden">
-                <ScrollViewer.Background>
-                    <SolidColorBrush Color="Black" Opacity="0.05"/>
-                </ScrollViewer.Background>
-                <StackPanel x:Name="panelView" Width="870" ScrollViewer.VerticalScrollBarVisibility="Hidden"/>
-            </ScrollViewer>
+            <!--Scan Window-->
+            <Grid x:Name="CustomerPayment" Margin="0,47,0,66" Panel.ZIndex="1" Visibility="Hidden">
 
-            <Ellipse HorizontalAlignment="Left" Height="98" Margin="595,654,0,0" VerticalAlignment="Top" Width="100">
-                <Ellipse.Stroke>
-                    <SolidColorBrush Color="Black" Opacity="0.6"/>
-                </Ellipse.Stroke>
-                <Ellipse.Fill>
-                    <SolidColorBrush Color="White" Opacity="0.4"/>
-                </Ellipse.Fill>
-            </Ellipse>
-            <Button  x:Name="scanQR" Style="{StaticResource ImageButtonStyle}" Content="" HorizontalAlignment="Left" Margin="618,676,0,0" Cursor="Hand" VerticalAlignment="Top" BorderBrush="{x:Null}" Foreground="{x:Null}" Width="56" Height="56" Click="goScan_Click" RenderTransformOrigin="0.5,0.5" >
-                <Button.RenderTransform>
+                <Grid Margin="-100,-123,1058,-170" Background="#FF5A78ED" RenderTransformOrigin="0.5,0.5">
+                    <Grid.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="-4.705"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Grid.RenderTransform>
+                    <Grid Margin="100,149,35,165" RenderTransformOrigin="0.5,0.5">
+                        <Grid.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="4.513"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Grid.RenderTransform>
+
+                        <Label Content="CHECKOUT" HorizontalAlignment="Left" Margin="127,136,0,0" VerticalAlignment="Top"
+                   FontSize="48" FontFamily="Bahnschrift SemiLight" FontWeight="Bold" Foreground="White"/>
+                        <Label Content="Feel Free to Purcase what you wish ✨" HorizontalAlignment="Left" Margin="134,197,0,0" VerticalAlignment="Top"
+                        FontSize="18" FontFamily="Bahnschrift SemiLight" FontWeight="Bold" Foreground="White"/>
+                        <Image HorizontalAlignment="Left" Height="50" Margin="377,137,0,0" VerticalAlignment="Top" Width="50" Source="/View/shopping-cart-add.png"/>
+                        <Label Content="AMOUNT" HorizontalAlignment="Left" Margin="136,264,0,0" VerticalAlignment="Top"
+                        FontSize="18" FontFamily="Bahnschrift SemiLight" FontWeight="Bold" Foreground="White"/>
+                        <Rectangle HorizontalAlignment="Left" Height="1" Margin="218,280,0,0" Stroke="White" VerticalAlignment="Top" Width="255" RenderTransformOrigin="0.5,0.5">
+                            <Rectangle.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleY="-1"/>
+                                    <SkewTransform/>
+                                    <RotateTransform/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Rectangle.RenderTransform>
+                        </Rectangle>
+                        <Label Content="RS. 00.00" HorizontalAlignment="Left" Margin="135,288,0,0" VerticalAlignment="Top"
+                        FontSize="36" FontFamily="Bahnschrift SemiBold" FontWeight="SemiBold" Height="50" Width="270" VerticalContentAlignment="Center">
+                            <Label.Foreground>
+                                <SolidColorBrush Color="White" Opacity="0.6"/>
+                            </Label.Foreground>
+                            <Label.Background>
+                                <SolidColorBrush Opacity="0.7"/>
+                            </Label.Background>
+                        </Label>
+                        <Label Content="OFFERS" HorizontalAlignment="Left" Margin="136,344,0,0" VerticalAlignment="Top"
+                        FontSize="16" FontFamily="Bahnschrift SemiLight" FontWeight="Bold">
+                            <Label.Foreground>
+                                <SolidColorBrush Color="White" Opacity="0.6"/>
+                            </Label.Foreground>
+                            <Label.Background>
+                                <SolidColorBrush Opacity="0.4"/>
+                            </Label.Background>
+                        </Label>
+                        <Label Content="COUPON DISCOUNT" HorizontalAlignment="Left" Margin="137,404,0,0" VerticalAlignment="Top"
+                        FontSize="16" FontFamily="Bahnschrift SemiLight" FontWeight="Bold">
+                            <Label.Foreground>
+                                <SolidColorBrush Color="White" Opacity="0.6"/>
+                            </Label.Foreground>
+                            <Label.Background>
+                                <SolidColorBrush Opacity="0.4"/>
+                            </Label.Background>
+                        </Label>
+                        <Label Content="RS 00.00" HorizontalAlignment="Left" Margin="136,367,0,0" VerticalAlignment="Top"
+                        FontSize="20" FontFamily="Bahnschrift SemiLight" FontWeight="Bold">
+                            <Label.Foreground>
+                                <SolidColorBrush Color="White" Opacity="0.6"/>
+                            </Label.Foreground>
+                            <Label.Background>
+                                <SolidColorBrush Opacity="0.4"/>
+                            </Label.Background>
+                        </Label>
+                        <Label Content="RS. 00.00" HorizontalAlignment="Left" Margin="136,424,0,0" VerticalAlignment="Top"
+                        FontSize="20" FontFamily="Bahnschrift SemiLight" FontWeight="Bold">
+                            <Label.Foreground>
+                                <SolidColorBrush Color="White" Opacity="0.6"/>
+                            </Label.Foreground>
+                            <Label.Background>
+                                <SolidColorBrush Opacity="0.4"/>
+                            </Label.Background>
+                        </Label>
+                        <Label Content="TOTAL BILL AMOUNT " HorizontalAlignment="Left" Margin="145,476,0,0" VerticalAlignment="Top"
+                        FontSize="18" FontFamily="Bahnschrift SemiLight" FontWeight="Bold" Foreground="White"/>
+                        <Rectangle HorizontalAlignment="Left" Height="1" Margin="326,492,0,0" Stroke="White" VerticalAlignment="Top" Width="156" RenderTransformOrigin="0.5,0.5">
+                            <Rectangle.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleY="-1"/>
+                                    <SkewTransform/>
+                                    <RotateTransform/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Rectangle.RenderTransform>
+                        </Rectangle>
+                        <Label Content="RS. 00.00" HorizontalAlignment="Left" Margin="141,503,0,0" VerticalAlignment="Top"
+                        FontSize="48" FontFamily="Bahnschrift SemiBold" FontWeight="SemiBold" Foreground="White" Height="59" Width="325" VerticalContentAlignment="Center"/>
+
+                        <Button x:Name="switchAssistandft" Style="{StaticResource btncutsomstyle}" Cursor="Hand" HorizontalAlignment="Left" Margin="147,570,0,0" VerticalAlignment="Top" Height="51" Width="336" Padding="0,0,0,0" Background="White" BorderThickness="1,1,1,1" Foreground="#FFAFAFAF" Click="SwitchEmployeePane" BorderBrush="{x:Null}" >
+                            <StackPanel Orientation="Horizontal">
+                                <Image Height="66" Width="50" Source="/View/MASTER.png"/>
+                                <TextBlock Text="Debit Card Payment" FontFamily="Bahnschrift" Foreground="DimGray" Width="239" VerticalAlignment="Center" TextAlignment="Center" Height="50" ScrollViewer.CanContentScroll="True" Padding="0,20,0,0"/>
+                            </StackPanel>
+                        </Button>
+                        <Button x:Name="switchAssistandft_Copy" Style="{StaticResource btncutsomstyle}" Cursor="Hand" HorizontalAlignment="Left" Margin="147,625,0,0" VerticalAlignment="Top" Height="51" Width="336" Padding="0,0,0,0" Background="White" BorderThickness="1,1,1,1" Foreground="#FFAFAFAF" Click="SwitchEmployeePane" BorderBrush="{x:Null}" >
+                            <StackPanel Orientation="Horizontal">
+                                <Image Height="66" Width="50" Source="/View/visa.png"/>
+                                <TextBlock Text="Credit Card Payment" FontFamily="Bahnschrift" Foreground="DimGray" Width="239" VerticalAlignment="Center" TextAlignment="Center" Height="50" ScrollViewer.CanContentScroll="True" Padding="0,20,0,0"/>
+                            </StackPanel>
+                        </Button>
+                        <Button x:Name="switchAssistandft_Copy1" Style="{StaticResource btncutsomstyle}" Cursor="Hand" HorizontalAlignment="Left" Margin="147,681,0,0" VerticalAlignment="Top" Height="51" Width="336" Padding="0,0,0,0" Background="White" BorderThickness="1,1,1,1" Foreground="#FFAFAFAF" Click="SwitchEmployeePane" BorderBrush="{x:Null}" >
+                            <StackPanel Orientation="Horizontal">
+                                <Image Height="66" Width="50" Source="/View/google-pay.png"/>
+                                <TextBlock Text="GooglePay" FontFamily="Bahnschrift" Foreground="DimGray" Width="239" VerticalAlignment="Center" TextAlignment="Center" Height="50" ScrollViewer.CanContentScroll="True" Padding="0,20,0,0"/>
+                            </StackPanel>
+                        </Button>
+
+
+                    </Grid>
+
+
+
+                </Grid>
+
+                <ScrollViewer x:Name="itemView" Grid.Column="0" Margin="595,45,49,139" VerticalScrollBarVisibility="Hidden">
+                    <ScrollViewer.Background>
+                        <SolidColorBrush Color="Black" Opacity="0.05"/>
+                    </ScrollViewer.Background>
+                    <StackPanel x:Name="panelView" Width="870" ScrollViewer.VerticalScrollBarVisibility="Hidden"/>
+                </ScrollViewer>
+
+                <Ellipse HorizontalAlignment="Left" Height="98" Margin="595,654,0,0" VerticalAlignment="Top" Width="100">
+                    <Ellipse.Stroke>
+                        <SolidColorBrush Color="Black" Opacity="0.6"/>
+                    </Ellipse.Stroke>
+                    <Ellipse.Fill>
+                        <SolidColorBrush Color="White" Opacity="0.4"/>
+                    </Ellipse.Fill>
+                </Ellipse>
+                <Button  x:Name="scanQR" Style="{StaticResource ImageButtonStyle}" Content="" HorizontalAlignment="Left" Margin="618,676,0,0" Cursor="Hand" VerticalAlignment="Top" BorderBrush="{x:Null}" Foreground="{x:Null}" Width="56" Height="56" Click="goScan_Click" RenderTransformOrigin="0.5,0.5" >
+                    <Button.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="180"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Button.RenderTransform>
+                    <Button.Background>
+                        <ImageBrush ImageSource="/View/qr-code.png" TileMode="None" Stretch="UniformToFill">
+                            <ImageBrush.RelativeTransform>
+                                <TransformGroup>
+                                    <ScaleTransform CenterY="0.5" CenterX="0.5"/>
+                                    <SkewTransform CenterX="0.5" CenterY="0.5"/>
+                                    <RotateTransform Angle="180" CenterX="0.5" CenterY="0.5"/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </ImageBrush.RelativeTransform>
+                        </ImageBrush>
+                    </Button.Background>
+                </Button>
+
+
+                <Border CornerRadius="20" Padding="10"
+                HorizontalAlignment="Left" VerticalAlignment="Top" Margin="714,653,0,0" Height="98" Width="304">
+                    <Border.Background>
+                        <SolidColorBrush Color="White" Opacity="0.6"/>
+                    </Border.Background>
+                    <Grid>
+                        <Button  x:Name="getOffer" Style="{StaticResource ImageButtonStyle}" Content="" HorizontalAlignment="Right" Margin="0,8,190,0" Cursor="Hand" VerticalAlignment="Top" BorderBrush="{x:Null}" Foreground="{x:Null}" Width="34" Height="34" Click="goScan_Click" RenderTransformOrigin="0.5,0.5" >
+                            <Button.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform/>
+                                    <SkewTransform/>
+                                    <RotateTransform Angle="180"/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Button.RenderTransform>
+                            <Button.Background>
+                                <ImageBrush ImageSource="/View/price-tag.png" TileMode="None" Stretch="UniformToFill">
+                                    <ImageBrush.RelativeTransform>
+                                        <TransformGroup>
+                                            <ScaleTransform CenterY="0.5" CenterX="0.5"/>
+                                            <SkewTransform CenterX="0.5" CenterY="0.5"/>
+                                            <RotateTransform Angle="180" CenterX="0.5" CenterY="0.5"/>
+                                            <TranslateTransform/>
+                                        </TransformGroup>
+                                    </ImageBrush.RelativeTransform>
+                                </ImageBrush>
+                            </Button.Background>
+                        </Button>
+                        <Button  x:Name="getOffer_Copy" Style="{StaticResource ImageButtonStyle}" Content="" HorizontalAlignment="Right" Margin="0,7,46,0" Cursor="Hand" VerticalAlignment="Top" BorderBrush="{x:Null}" Foreground="{x:Null}" Width="34" Height="35" Click="goScan_Click" RenderTransformOrigin="0.5,0.5" >
+                            <Button.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform/>
+                                    <SkewTransform/>
+                                    <RotateTransform Angle="180"/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Button.RenderTransform>
+                            <Button.Background>
+                                <ImageBrush ImageSource="/View/gift-card.png" TileMode="None" Stretch="UniformToFill">
+                                    <ImageBrush.RelativeTransform>
+                                        <TransformGroup>
+                                            <ScaleTransform CenterY="0.5" CenterX="0.5"/>
+                                            <SkewTransform CenterX="0.5" CenterY="0.5"/>
+                                            <RotateTransform Angle="180" CenterX="0.5" CenterY="0.5"/>
+                                            <TranslateTransform/>
+                                        </TransformGroup>
+                                    </ImageBrush.RelativeTransform>
+                                </ImageBrush>
+                            </Button.Background>
+                        </Button>
+                        <Label Content="Add Coupon Code" HorizontalAlignment="Right"       VerticalAlignment="Top" Height="26" Width="112" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="0,46,7,0"/>
+                        <Label Content="Add an Offer Discount" HorizontalAlignment="Right"       VerticalAlignment="Top" Height="26" Width="137" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="0,46,129,0"/>
+                    </Grid>
+                </Border>
+
+
+
+
+                <!--BACK BUTTON-->
+                <Button x:Name="backBtn2" Style="{StaticResource ImageButtonStyle}" Content="" HorizontalAlignment="Left" Margin="135,106,0,0" Cursor="Hand" VerticalAlignment="Top" BorderBrush="{x:Null}" Foreground="{x:Null}" Width="28" Height="28" Click="backCusSelectView" Panel.ZIndex="2">
+                    <Button.Background>
+                        <ImageBrush ImageSource="/View/back.png" TileMode="None" Stretch="UniformToFill" Opacity="0.5"/>
+                    </Button.Background>
+                </Button>
+                <Label Content="Back to Selection" HorizontalAlignment="Left" Margin="168,107,0,0" VerticalAlignment="Top" Panel.ZIndex="2">
+                    <Label.Foreground>
+                        <SolidColorBrush Color="Black" Opacity="0.6"/>
+                    </Label.Foreground>
+                </Label>
+
+            </Grid>
+
+
+            <!--BACKGROUND GRADIANT-->
+            <Image HorizontalAlignment="Left" Height="1252" Margin="1006,139,0,0" VerticalAlignment="Top" Width="1252"
+               Source="/View/Group.png" RenderTransformOrigin="0.5,0.5">
+                <Image.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
                         <SkewTransform/>
-                        <RotateTransform Angle="180"/>
+                        <RotateTransform Angle="0"/>
                         <TranslateTransform/>
                     </TransformGroup>
-                </Button.RenderTransform>
-                <Button.Background>
-                    <ImageBrush ImageSource="/View/qr-code.png" TileMode="None" Stretch="UniformToFill">
-                        <ImageBrush.RelativeTransform>
-                            <TransformGroup>
-                                <ScaleTransform CenterY="0.5" CenterX="0.5"/>
-                                <SkewTransform CenterX="0.5" CenterY="0.5"/>
-                                <RotateTransform Angle="180" CenterX="0.5" CenterY="0.5"/>
-                                <TranslateTransform/>
-                            </TransformGroup>
-                        </ImageBrush.RelativeTransform>
-                    </ImageBrush>
-                </Button.Background>
-            </Button>
-
-
-            <Border CornerRadius="20" Padding="10"
-                HorizontalAlignment="Left" VerticalAlignment="Top" Margin="714,653,0,0" Height="98" Width="304">
-                <Border.Background>
-                    <SolidColorBrush Color="White" Opacity="0.6"/>
-                </Border.Background>
-                <Grid>
-                    <Button  x:Name="getOffer" Style="{StaticResource ImageButtonStyle}" Content="" HorizontalAlignment="Right" Margin="0,8,190,0" Cursor="Hand" VerticalAlignment="Top" BorderBrush="{x:Null}" Foreground="{x:Null}" Width="34" Height="34" Click="goScan_Click" RenderTransformOrigin="0.5,0.5" >
-                        <Button.RenderTransform>
-                            <TransformGroup>
-                                <ScaleTransform/>
-                                <SkewTransform/>
-                                <RotateTransform Angle="180"/>
-                                <TranslateTransform/>
-                            </TransformGroup>
-                        </Button.RenderTransform>
-                        <Button.Background>
-                            <ImageBrush ImageSource="/View/price-tag.png" TileMode="None" Stretch="UniformToFill">
-                                <ImageBrush.RelativeTransform>
-                                    <TransformGroup>
-                                        <ScaleTransform CenterY="0.5" CenterX="0.5"/>
-                                        <SkewTransform CenterX="0.5" CenterY="0.5"/>
-                                        <RotateTransform Angle="180" CenterX="0.5" CenterY="0.5"/>
-                                        <TranslateTransform/>
-                                    </TransformGroup>
-                                </ImageBrush.RelativeTransform>
-                            </ImageBrush>
-                        </Button.Background>
-                    </Button>
-                    <Button  x:Name="getOffer_Copy" Style="{StaticResource ImageButtonStyle}" Content="" HorizontalAlignment="Right" Margin="0,7,46,0" Cursor="Hand" VerticalAlignment="Top" BorderBrush="{x:Null}" Foreground="{x:Null}" Width="34" Height="35" Click="goScan_Click" RenderTransformOrigin="0.5,0.5" >
-                        <Button.RenderTransform>
-                            <TransformGroup>
-                                <ScaleTransform/>
-                                <SkewTransform/>
-                                <RotateTransform Angle="180"/>
-                                <TranslateTransform/>
-                            </TransformGroup>
-                        </Button.RenderTransform>
-                        <Button.Background>
-                            <ImageBrush ImageSource="/View/gift-card.png" TileMode="None" Stretch="UniformToFill">
-                                <ImageBrush.RelativeTransform>
-                                    <TransformGroup>
-                                        <ScaleTransform CenterY="0.5" CenterX="0.5"/>
-                                        <SkewTransform CenterX="0.5" CenterY="0.5"/>
-                                        <RotateTransform Angle="180" CenterX="0.5" CenterY="0.5"/>
-                                        <TranslateTransform/>
-                                    </TransformGroup>
-                                </ImageBrush.RelativeTransform>
-                            </ImageBrush>
-                        </Button.Background>
-                    </Button>
-                    <Label Content="Add Coupon Code" HorizontalAlignment="Right"       VerticalAlignment="Top" Height="26" Width="112" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="0,46,7,0"/>
-                    <Label Content="Add an Offer Discount" HorizontalAlignment="Right"       VerticalAlignment="Top" Height="26" Width="137" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="0,46,129,0"/>
-                </Grid>
-            </Border>
-
-
-
-
-            <!--BACK BUTTON-->
-            <Button x:Name="backBtn2" Style="{StaticResource ImageButtonStyle}" Content="" HorizontalAlignment="Left" Margin="135,106,0,0" Cursor="Hand" VerticalAlignment="Top" BorderBrush="{x:Null}" Foreground="{x:Null}" Width="28" Height="28" Click="backCusSelectView" Panel.ZIndex="2">
-                <Button.Background>
-                    <ImageBrush ImageSource="/View/back.png" TileMode="None" Stretch="UniformToFill" Opacity="0.5"/>
-                </Button.Background>
-            </Button>
-            <Label Content="Back to Selection" HorizontalAlignment="Left" Margin="168,107,0,0" VerticalAlignment="Top" Panel.ZIndex="2">
-                <Label.Foreground>
-                    <SolidColorBrush Color="Black" Opacity="0.6"/>
-                </Label.Foreground>
-            </Label>
-
-        </Grid>
-
-
-        <!--BACKGROUND GRADIANT-->
-        <Image HorizontalAlignment="Left" Height="1252" Margin="1006,139,0,0" VerticalAlignment="Top" Width="1252"
-               Source="/View/Group.png" RenderTransformOrigin="0.5,0.5">
-            <Image.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="0"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Image.RenderTransform>
-        </Image>
-        <Image HorizontalAlignment="Left" Height="1252" Margin="-417,-515,0,0" VerticalAlignment="Top" Width="1252"
+                </Image.RenderTransform>
+            </Image>
+            <Image HorizontalAlignment="Left" Height="1252" Margin="-417,-515,0,0" VerticalAlignment="Top" Width="1252"
                Source="/View/Group (1).png" RenderTransformOrigin="0.5,0.5">
-            <Image.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="0"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Image.RenderTransform>
-        </Image>
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="0"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
 
-        <!-- Global Error Boxes -->
-        <Border x:Name="error_box_manage" Style="{StaticResource FadeOutLabelStyle}" Visibility="Collapsed" CornerRadius="20"
+            <!-- Global Error Boxes -->
+            <Border x:Name="error_box_manage" Style="{StaticResource FadeOutLabelStyle}" Visibility="Collapsed" CornerRadius="20"
                 BorderBrush="#FFEA1010" BorderThickness="1" HorizontalAlignment="Center" Height="40" Margin="0,829,0,0"
                 VerticalAlignment="Top" Width="736">
-            <Border.Background>
-                <SolidColorBrush Color="#FFF13E19" Opacity="0.1"/>
-            </Border.Background>
-            <Label x:Name="error_box_manage_content" Content="Error message goes here" VerticalAlignment="Center"
+                <Border.Background>
+                    <SolidColorBrush Color="#FFF13E19" Opacity="0.1"/>
+                </Border.Background>
+                <Label x:Name="error_box_manage_content" Content="Error message goes here" VerticalAlignment="Center"
                    HorizontalAlignment="Center"/>
-        </Border>
-        <Border x:Name="success_box_manage" Style="{StaticResource FadeOutLabelStyle}" Visibility="Collapsed" CornerRadius="20"
+            </Border>
+            <Border x:Name="success_box_manage" Style="{StaticResource FadeOutLabelStyle}" Visibility="Collapsed" CornerRadius="20"
                 BorderBrush="#FF2BEA10" BorderThickness="1" HorizontalAlignment="Center" Height="40" Margin="0,829,0,0"
                 VerticalAlignment="Top" Width="736">
-            <Border.Background>
-                <SolidColorBrush Color="#FF19F126" Opacity="0.1"/>
-            </Border.Background>
-            <Label x:Name="success_box_manage_content" Content="Congratulations! Your request was processed successfully."
+                <Border.Background>
+                    <SolidColorBrush Color="#FF19F126" Opacity="0.1"/>
+                </Border.Background>
+                <Label x:Name="success_box_manage_content" Content="Congratulations! Your request was processed successfully."
                    VerticalAlignment="Center" HorizontalAlignment="Center"/>
-        </Border>
-        <!--Sarasavi Logo-->
-        <Image HorizontalAlignment="Left" Height="1252" Margin="1006,139,0,0" VerticalAlignment="Top" Width="1252"
+            </Border>
+            <!--Sarasavi Logo-->
+            <Image HorizontalAlignment="Left" Height="1252" Margin="1006,139,0,0" VerticalAlignment="Top" Width="1252"
             Source="/View/Group.png" RenderTransformOrigin="0.5,0.5">
-            <Image.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="0"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Image.RenderTransform>
-        </Image>
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="0"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
 
 
 
 
+        </Grid>
     </Grid>
 </Window>
