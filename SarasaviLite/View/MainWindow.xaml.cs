@@ -8,10 +8,14 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+//<<<<<<< HEAD
+using Microsoft.EntityFrameworkCore;
+//=======
 using SarasaviLite.Controller;
+//>>>>>>> 5cc494f771ef3bf5ecd7d88d2104ffa8e0d195f8
 using SarasaviLite.Data;
 using SarasaviLite.Models;
-
+using SarasaviLite.View;
 
 namespace SarasaviLite
 {
@@ -29,6 +33,7 @@ namespace SarasaviLite
             inventoryController = new InventoryController();
 
             loadInitData();
+
         }
 
         private void exitApp(object sender, RoutedEventArgs e)
@@ -108,6 +113,7 @@ namespace SarasaviLite
             edit_view_voucher.Visibility = Visibility.Visible;
             
             inventoryscrollView.Visibility = Visibility.Hidden;
+
         }
 
         private void add_stationary(object sender, RoutedEventArgs e)
@@ -191,9 +197,7 @@ namespace SarasaviLite
             report_view.Visibility = Visibility.Visible;
 
         }
-
-
-
+    
         private void btnAddBook_Click(object sender, RoutedEventArgs e)
         {
             Book book = new Book()
@@ -212,6 +216,16 @@ namespace SarasaviLite
             foreach (var author in authors)
             {
                 selectBookAuthor.Items.Add(author.Name);
+            }
+        }
+
+        private void loaditemData()
+        {
+            var items = inventoryController.GetItems();
+            foreach (var item_ in items)
+            {
+               iteminventory inventory = new iteminventory();
+                inventory.Name = item_.Name;
             }
         }
     }
