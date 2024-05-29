@@ -27,5 +27,7 @@ namespace SarasaviLite.Models
         public decimal Tax { get; set; } = 0;
 
         public int Qty { get; set; } = 0;
+
+        public string Image {  get; set; }
     }
 }
