@@ -62,14 +62,11 @@ namespace SarasaviLite
             CustomerSelector.Visibility = Visibility.Visible;
         }
 
-        private void backdashboardView(object sender, RoutedEventArgs e)
-        {
-            inventoryView.Visibility = Visibility.Hidden;
-        }
+
 
         private void add_item(object sender, RoutedEventArgs e)
         {
-            inventoryView.Visibility = Visibility.Hidden;
+            inventoryscrollView.Visibility = Visibility.Hidden;
         }
         private void recheck(object sender, TextChangedEventArgs e)
         {
@@ -106,6 +103,8 @@ namespace SarasaviLite
             edit_view_stationary.Visibility = Visibility.Hidden;
             edit_view_book.Visibility = Visibility.Hidden;
             edit_view_voucher.Visibility = Visibility.Visible;
+            
+            inventoryscrollView.Visibility = Visibility.Hidden;
         }
 
         private void add_stationary(object sender, RoutedEventArgs e)
@@ -113,6 +112,9 @@ namespace SarasaviLite
             edit_view_stationary.Visibility = Visibility.Visible;
             edit_view_book.Visibility = Visibility.Hidden;
             edit_view_voucher.Visibility = Visibility.Hidden;
+            
+            inventoryscrollView.Visibility = Visibility.Hidden;
+
         }
 
         private void add_book(object sender, RoutedEventArgs e)
@@ -120,6 +122,8 @@ namespace SarasaviLite
             edit_view_stationary.Visibility = Visibility.Hidden;
             edit_view_book.Visibility = Visibility.Visible;
             edit_view_voucher.Visibility = Visibility.Hidden;
+            
+            inventoryscrollView.Visibility = Visibility.Hidden;
         }
 
         private void voucher_type__SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -135,11 +139,17 @@ namespace SarasaviLite
             search_view.Visibility= Visibility.Hidden;
             report_view.Visibility=Visibility.Hidden;
             inventory_view.Visibility=Visibility.Visible;
+
+            inventoryscrollView.Visibility = Visibility.Visible;
+            edit_view_stationary.Visibility = Visibility.Hidden;
+            edit_view_book.Visibility = Visibility.Hidden;
+            edit_view_voucher.Visibility = Visibility.Hidden;
+
         }
 
         private void dashboardViewAction(object sender, RoutedEventArgs e)
         {
-            inventoryView.Visibility = Visibility.Hidden;
+            inventory_view.Visibility = Visibility.Hidden;
             Home_view.Visibility = Visibility.Visible;
             add_view.Visibility = Visibility.Hidden;
             search_view.Visibility = Visibility.Hidden;
@@ -149,29 +159,34 @@ namespace SarasaviLite
 
         private void searchViewAction(object sender, RoutedEventArgs e)
         {
-            inventoryView.Visibility = Visibility.Hidden;
+            inventory_view.Visibility = Visibility.Hidden;
             Home_view.Visibility = Visibility.Hidden;
             add_view.Visibility = Visibility.Hidden;
             search_view.Visibility = Visibility.Visible;
             report_view.Visibility = Visibility.Hidden;
+
+
         }
 
         private void addViewAction(object sender, RoutedEventArgs e)
         {
-            inventoryView.Visibility = Visibility.Hidden;
+            inventory_view.Visibility = Visibility.Hidden;
             Home_view.Visibility = Visibility.Hidden;
             add_view.Visibility = Visibility.Visible;
             search_view.Visibility = Visibility.Hidden;
             report_view.Visibility = Visibility.Hidden;
+
+
         }
 
         private void reportViewAction(object sender, RoutedEventArgs e)
         {
-            inventoryView.Visibility = Visibility.Hidden;
+            inventory_view.Visibility = Visibility.Hidden;
             Home_view.Visibility = Visibility.Hidden;
             add_view.Visibility = Visibility.Hidden;
             search_view.Visibility = Visibility.Hidden;
             report_view.Visibility = Visibility.Visible;
+
         }
 
         private void btnAddBook_Click(object sender, RoutedEventArgs e)

@@ -761,7 +761,7 @@
 
 
                 <!--Inventory View-->
-                <ScrollViewer x:Name="inventoryView" Grid.Column="0" Margin="420,42,42,42" VerticalScrollBarVisibility="Hidden" Background="#FFF9E8E8" Grid.ColumnSpan="2" Visibility="Hidden">
+                <ScrollViewer x:Name="inventoryscrollView" Grid.Column="0" Margin="420,42,42,42" VerticalScrollBarVisibility="Hidden" Background="#FFF9E8E8" Grid.ColumnSpan="2" Visibility="Visible">
                     <StackPanel x:Name="View" Width="1126" ScrollViewer.VerticalScrollBarVisibility="Hidden"/>
                 </ScrollViewer>
 
@@ -1192,9 +1192,9 @@ ItemContainerStyle="{DynamicResource theComboBoxItem}" Height="40" VerticalConte
 
 
 
-                <Button Content="ADD voucher" HorizontalAlignment="Left" Margin="152,295,0,0" VerticalAlignment="Top" Width="199" Height="43" Click="add_voucher"/>
-                <Button Content="ADD stationary" HorizontalAlignment="Left" Margin="152,358,0,0" VerticalAlignment="Top" Width="199" Height="42" Click="add_stationary"/>
-                <Button Content="ADD Book" HorizontalAlignment="Left" Margin="152,421,0,0" VerticalAlignment="Top" Width="199" Height="42" Click="add_book"/>
+                <Button Content="ADD voucher" HorizontalAlignment="Left" Margin="59,516,0,0" VerticalAlignment="Top" Width="168" Height="157" Click="add_voucher"/>
+                <Button Content="ADD stationary" HorizontalAlignment="Left" Margin="59,426,0,0" VerticalAlignment="Top" Width="339" Height="85" Click="add_stationary"/>
+                <Button Content="ADD Book" HorizontalAlignment="Left" Margin="232,516,0,0" VerticalAlignment="Top" Width="166" Height="157" Click="add_book"/>
 
 
 

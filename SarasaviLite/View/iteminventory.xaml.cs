@@ -22,6 +22,29 @@ namespace SarasaviLite.View
         public item()
         {
             InitializeComponent();
+            this.DataContext = this;
+        }
+
+
+        public String itemType { get; set; }
+        public String name { get; set; }
+        public String price { get; set; }
+        public String qty { get; set; }
+        public String status { get; set; }
+        public String inventoryType { get; set; }
+        public String location { get; set; }
+        public String itemCost { get; set; }
+        public String tax { get; set; }
+        public String discountAmount { get; set; }
+
+        private void deleteBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void select_click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
