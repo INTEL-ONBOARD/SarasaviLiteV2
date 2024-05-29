@@ -575,6 +575,7 @@
                         </ImageBrush>
                     </Button.Background>
                 </Button>
+
             </Grid>
             <!--navbodypane-->
             <Grid x:Name="inventory_view" Background="#FF8CDA24" Margin="1,72,-1,0" >
@@ -597,6 +598,31 @@
                         </TransformGroup>
                     </Label.RenderTransform>
                 </Label>
+
+
+
+                <Button  x:Name="nav_Copy3" Style="{StaticResource ImageButtonStyle_noborder}" Content="" HorizontalAlignment="Left" Margin="71,184,0,0" Cursor="Hand" VerticalAlignment="Top" BorderBrush="{x:Null}" Foreground="{x:Null}" Width="35" Height="35" Click="goScan_Click" RenderTransformOrigin="0.5,0.5" >
+                    <Button.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="180"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Button.RenderTransform>
+                    <Button.Background>
+                        <ImageBrush ImageSource="/View/plus-hexagon.png" TileMode="Tile" Stretch="UniformToFill">
+                            <ImageBrush.RelativeTransform>
+                                <TransformGroup>
+                                    <ScaleTransform CenterY="0.5" CenterX="0.5"/>
+                                    <SkewTransform CenterX="0.5" CenterY="0.5"/>
+                                    <RotateTransform Angle="180" CenterX="0.5" CenterY="0.5"/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </ImageBrush.RelativeTransform>
+                        </ImageBrush>
+                    </Button.Background>
+                </Button>
 
             </Grid>
 

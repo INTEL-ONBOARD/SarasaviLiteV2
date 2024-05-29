@@ -20,7 +20,7 @@ namespace SarasaviLite.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=127.0.0.1:3306;Database=wenuja_sarasavi;User Id=root;Password=;");
+            optionsBuilder.UseSqlServer(@"Data Source=VitaminC\SQLEXPRESS;Initial Catalog=SarasaviDb;Integrated Security=True;TrustServerCertificate=True");
         }
     }
 }
