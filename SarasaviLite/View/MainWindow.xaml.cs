@@ -8,10 +8,14 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+//<<<<<<< HEAD
+using Microsoft.EntityFrameworkCore;
+//=======
 using SarasaviLite.Controller;
+//>>>>>>> 5cc494f771ef3bf5ecd7d88d2104ffa8e0d195f8
 using SarasaviLite.Data;
 using SarasaviLite.Models;
-
+using SarasaviLite.View;
 
 namespace SarasaviLite
 {
@@ -212,6 +216,16 @@ namespace SarasaviLite
             foreach (var author in authors)
             {
                 selectBookAuthor.Items.Add(author.Name);
+            }
+        }
+
+        private void loaditemData()
+        {
+            var items = inventoryController.GetItems();
+            foreach (var item_ in items)
+            {
+               iteminventory inventory = new iteminventory();
+                inventory.Name = item_.Name;
             }
         }
     }

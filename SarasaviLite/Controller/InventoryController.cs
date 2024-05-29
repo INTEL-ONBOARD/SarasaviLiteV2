@@ -20,6 +20,9 @@ namespace SarasaviLite.Controller
         public DbSet<Book>  GetBooks() {
             return context.Books;
         }
+        public DbSet<Item> GetItems() { 
+            return context.Items; 
+        } 
 
         public bool SaveBook(Book book)
         {
