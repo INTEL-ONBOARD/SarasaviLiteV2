@@ -29,6 +29,22 @@ namespace SarasaviLite.Controller
             return true;
         }
 
+        public bool UpdateBook(Book book)
+        {
+            context.Books.Update(book);
+            context.SaveChanges();
+
+            return true;
+        }
+
+        public bool DeleteBook(Book book)
+        {
+            context.Books.Remove(book);
+            context.SaveChanges();
+
+            return true;
+        }
+
         public DbSet<Author> GetAuthors()
         {
             return context.Authors;
