@@ -192,6 +192,8 @@ namespace SarasaviLite
 
         }
 
+
+
         private void btnAddBook_Click(object sender, RoutedEventArgs e)
         {
          /*   Book book = new Book()
