@@ -1253,7 +1253,7 @@ ItemContainerStyle="{DynamicResource theComboBoxItem}" Height="40" VerticalConte
                 </Grid>
 
 
-                <Grid x:Name="edit_view_stationary" Grid.ColumnSpan="2" Margin="526,0,0,0" Visibility="Hidden">
+                <Grid x:Name="edit_view_stationary" Grid.ColumnSpan="2" Margin="526,0,0,0" Visibility="Visible">
 
                     <!--item-edit-view-->
                     <Grid x:Name="item_view_stationary" Margin="-10,56,10,357" Panel.ZIndex="1" >
@@ -1500,13 +1500,17 @@ ItemContainerStyle="{DynamicResource theComboBoxItem}" Height="40" VerticalConte
                             Padding="15,5,15,5"
                             HorizontalContentAlignment="Center"
                             VerticalAlignment="Top"
-                            ItemContainerStyle="{DynamicResource theComboBoxItem}" Height="40" VerticalContentAlignment="Center" Margin="0,420,67,0" HorizontalAlignment="Right" Width="242" Foreground="Black" BorderBrush="#FF0C0000" Background="#FFECECEC"/>
+                            ItemContainerStyle="{DynamicResource theComboBoxItem}" Height="40" VerticalContentAlignment="Center" Margin="0,420,67,0" HorizontalAlignment="Right" Width="242" Foreground="Black" BorderBrush="#FF0C0000" Background="#FFECECEC">
+                            <ComboBoxItem Content="Atlas"/>
+                            <ComboBoxItem Content="Dumindu"/>
+                            <ComboBoxItem Content="Promate"/>
+                        </ComboBox>
 
 
                         <Button x:Name="saveBtn2" Style="{StaticResource btncutsomstyle}" Cursor="Hand" Content="Update stock" HorizontalAlignment="Left" Margin="204,456,0,0" VerticalAlignment="Top" Height="32" Width="102" Background="{x:Null}" BorderBrush="#FF797676" Click="save" Grid.Column="1"/>
                         <Button x:Name="clearBtn2" Style="{StaticResource btncutsomstyle}" Cursor="Hand" Content="Clear" HorizontalAlignment="Left" Margin="314,456,0,0" VerticalAlignment="Top" Height="32" Width="102" Background="{x:Null}" BorderBrush="#FF797676" Click="save" Grid.Column="1"/>
 
-                        <Label Content="ISBN No." HorizontalAlignment="Left" VerticalAlignment="Top" Margin="283,322,0,0" Height="24" RenderTransformOrigin="0.5,0.5">
+                        <Label Content="Note" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="283,322,0,0" Height="24" RenderTransformOrigin="0.5,0.5">
                             <Label.RenderTransform>
                                 <TransformGroup>
                                     <ScaleTransform ScaleY="1"/>
@@ -1542,7 +1546,7 @@ ItemContainerStyle="{DynamicResource theComboBoxItem}" Height="40" VerticalConte
                             </Label.Background>
                         </Label>
                         <TextBox x:Name="txtBookTitle2" Style="{StaticResource CustomTextBoxStyle}" Margin="14,351,0,0" TextWrapping="Wrap" Tag="" Width="242" Height="40" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" BorderBrush="#FFD2D2D2" FontSize="14" TextChanged="recheck" HorizontalAlignment="Left" Panel.ZIndex="1" />
-                        <Label Content="Year of the Book" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="14,391,0,0" Height="24" RenderTransformOrigin="0.5,0.5">
+                        <Label Content="Variation ()" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="14,391,0,0" Height="24" RenderTransformOrigin="0.5,0.5">
                             <Label.RenderTransform>
                                 <TransformGroup>
                                     <ScaleTransform ScaleY="1"/>
@@ -1559,7 +1563,7 @@ ItemContainerStyle="{DynamicResource theComboBoxItem}" Height="40" VerticalConte
                             </Label.Background>
                         </Label>
                         <TextBox x:Name="txtBookYear2" Style="{StaticResource CustomTextBoxStyle}" Margin="14,420,0,0" TextWrapping="Wrap" Tag="" Width="242" Height="40" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" BorderBrush="#FFD2D2D2" FontSize="14" TextChanged="recheck" HorizontalAlignment="Left" Panel.ZIndex="1" />
-                        <Label Content="Author of the book" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="289,391,0,0" Height="24" RenderTransformOrigin="0.5,0.5">
+                        <Label Content="Distributer" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="289,391,0,0" Height="24" RenderTransformOrigin="0.5,0.5">
                             <Label.RenderTransform>
                                 <TransformGroup>
                                     <ScaleTransform ScaleY="1"/>
@@ -1680,7 +1684,7 @@ ItemContainerStyle="{DynamicResource theComboBoxItem}" Height="40" VerticalConte
                 </Grid>
 
 
-                <Grid x:Name="edit_view_voucher" Grid.ColumnSpan="2" Margin="526,0,0,0" Visibility="Visible">
+                <Grid x:Name="edit_view_voucher" Grid.ColumnSpan="2" Margin="526,0,0,0" Visibility="Hidden">
 
                     <!--item-edit-view-->
                     <Grid x:Name="item_view_voucher" Margin="-10,56,10,357" Panel.ZIndex="1" >
