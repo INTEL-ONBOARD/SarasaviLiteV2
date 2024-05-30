@@ -2131,8 +2131,8 @@ ItemContainerStyle="{DynamicResource theComboBoxItem}" Height="40" VerticalConte
                         <SolidColorBrush Color="#FF404040" Opacity="0.5"/>
                     </Button.BorderBrush>
                     <StackPanel Orientation="Horizontal" Height="82" Width="253" VerticalAlignment="Center" HorizontalAlignment="Center">
-                        <Image Height="36" Source="/View/add-button.png" Opacity="0.8" Width="36"/>
-                        <TextBlock Text="View Inventory" FontFamily="Bahnschrift" Padding="0,19,0,0" Foreground="DimGray" Width="204" VerticalAlignment="Center" TextAlignment="Center" Height="52" HorizontalAlignment="Center"/>
+                        <Image Height="30" Source="/View/package.png" Opacity="0.8" Width="30" Margin="50,0,0,0"/>
+                        <TextBlock Text="View Inventory" FontFamily="Bahnschrift" Padding="0,19,0,0" Foreground="DimGray" Width="130" VerticalAlignment="Center" TextAlignment="Center" Height="52"/>
                     </StackPanel>
                 </Button>
                 <Button  x:Name="add_itemBtn_Copy" Style="{StaticResource ImageButtonStyle_noborder}" Content="" HorizontalAlignment="Left" Margin="42,196,0,0" Cursor="Hand" VerticalAlignment="Top" BorderBrush="{x:Null}" Foreground="{x:Null}" Width="34" Height="35" Click="add_item" RenderTransformOrigin="0.5,0.5" >
@@ -2849,8 +2849,8 @@ ItemContainerStyle="{DynamicResource theComboBoxItem}" Height="40" VerticalConte
                     <SolidColorBrush Color="#FF404040" Opacity="0.5"/>
                 </Button.BorderBrush>
                 <StackPanel Orientation="Horizontal" Height="82" Width="253" VerticalAlignment="Center" HorizontalAlignment="Center">
-                    <Image Height="36" Source="/View/add-button.png" Opacity="0.8" Width="36"/>
-                    <TextBlock Text="Generate Report" FontFamily="Bahnschrift" Padding="0,19,0,0" Foreground="DimGray" Width="204" VerticalAlignment="Center" TextAlignment="Center" Height="52" HorizontalAlignment="Center"/>
+                    <Image Height="30" Source="/View/printer.png" Opacity="0.8" Width="30" Margin="50,0,0,0"/>
+                    <TextBlock Text="Generate Report" FontFamily="Bahnschrift" Padding="0,19,0,0" Foreground="DimGray" Width="146" VerticalAlignment="Center" TextAlignment="Center" Height="52"/>
                 </StackPanel>
             </Button>
 
