@@ -9,12 +9,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="View\add-button.png" />
     <None Remove="View\apple-logo.png" />
     <None Remove="View\apple-pay.png" />
     <None Remove="View\arrow-circle-right.png" />
     <None Remove="View\back.png" />
     <None Remove="View\bell-notification-social-media.png" />
     <None Remove="View\bell.png" />
+    <None Remove="View\book-cover.png" />
     <None Remove="View\boxes.png" />
     <None Remove="View\caret-square-left.png" />
     <None Remove="View\cart.png" />
@@ -70,12 +72,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="View\add-button.png" />
     <Resource Include="View\apple-logo.png" />
     <Resource Include="View\apple-pay.png" />
     <Resource Include="View\arrow-circle-right.png" />
     <Resource Include="View\back.png" />
     <Resource Include="View\bell-notification-social-media.png" />
     <Resource Include="View\bell.png" />
+    <Resource Include="View\book-cover.png" />
     <Resource Include="View\boxes.png" />
     <Resource Include="View\cart.png" />
     <Resource Include="View\cash.png" />

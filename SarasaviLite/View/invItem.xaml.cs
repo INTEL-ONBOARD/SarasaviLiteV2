@@ -10,16 +10,17 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace SarasaviLite.View
 {
     /// <summary>
-    /// Interaction logic for item.xaml
+    /// Interaction logic for invItem.xaml
     /// </summary>
-    public partial class ItemInventory : Window
+    public partial class invItem : UserControl
     {
-        public ItemInventory()
+        public invItem()
         {
             InitializeComponent();
             this.DataContext = this;
@@ -41,10 +42,20 @@ namespace SarasaviLite.View
         {
 
         }
-
-        private void select_click(object sender, RoutedEventArgs e)
+        private void selectItem(object sender, RoutedEventArgs e)
         {
 
         }
+
+
+        private void check_(object sender, RoutedEventArgs e)
+        {
+            if (statusLbl.Content.Equals("Available"))
+            {
+                statusLbl.BorderBrush = Brushes.Green;
+            }
+        }
+
+
     }
 }

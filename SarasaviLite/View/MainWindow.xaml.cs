@@ -210,6 +210,14 @@ namespace SarasaviLite
             };
             inventoryController.SaveBook(book);
         }
+        private void view_item(object sender, RoutedEventArgs e)
+        {
+            edit_view_stationary.Visibility = Visibility.Hidden;
+            edit_view_book.Visibility = Visibility.Hidden;
+            edit_view_voucher.Visibility = Visibility.Hidden;
+
+            inventoryscrollView.Visibility = Visibility.Visible;
+        }
 
         private void loadInitData()
         {
@@ -225,8 +233,20 @@ namespace SarasaviLite
             var items = inventoryController.GetItems();
             foreach (var item_ in items)
             {
-                ItemInventory inventory = new ItemInventory();
+                invItem inventory = new invItem();
                 inventory.name = item_.Name;
+                inventory.itemType = item_.ItemType;
+                inventory.price = item_.Price.ToString();
+                inventory.qty = item_.Qty.ToString();
+                inventory.status = item_.Status;
+
+
+
+                inventory.inventoryType = item_.InventoryType;
+                inventory.location = item_.Location;
+                inventory.itemCost = item_.ItemCost.ToString();
+                inventory.tax = item_.Tax.ToString();
+                inventory.discountAmount = item_.DiscountAmount.ToString();
                 Console.WriteLine(inventory.name);
                 View.Children.Add(inventory);
             }
