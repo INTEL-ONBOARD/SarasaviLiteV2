@@ -201,14 +201,7 @@ namespace SarasaviLite
     
         private void btnAddBook_Click(object sender, RoutedEventArgs e)
         {
-            Book book = new Book()
-            {
-                ISBN = Convert.ToInt32(txtBookISBN.Text),
-                Title = txtBookTitle.Text,
-                Author = inventoryController.GetAuthors().FirstOrDefault(author => author.Name == selectBookAuthor.SelectedValue),
-                Year = Convert.ToInt32(txtBookYear.Text)
-            };
-            inventoryController.SaveBook(book);
+            inventoryController.CreateBook(txtBookISBN.Text, txtBookTitle.Text, inventoryController.GetAuthors().FirstOrDefault(author => author.Name == selectBookAuthor.SelectedValue), txtBookYear.Text);
         }
         private void view_item(object sender, RoutedEventArgs e)
         {

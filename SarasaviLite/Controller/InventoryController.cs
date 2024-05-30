@@ -24,12 +24,25 @@ namespace SarasaviLite.Controller
             return context.Items; 
         } 
 
-        public bool SaveBook(Book book)
+        public string CreateBook(string ISBN, string Title, Author author, string Year )
         {
+            try
+            {
+            Book book = new Book()
+            {
+                ISBN = Convert.ToInt32(ISBN),
+                Title = Title,
+                Author = author,
+                Year = Convert.ToInt32(Year)
+            };
             context.Books.Add(book);
-            context.SaveChanges();
+            }catch (Exception ex)
+            {
+                return ex.Message;
+            }
 
-            return true;
+            context.SaveChanges();
+            return "";
         }
 
         public bool UpdateBook(Book book)
