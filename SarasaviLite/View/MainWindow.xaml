@@ -382,7 +382,7 @@
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsHighlighted" Value="true">
-                                <Setter TargetName="Border" Property="BorderBrush" Value="#FFFF2C2C"/>
+                                <Setter TargetName="Border" Property="BorderBrush" Value="#FF3B36E2"/>
                                 <Setter TargetName="Border" Property="Background" Value="#F8FAEB"/>
                             </Trigger>
                         </ControlTemplate.Triggers>
@@ -762,12 +762,13 @@
 
                 <!--Inventory View-->
                 <ScrollViewer x:Name="inventoryscrollView" Grid.Column="0" Margin="420,42,42,42" VerticalScrollBarVisibility="Hidden" Grid.ColumnSpan="2" Visibility="Visible" RenderTransformOrigin="0.499,0.499">
+                    <!--<TextBlock TextWrapping="Wrap" Text="TextBlock"/>-->
                     <StackPanel x:Name="View" Width="1126" ScrollViewer.VerticalScrollBarVisibility="Hidden"/>
                 </ScrollViewer>
 
 
-                <Label Content="View Stock" HorizontalAlignment="Left" Margin="59,88,0,0" VerticalAlignment="Top" Height="64" Width="292" FontSize="48" FontFamily="Bahnschrift Light"/>
-                <Label Content=" Update | View | Remove" HorizontalAlignment="Left" Margin="36,140,0,0" VerticalAlignment="Top" Height="33" Width="292" FontFamily="Bahnschrift Light" FontSize="20" RenderTransformOrigin="0.5,0.5" VerticalContentAlignment="Center" HorizontalContentAlignment="Center">
+                <Label Content="View Stock" HorizontalAlignment="Left" Margin="77,62,0,0" VerticalAlignment="Top" Height="64" Width="292" FontSize="48" FontFamily="Bahnschrift Light"/>
+                <Label Content=" Update | View | Remove" HorizontalAlignment="Left" Margin="54,114,0,0" VerticalAlignment="Top" Height="33" Width="292" FontFamily="Bahnschrift Light" FontSize="20" RenderTransformOrigin="0.5,0.5" VerticalContentAlignment="Center" HorizontalContentAlignment="Center">
                     <Label.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform/>
@@ -780,7 +781,7 @@
 
 
 
-                <Button  x:Name="add_itemBtn" Style="{StaticResource ImageButtonStyle_noborder}" Content="" HorizontalAlignment="Left" Margin="40,502,0,0" Cursor="Hand" VerticalAlignment="Top" BorderBrush="{x:Null}" Foreground="{x:Null}" Width="35" Height="35" Click="add_item" RenderTransformOrigin="0.5,0.5" >
+                <Button  x:Name="add_itemBtn" Style="{StaticResource ImageButtonStyle_noborder}" Content="" HorizontalAlignment="Left" Margin="40,478,0,0" Cursor="Hand" VerticalAlignment="Top" BorderBrush="{x:Null}" Foreground="{x:Null}" Width="35" Height="35" Click="add_item" RenderTransformOrigin="0.5,0.5" >
                     <Button.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform/>
@@ -809,7 +810,7 @@
 
 
 
-                <Button x:Name="add_item_" Style="{StaticResource btncutsomstyle}" Cursor="Hand" HorizontalAlignment="Left" Margin="152,551,0,0" VerticalAlignment="Top" Height="92" Width="87" Padding="0,0,0,0" Background="{x:Null}" BorderThickness="1,1,1,1" Foreground="#FFAFAFAF" Click="add_stationary" >
+                <Button x:Name="add_item_" Style="{StaticResource btncutsomstyle}" Cursor="Hand" HorizontalAlignment="Left" Margin="152,527,0,0" VerticalAlignment="Top" Height="92" Width="87" Padding="0,0,0,0" Background="{x:Null}" BorderThickness="1,1,1,1" Foreground="#FFAFAFAF" Click="add_stationary" >
                     <Button.BorderBrush>
                         <SolidColorBrush Color="#FF404040" Opacity="0.5"/>
                     </Button.BorderBrush>
@@ -823,215 +824,14 @@
 
 
                 <!--item-update-view-->
-                <Grid x:Name="edit_view_voucher" Grid.ColumnSpan="2" Margin="526,0,0,0" Visibility="Hidden" Background="#FF453FF3">
 
 
-
-                    <!--item-edit-view-->
-                    <Grid x:Name="voucher_view" Margin="0,-1,0,518">
-                        <Grid.Background>
-                            <SolidColorBrush Color="Black" Opacity="0.4"/>
-                        </Grid.Background>
-
-                        <Label Content="Item info" HorizontalAlignment="Left" Margin="741,0,0,0" VerticalAlignment="Center" Height="64" Width="292" FontSize="20" FontFamily="Bahnschrift Light" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
-
-                        <TextBox HorizontalAlignment="Left" Margin="81,53,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-                        <TextBox HorizontalAlignment="Left" Margin="81,81,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-                        <TextBox HorizontalAlignment="Left" Margin="81,112,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-                        <TextBox HorizontalAlignment="Left" Margin="81,112,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-                        <TextBox HorizontalAlignment="Left" Margin="81,145,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-                        <TextBox HorizontalAlignment="Left" Margin="247,53,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-
-                        <ComboBox 
-        x:Name="select_vehicle_manufacture" 
-        FontSize="13"
-        Style="{DynamicResource theComboBox}"
-        Padding="15,5,15,5"
-        HorizontalContentAlignment="Center"
-        VerticalAlignment="Top"
-        ItemContainerStyle="{DynamicResource theComboBoxItem}" Height="40" VerticalContentAlignment="Center" Margin="0,53,0,0" HorizontalAlignment="Center" Width="242" Foreground="Black" BorderBrush="#FF0C0000" Background="#FFECECEC">
-                            <ComboBoxItem Content="Nugegoda"/>
-                            <ComboBoxItem Content="Kaluthara"/>
-                            <ComboBoxItem Content="Matara"/>
-
-                        </ComboBox>
-                        <ComboBox 
-                        x:Name="select_vehicle_manufacture_Copy" 
-                        FontSize="13"
-                        Style="{DynamicResource theComboBox}"
-                        Padding="15,5,15,5"
-                        HorizontalContentAlignment="Center"
-                        VerticalAlignment="Top"
-                        ItemContainerStyle="{DynamicResource theComboBoxItem}" Height="40" VerticalContentAlignment="Center" Margin="0,112,416,0" HorizontalAlignment="Right" Width="242" Foreground="Black" BorderBrush="#FF0C0000" Background="#FFECECEC">
-                            <ComboBoxItem Content="Nugegoda"/>
-                            <ComboBoxItem Content="Kaluthara"/>
-                            <ComboBoxItem Content="Matara"/>
-
-                        </ComboBox>
-                    </Grid>
-                    <!--voucher-edit-view-->
-                    <Grid Margin="0,165,0,0">
-                        <Grid.Background>
-                            <SolidColorBrush Color="Black" Opacity="0.2"/>
-                        </Grid.Background>
-
-                        <Label Content="Voucher info" HorizontalAlignment="Left" Margin="741,0,0,0" VerticalAlignment="Center" Height="64" Width="292" FontSize="20" FontFamily="Bahnschrift Light" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
-
-
-                        <ComboBox 
-                        x:Name="voucher_type" 
-                        FontSize="13"
-                        Style="{DynamicResource theComboBox}"
-                        Padding="15,5,15,5"
-                        HorizontalContentAlignment="Center"
-                        VerticalAlignment="Top"
-                        ItemContainerStyle="{DynamicResource theComboBoxItem}" Height="40" VerticalContentAlignment="Center" Margin="0,138,774,0" HorizontalAlignment="Right" Width="242" Foreground="Black" BorderBrush="#FF0C0000" Background="#FFECECEC">
-                            <ComboBoxItem Content="Nugegoda"/>
-                            <ComboBoxItem Content="Kaluthara"/>
-                            <ComboBoxItem Content="Matara"/>
-
-                        </ComboBox>
-                        <ComboBox 
-                        x:Name="status" 
-                        FontSize="13"
-                        Style="{DynamicResource theComboBox}"
-                        Padding="15,5,15,5"
-                        HorizontalContentAlignment="Center"
-                        VerticalAlignment="Top"
-                        ItemContainerStyle="{DynamicResource theComboBoxItem}" Height="40" VerticalContentAlignment="Center" Margin="0,62,774,0" HorizontalAlignment="Right" Width="242" Foreground="Black" BorderBrush="#FF0C0000" Background="#FFECECEC">
-                            <ComboBoxItem Content="Nugegoda"/>
-                            <ComboBoxItem Content="Kaluthara"/>
-                            <ComboBoxItem Content="Matara"/>
-
-                        </ComboBox>
-
-                        <TextBox HorizontalAlignment="Left" Margin="396,62,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-                        <TextBox HorizontalAlignment="Left" Margin="396,95,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-                        <TextBox HorizontalAlignment="Left" Margin="396,128,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-
-                        <TextBox HorizontalAlignment="Left" Margin="396,160,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-                        <TextBox HorizontalAlignment="Left" Margin="396,192,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-                        <Button Content="Save" HorizontalAlignment="Left" Margin="887,456,0,0" VerticalAlignment="Top" Width="123" Height="32"/>
-
-                    </Grid>
-                </Grid>
-
-
-
-                <Grid x:Name="edit_view_stationary" Grid.ColumnSpan="2" Margin="526,0,0,0" Visibility="Hidden" Background="#FF64E666">
-
-
-
-                    <!--item-edit-view-->
-                    <Grid x:Name="item_view_stationary" Margin="0,-1,0,518" >
-                        <Grid.Background>
-                            <SolidColorBrush Color="Black" Opacity="0.4"/>
-                        </Grid.Background>
-
-                        <Label Content="Item info" HorizontalAlignment="Left" Margin="741,0,0,0" VerticalAlignment="Center" Height="64" Width="292" FontSize="20" FontFamily="Bahnschrift Light" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
-
-                        <TextBox HorizontalAlignment="Left" Margin="81,53,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-                        <TextBox HorizontalAlignment="Left" Margin="81,81,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-                        <TextBox HorizontalAlignment="Left" Margin="81,112,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-                        <TextBox HorizontalAlignment="Left" Margin="81,112,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-                        <TextBox HorizontalAlignment="Left" Margin="81,145,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-                        <TextBox HorizontalAlignment="Left" Margin="247,53,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-
-                        <ComboBox 
-x:Name="select_vehicle_nufacture" 
-FontSize="13"
-Style="{DynamicResource theComboBox}"
-Padding="15,5,15,5"
-HorizontalContentAlignment="Center"
-VerticalAlignment="Top"
-ItemContainerStyle="{DynamicResource theComboBoxItem}" Height="40" VerticalContentAlignment="Center" Margin="0,53,0,0" HorizontalAlignment="Center" Width="242" Foreground="Black" BorderBrush="#FF0C0000" Background="#FFECECEC">
-                            <ComboBoxItem Content="Nugegoda"/>
-                            <ComboBoxItem Content="Kaluthara"/>
-                            <ComboBoxItem Content="Matara"/>
-
-                        </ComboBox>
-                        <ComboBox 
-                x:Name="select_vehicle_manufacture_Co" 
-                FontSize="13"
-                Style="{DynamicResource theComboBox}"
-                Padding="15,5,15,5"
-                HorizontalContentAlignment="Center"
-                VerticalAlignment="Top"
-                ItemContainerStyle="{DynamicResource theComboBoxItem}" Height="40" VerticalContentAlignment="Center" Margin="0,112,416,0" HorizontalAlignment="Right" Width="242" Foreground="Black" BorderBrush="#FF0C0000" Background="#FFECECEC">
-                            <ComboBoxItem Content="Nugegoda"/>
-                            <ComboBoxItem Content="Kaluthara"/>
-                            <ComboBoxItem Content="Matara"/>
-
-                        </ComboBox>
-                    </Grid>
-                    <!--stationary-edit-view-->
-                    <Grid Margin="0,165,0,0">
-                        <Grid.Background>
-                            <SolidColorBrush Color="Black" Opacity="0.2"/>
-                        </Grid.Background>
-
-                        <Label Content="STATIONARY info" HorizontalAlignment="Left" Margin="741,0,0,0" VerticalAlignment="Center" Height="64" Width="292" FontSize="20" FontFamily="Bahnschrift Light" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
-
-
-                        <ComboBox 
-                x:Name="voucher_type__" 
-                FontSize="13"
-                Style="{DynamicResource theComboBox}"
-                Padding="15,5,15,5"
-                HorizontalContentAlignment="Center"
-                VerticalAlignment="Top"
-                ItemContainerStyle="{DynamicResource theComboBoxItem}" Height="40" VerticalContentAlignment="Center" Margin="0,138,774,0" HorizontalAlignment="Right" Width="242" Foreground="Black" BorderBrush="#FF0C0000" Background="#FFECECEC">
-                            <ComboBoxItem Content="Nugegoda"/>
-                            <ComboBoxItem Content="Kaluthara"/>
-                            <ComboBoxItem Content="Matara"/>
-
-                        </ComboBox>
-                        <ComboBox 
-                x:Name="stats" 
-                FontSize="13"
-                Style="{DynamicResource theComboBox}"
-                Padding="15,5,15,5"
-                HorizontalContentAlignment="Center"
-                VerticalAlignment="Top"
-                ItemContainerStyle="{DynamicResource theComboBoxItem}" Height="40" VerticalContentAlignment="Center" Margin="0,62,774,0" HorizontalAlignment="Right" Width="242" Foreground="Black" BorderBrush="#FF0C0000" Background="#FFECECEC">
-                            <ComboBoxItem Content="Nugegoda"/>
-                            <ComboBoxItem Content="Kaluthara"/>
-                            <ComboBoxItem Content="Matara"/>
-
-                        </ComboBox>
-
-                        <TextBox HorizontalAlignment="Left" Margin="396,62,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-                        <TextBox HorizontalAlignment="Left" Margin="396,95,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-                        <TextBox HorizontalAlignment="Left" Margin="396,128,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-
-                        <TextBox HorizontalAlignment="Left" Margin="396,160,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-                        <TextBox HorizontalAlignment="Left" Margin="396,192,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-                        <Button Content="Save" HorizontalAlignment="Left" Margin="887,456,0,0" VerticalAlignment="Top" Width="123" Height="32"/>
-
-                    </Grid>
-                </Grid>
-
-
-                <Grid x:Name="edit_view_book" Grid.ColumnSpan="2" Margin="526,0,0,0" Visibility="Visible">
+                <Grid x:Name="edit_view_book" Grid.ColumnSpan="2" Margin="526,0,0,0" Visibility="Hidden">
 
                     <!--item-edit-view-->
                     <Grid x:Name="item_view_book" Margin="-10,56,10,357" Panel.ZIndex="1" >
-                        <Grid.Background>
-                            <SolidColorBrush Color="#FF150000" Opacity="0.1"/>
-                        </Grid.Background>
 
-                        <Label Content="ITEM INFO" HorizontalAlignment="Left" Margin="845,19,0,0" VerticalAlignment="Top" Height="44" Width="229" FontSize="20" FontFamily="Bahnschrift Light" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
-
-                        <Rectangle Height="2" Stroke="Black" Width="866" RenderTransformOrigin="0.5,0.5" Margin="30,40,178,260" Opacity="0.9">
-                            <Rectangle.RenderTransform>
-                                <TransformGroup>
-                                    <ScaleTransform ScaleY="-1"/>
-                                    <SkewTransform/>
-                                    <RotateTransform/>
-                                    <TranslateTransform/>
-                                </TransformGroup>
-                            </Rectangle.RenderTransform>
-                        </Rectangle>
+                        <Label Content="ITEM INFO" HorizontalAlignment="Left" Margin="845,-3,0,0" VerticalAlignment="Top" Height="44" Width="229" FontSize="20" FontFamily="Bahnschrift Light" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
 
 
                         <Label Content="Price" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="27,151,0,0" Height="24" RenderTransformOrigin="0.5,0.5">
@@ -1167,7 +967,7 @@ ItemContainerStyle="{DynamicResource theComboBoxItem}" Height="40" VerticalConte
                             HorizontalContentAlignment="Center"
                             VerticalAlignment="Top"
                             ItemContainerStyle="{DynamicResource theComboBoxItem}" Height="33" VerticalContentAlignment="Center" Margin="248,121,0,0" HorizontalAlignment="Left" Width="242" Foreground="Black" BorderBrush="#FF0C0000" Background="#FFECECEC"/>
-                        <Label Content="Discount Amount" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="516,35,0,0" Height="24" RenderTransformOrigin="0.5,0.5">
+                        <Label Content="Discount Amount" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="516,32,0,0" Height="24" RenderTransformOrigin="0.5,0.5">
                             <Label.RenderTransform>
                                 <TransformGroup>
                                     <ScaleTransform ScaleY="1"/>
@@ -1217,7 +1017,28 @@ ItemContainerStyle="{DynamicResource theComboBoxItem}" Height="40" VerticalConte
                                 <SolidColorBrush Opacity="0.445"/>
                             </Label.Background>
                         </Label>
-
+                        <Label Content="Item Name" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="516,103,0,0" Height="24" RenderTransformOrigin="0.5,0.5">
+                            <Label.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleY="1"/>
+                                    <SkewTransform/>
+                                    <RotateTransform/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Label.RenderTransform>
+                            <Label.Foreground>
+                                <SolidColorBrush Color="Black" Opacity="0.8"/>
+                            </Label.Foreground>
+                            <Label.Background>
+                                <SolidColorBrush Opacity="0.445"/>
+                            </Label.Background>
+                        </Label>
+                        <TextBox x:Name="tax_Copy2" Style="{StaticResource CustomTextBoxStyle}" Margin="516,0,0,0" TextWrapping="Wrap" Tag="" Width="241" Height="40" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" BorderBrush="#FFD2D2D2" FontSize="14" TextChanged="recheck" HorizontalAlignment="Left" Panel.ZIndex="1" VerticalAlignment="Center" />
+                        <TextBlock Margin="788,36,44,37" Text="This form allows you to securely and efficiently submit your essential data, ensuring our records are accurate and up-to-date, which supports effective organizational workflows and administrative processes." TextWrapping="Wrap" TextAlignment="Right" >
+                            <TextBlock.Foreground>
+                                <SolidColorBrush Color="Black" Opacity="0.6"/>
+                            </TextBlock.Foreground>
+                        </TextBlock>
 
                     </Grid>
                     <!--book-edit-view-->
@@ -1238,6 +1059,13 @@ ItemContainerStyle="{DynamicResource theComboBoxItem}" Height="40" VerticalConte
                         </Rectangle>
                         <Label Content="BOOK INFO" HorizontalAlignment="Left" Margin="263,231,0,0" VerticalAlignment="Top" Height="38" Width="203" FontSize="20" FontFamily="Bahnschrift Light" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Column="1"/>
 
+                        <TextBlock Margin="527,269,46,171" Text="This section enables you to seamlessly update book information, ensuring our inventory remains precise and current. Effortlessly add, edit, or remove book details." TextWrapping="Wrap" TextAlignment="Right" Grid.ColumnSpan="2" >
+                            <TextBlock.Foreground>
+                                <SolidColorBrush Color="Black" Opacity="0.6"/>
+                            </TextBlock.Foreground>
+                        </TextBlock>
+
+
                         <ComboBox 
                             x:Name="selectBookAuthor" 
                             FontSize="13"
@@ -1245,12 +1073,13 @@ ItemContainerStyle="{DynamicResource theComboBoxItem}" Height="40" VerticalConte
                             Padding="15,5,15,5"
                             HorizontalContentAlignment="Center"
                             VerticalAlignment="Top"
-                            ItemContainerStyle="{DynamicResource theComboBoxItem}" Height="40" VerticalContentAlignment="Center" Margin="0,420,450,0" HorizontalAlignment="Right" Width="242" Foreground="Black" BorderBrush="#FF0C0000" Background="#FFECECEC" Grid.ColumnSpan="2">
-                        </ComboBox>
-                        <Button x:Name="btnAddBook" Content="Save" HorizontalAlignment="Left" Margin="289,456,0,0" VerticalAlignment="Top" Width="123" Height="32" Click="btnAddBook_Click" Grid.Column="1"/>
+                            ItemContainerStyle="{DynamicResource theComboBoxItem}" Height="40" VerticalContentAlignment="Center" Margin="0,420,67,0" HorizontalAlignment="Right" Width="242" Foreground="Black" BorderBrush="#FF0C0000" Background="#FFECECEC"/>
 
 
-                        <Label Content="ISBN No." HorizontalAlignment="Left" VerticalAlignment="Top" Margin="382,322,0,0" Height="24" RenderTransformOrigin="0.5,0.5">
+                        <Button x:Name="saveBtn" Style="{StaticResource btncutsomstyle}" Cursor="Hand" Content="Update stock" HorizontalAlignment="Left" Margin="204,456,0,0" VerticalAlignment="Top" Height="32" Width="102" Background="{x:Null}" BorderBrush="#FF797676" Click="save" Grid.Column="1"/>
+                        <Button x:Name="clearBtn" Style="{StaticResource btncutsomstyle}" Cursor="Hand" Content="Clear" HorizontalAlignment="Left" Margin="314,456,0,0" VerticalAlignment="Top" Height="32" Width="102" Background="{x:Null}" BorderBrush="#FF797676" Click="save" Grid.Column="1"/>
+
+                        <Label Content="ISBN No." HorizontalAlignment="Left" VerticalAlignment="Top" Margin="283,322,0,0" Height="24" RenderTransformOrigin="0.5,0.5">
                             <Label.RenderTransform>
                                 <TransformGroup>
                                     <ScaleTransform ScaleY="1"/>
@@ -1266,10 +1095,10 @@ ItemContainerStyle="{DynamicResource theComboBoxItem}" Height="40" VerticalConte
                                 <SolidColorBrush Opacity="0.445"/>
                             </Label.Background>
                         </Label>
-                        <TextBox x:Name="txtBookISBN" Style="{StaticResource CustomTextBoxStyle}" Margin="382,351,0,0" TextWrapping="Wrap" Tag="" Width="242" Height="40" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" BorderBrush="#FFD2D2D2" FontSize="14" TextChanged="recheck" HorizontalAlignment="Left" Panel.ZIndex="1" Grid.ColumnSpan="2" />
+                        <TextBox x:Name="txtBookISBN" Style="{StaticResource CustomTextBoxStyle}" Margin="281,351,0,0" TextWrapping="Wrap" Tag="" Width="242" Height="40" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" BorderBrush="#FFD2D2D2" FontSize="14" TextChanged="recheck" HorizontalAlignment="Left" Panel.ZIndex="1" />
 
 
-                        <Label Content="Title" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="58,322,0,0" Height="24" RenderTransformOrigin="0.5,0.5">
+                        <Label Content="Title" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="14,322,0,0" Height="24" RenderTransformOrigin="0.5,0.5">
                             <Label.RenderTransform>
                                 <TransformGroup>
                                     <ScaleTransform ScaleY="1"/>
@@ -1285,8 +1114,8 @@ ItemContainerStyle="{DynamicResource theComboBoxItem}" Height="40" VerticalConte
                                 <SolidColorBrush Opacity="0.445"/>
                             </Label.Background>
                         </Label>
-                        <TextBox x:Name="txtBookTitle" Style="{StaticResource CustomTextBoxStyle}" Margin="58,351,0,0" TextWrapping="Wrap" Tag="" Width="242" Height="40" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" BorderBrush="#FFD2D2D2" FontSize="14" TextChanged="recheck" HorizontalAlignment="Left" Panel.ZIndex="1" />
-                        <Label Content="Year of the Book" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="58,391,0,0" Height="24" RenderTransformOrigin="0.5,0.5">
+                        <TextBox x:Name="txtBookTitle" Style="{StaticResource CustomTextBoxStyle}" Margin="14,351,0,0" TextWrapping="Wrap" Tag="" Width="242" Height="40" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" BorderBrush="#FFD2D2D2" FontSize="14" TextChanged="recheck" HorizontalAlignment="Left" Panel.ZIndex="1" />
+                        <Label Content="Year of the Book" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="14,391,0,0" Height="24" RenderTransformOrigin="0.5,0.5">
                             <Label.RenderTransform>
                                 <TransformGroup>
                                     <ScaleTransform ScaleY="1"/>
@@ -1302,8 +1131,8 @@ ItemContainerStyle="{DynamicResource theComboBoxItem}" Height="40" VerticalConte
                                 <SolidColorBrush Opacity="0.65"/>
                             </Label.Background>
                         </Label>
-                        <TextBox x:Name="txtBookYear" Style="{StaticResource CustomTextBoxStyle}" Margin="58,420,0,0" TextWrapping="Wrap" Tag="" Width="242" Height="40" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" BorderBrush="#FFD2D2D2" FontSize="14" TextChanged="recheck" HorizontalAlignment="Left" Panel.ZIndex="1" />
-                        <Label Content="Author of the book" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="382,391,0,0" Height="24" RenderTransformOrigin="0.5,0.5">
+                        <TextBox x:Name="txtBookYear" Style="{StaticResource CustomTextBoxStyle}" Margin="14,420,0,0" TextWrapping="Wrap" Tag="" Width="242" Height="40" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" BorderBrush="#FFD2D2D2" FontSize="14" TextChanged="recheck" HorizontalAlignment="Left" Panel.ZIndex="1" />
+                        <Label Content="Author of the book" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="289,391,0,0" Height="24" RenderTransformOrigin="0.5,0.5">
                             <Label.RenderTransform>
                                 <TransformGroup>
                                     <ScaleTransform ScaleY="1"/>
@@ -1424,8 +1253,862 @@ ItemContainerStyle="{DynamicResource theComboBoxItem}" Height="40" VerticalConte
                 </Grid>
 
 
+                <Grid x:Name="edit_view_stationary" Grid.ColumnSpan="2" Margin="526,0,0,0" Visibility="Hidden">
 
-                <Button x:Name="add_item__Copy" Style="{StaticResource btncutsomstyle}" Cursor="Hand" HorizontalAlignment="Left" Margin="41,551,0,0" VerticalAlignment="Top" Height="92" Width="87" Padding="0,0,0,0" Background="{x:Null}" BorderThickness="1,1,1,1" Foreground="#FFAFAFAF" Click="add_voucher" >
+                    <!--item-edit-view-->
+                    <Grid x:Name="item_view_stationary" Margin="-10,56,10,357" Panel.ZIndex="1" >
+
+                        <Label Content="ITEM INFO" HorizontalAlignment="Left" Margin="845,-3,0,0" VerticalAlignment="Top" Height="44" Width="229" FontSize="20" FontFamily="Bahnschrift Light" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+
+
+                        <Label Content="Price" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="27,151,0,0" Height="24" RenderTransformOrigin="0.5,0.5">
+                            <Label.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleY="1"/>
+                                    <SkewTransform/>
+                                    <RotateTransform/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Label.RenderTransform>
+                            <Label.Foreground>
+                                <SolidColorBrush Color="Black" Opacity="0.8"/>
+                            </Label.Foreground>
+                            <Label.Background>
+                                <SolidColorBrush Opacity="0.445"/>
+                            </Label.Background>
+                        </Label>
+                        <TextBox x:Name="Price2" Style="{StaticResource CustomTextBoxStyle}" Margin="24,175,0,0" TextWrapping="Wrap" Tag="" Width="196" Height="40" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" BorderBrush="#FFD2D2D2" FontSize="14" TextChanged="recheck" HorizontalAlignment="Left" Panel.ZIndex="1" />
+                        <Label Content="Cost" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="27,93,0,0" Height="24" RenderTransformOrigin="0.5,0.5">
+                            <Label.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleY="1"/>
+                                    <SkewTransform/>
+                                    <RotateTransform/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Label.RenderTransform>
+                            <Label.Foreground>
+                                <SolidColorBrush Color="Black" Opacity="0.8"/>
+                            </Label.Foreground>
+                            <Label.Background>
+                                <SolidColorBrush Opacity="0.445"/>
+                            </Label.Background>
+                        </Label>
+                        <TextBox x:Name="cost2" Style="{StaticResource CustomTextBoxStyle}" Margin="24,114,0,0" TextWrapping="Wrap" Tag="" Width="196" Height="40" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" BorderBrush="#FFD2D2D2" FontSize="14" TextChanged="recheck" HorizontalAlignment="Left" Panel.ZIndex="1" />
+                        <Label Content="TAX" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30,29,0,0" Height="24" RenderTransformOrigin="0.5,0.5">
+                            <Label.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleY="1"/>
+                                    <SkewTransform/>
+                                    <RotateTransform/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Label.RenderTransform>
+                            <Label.Foreground>
+                                <SolidColorBrush Color="Black" Opacity="0.8"/>
+                            </Label.Foreground>
+                            <Label.Background>
+                                <SolidColorBrush Opacity="0.445"/>
+                            </Label.Background>
+                        </Label>
+                        <TextBox x:Name="tax2" Style="{StaticResource CustomTextBoxStyle}" Margin="24,53,0,0" TextWrapping="Wrap" Tag="" Width="196" Height="40" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" BorderBrush="#FFD2D2D2" FontSize="14" TextChanged="recheck" HorizontalAlignment="Left" Panel.ZIndex="1" />
+
+                        <Label Content="Item type" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="244,33,0,0" Height="30" RenderTransformOrigin="0.5,0.5">
+                            <Label.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleY="1"/>
+                                    <SkewTransform/>
+                                    <RotateTransform/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Label.RenderTransform>
+                            <Label.Foreground>
+                                <SolidColorBrush Color="Black" Opacity="0.8"/>
+                            </Label.Foreground>
+                            <Label.Background>
+                                <SolidColorBrush Opacity="0.445"/>
+                            </Label.Background>
+                        </Label>
+                        <ComboBox 
+                            x:Name="selectItemType2" 
+                            FontSize="13"
+                            Style="{DynamicResource theComboBox}"
+                            Padding="15,5,15,5"
+                            HorizontalContentAlignment="Center"
+                            VerticalAlignment="Top"
+                            ItemContainerStyle="{DynamicResource theComboBoxItem}" Height="33" VerticalContentAlignment="Center" Margin="244,57,0,0" HorizontalAlignment="Left" Width="242" Foreground="Black" BorderBrush="#FF0C0000" Background="#FFECECEC" >
+                        </ComboBox>
+                        <Label Content="Inventory type" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="248,154,0,0" Height="33" RenderTransformOrigin="0.5,0.5">
+                            <Label.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleY="1"/>
+                                    <SkewTransform/>
+                                    <RotateTransform/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Label.RenderTransform>
+                            <Label.Foreground>
+                                <SolidColorBrush Color="Black" Opacity="0.8"/>
+                            </Label.Foreground>
+                            <Label.Background>
+                                <SolidColorBrush Opacity="0.445"/>
+                            </Label.Background>
+                        </Label>
+                        <ComboBox 
+                            x:Name="selectItemType_Copy222" 
+                            FontSize="13"
+                            Style="{DynamicResource theComboBox}"
+                            Padding="15,5,15,5"
+                            HorizontalContentAlignment="Center"
+                            VerticalAlignment="Top"
+                            ItemContainerStyle="{DynamicResource theComboBoxItem}" Height="35" VerticalContentAlignment="Center" Margin="249,235,0,0" HorizontalAlignment="Left" Width="242" Foreground="Black" BorderBrush="#FF0C0000" Background="#FFECECEC"/>
+                        <ComboBox 
+                            x:Name="selectItemType_Copy12" 
+                            FontSize="13"
+                            Style="{DynamicResource theComboBox}"
+                            Padding="15,5,15,5"
+                            HorizontalContentAlignment="Center"
+                            VerticalAlignment="Top"
+                            ItemContainerStyle="{DynamicResource theComboBoxItem}" Height="20" VerticalContentAlignment="Center" Margin="248,179,0,0" HorizontalAlignment="Left" Width="242" Foreground="Black" BorderBrush="#FF0C0000" Background="#FFECECEC"/>
+                        <Label Content="Location" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="249,97,0,0" Height="30" RenderTransformOrigin="0.5,0.5">
+                            <Label.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleY="1"/>
+                                    <SkewTransform/>
+                                    <RotateTransform/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Label.RenderTransform>
+                            <Label.Foreground>
+                                <SolidColorBrush Color="Black" Opacity="0.8"/>
+                            </Label.Foreground>
+                            <Label.Background>
+                                <SolidColorBrush Opacity="0.445"/>
+                            </Label.Background>
+                        </Label>
+                        <ComboBox 
+                            x:Name="selectItemType_Copy22" 
+                            FontSize="13"
+                            Style="{DynamicResource theComboBox}"
+                            Padding="15,5,15,5"
+                            HorizontalContentAlignment="Center"
+                            VerticalAlignment="Top"
+                            ItemContainerStyle="{DynamicResource theComboBoxItem}" Height="33" VerticalContentAlignment="Center" Margin="248,121,0,0" HorizontalAlignment="Left" Width="242" Foreground="Black" BorderBrush="#FF0C0000" Background="#FFECECEC"/>
+                        <Label Content="Discount Amount" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="516,32,0,0" Height="24" RenderTransformOrigin="0.5,0.5">
+                            <Label.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleY="1"/>
+                                    <SkewTransform/>
+                                    <RotateTransform/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Label.RenderTransform>
+                            <Label.Foreground>
+                                <SolidColorBrush Color="Black" Opacity="0.8"/>
+                            </Label.Foreground>
+                            <Label.Background>
+                                <SolidColorBrush Opacity="0.445"/>
+                            </Label.Background>
+                        </Label>
+                        <TextBox x:Name="tax_Copy222" Style="{StaticResource CustomTextBoxStyle}" Margin="516,54,0,0" TextWrapping="Wrap" Tag="" Width="241" Height="40" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" BorderBrush="#FFD2D2D2" FontSize="14" TextChanged="recheck" HorizontalAlignment="Left" Panel.ZIndex="1" />
+                        <Label Content="Qty" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30,209,0,0" Height="31" RenderTransformOrigin="0.5,0.5">
+                            <Label.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleY="1"/>
+                                    <SkewTransform/>
+                                    <RotateTransform/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Label.RenderTransform>
+                            <Label.Foreground>
+                                <SolidColorBrush Color="Black" Opacity="0.8"/>
+                            </Label.Foreground>
+                            <Label.Background>
+                                <SolidColorBrush Opacity="0.445"/>
+                            </Label.Background>
+                        </Label>
+                        <TextBox x:Name="tax_Copy12" Style="{StaticResource CustomTextBoxStyle}" Margin="24,231,0,0" TextWrapping="Wrap" Tag="" Width="196" Height="40" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" BorderBrush="#FFD2D2D2" FontSize="14" TextChanged="recheck" HorizontalAlignment="Left" Panel.ZIndex="1" />
+                        <Label Content="Item type" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="244,214,0,0" Height="31" RenderTransformOrigin="0.5,0.5">
+                            <Label.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleY="1"/>
+                                    <SkewTransform/>
+                                    <RotateTransform/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Label.RenderTransform>
+                            <Label.Foreground>
+                                <SolidColorBrush Color="Black" Opacity="0.8"/>
+                            </Label.Foreground>
+                            <Label.Background>
+                                <SolidColorBrush Opacity="0.445"/>
+                            </Label.Background>
+                        </Label>
+                        <Label Content="Item Name" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="516,103,0,0" Height="24" RenderTransformOrigin="0.5,0.5">
+                            <Label.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleY="1"/>
+                                    <SkewTransform/>
+                                    <RotateTransform/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Label.RenderTransform>
+                            <Label.Foreground>
+                                <SolidColorBrush Color="Black" Opacity="0.8"/>
+                            </Label.Foreground>
+                            <Label.Background>
+                                <SolidColorBrush Opacity="0.445"/>
+                            </Label.Background>
+                        </Label>
+                        <TextBox x:Name="tax_Copy22" Style="{StaticResource CustomTextBoxStyle}" Margin="516,0,0,0" TextWrapping="Wrap" Tag="" Width="241" Height="40" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" BorderBrush="#FFD2D2D2" FontSize="14" TextChanged="recheck" HorizontalAlignment="Left" Panel.ZIndex="1" VerticalAlignment="Center" />
+                        <TextBlock Margin="788,36,44,37" Text="This form allows you to securely and efficiently submit your essential data, ensuring our records are accurate and up-to-date, which supports effective organizational workflows and administrative processes." TextWrapping="Wrap" TextAlignment="Right" >
+                            <TextBlock.Foreground>
+                                <SolidColorBrush Color="Black" Opacity="0.6"/>
+                            </TextBlock.Foreground>
+                        </TextBlock>
+
+                    </Grid>
+                    <!--book-edit-view-->
+                    <Grid Margin="0,165,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="299*"/>
+                            <ColumnDefinition Width="238*"/>
+                        </Grid.ColumnDefinitions>
+                        <Rectangle Height="2" Stroke="Black" RenderTransformOrigin="0.5,0.5" Margin="34,250,221,298" Opacity="0.1" Grid.ColumnSpan="2">
+                            <Rectangle.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleY="-1"/>
+                                    <SkewTransform/>
+                                    <RotateTransform/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Rectangle.RenderTransform>
+                        </Rectangle>
+                        <Label Content="STATIONARY INFO" HorizontalAlignment="Left" Margin="229,231,0,0" VerticalAlignment="Top" Height="38" Width="203" FontSize="20" FontFamily="Bahnschrift Light" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Column="1"/>
+
+                        <TextBlock Margin="507,269,66,171" Text="This specialized section simplifies updating study material details, ensuring our stationery inventory stays well-organized. Effortlessly refine, manage, or modify specifics to maintain efficient and reliable resource tracking." TextWrapping="Wrap" TextAlignment="Right" Grid.ColumnSpan="2" >
+                            <TextBlock.Foreground>
+                                <SolidColorBrush Color="Black" Opacity="0.6"/>
+                            </TextBlock.Foreground>
+                        </TextBlock>
+
+
+                        <ComboBox 
+                            x:Name="selectBookAuthor2" 
+                            FontSize="13"
+                            Style="{DynamicResource theComboBox}"
+                            Padding="15,5,15,5"
+                            HorizontalContentAlignment="Center"
+                            VerticalAlignment="Top"
+                            ItemContainerStyle="{DynamicResource theComboBoxItem}" Height="40" VerticalContentAlignment="Center" Margin="0,420,67,0" HorizontalAlignment="Right" Width="242" Foreground="Black" BorderBrush="#FF0C0000" Background="#FFECECEC"/>
+
+
+                        <Button x:Name="saveBtn2" Style="{StaticResource btncutsomstyle}" Cursor="Hand" Content="Update stock" HorizontalAlignment="Left" Margin="204,456,0,0" VerticalAlignment="Top" Height="32" Width="102" Background="{x:Null}" BorderBrush="#FF797676" Click="save" Grid.Column="1"/>
+                        <Button x:Name="clearBtn2" Style="{StaticResource btncutsomstyle}" Cursor="Hand" Content="Clear" HorizontalAlignment="Left" Margin="314,456,0,0" VerticalAlignment="Top" Height="32" Width="102" Background="{x:Null}" BorderBrush="#FF797676" Click="save" Grid.Column="1"/>
+
+                        <Label Content="ISBN No." HorizontalAlignment="Left" VerticalAlignment="Top" Margin="283,322,0,0" Height="24" RenderTransformOrigin="0.5,0.5">
+                            <Label.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleY="1"/>
+                                    <SkewTransform/>
+                                    <RotateTransform/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Label.RenderTransform>
+                            <Label.Foreground>
+                                <SolidColorBrush Color="Black" Opacity="0.8"/>
+                            </Label.Foreground>
+                            <Label.Background>
+                                <SolidColorBrush Opacity="0.445"/>
+                            </Label.Background>
+                        </Label>
+                        <TextBox x:Name="txtBookISBN2" Style="{StaticResource CustomTextBoxStyle}" Margin="281,351,0,0" TextWrapping="Wrap" Tag="" Width="242" Height="40" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" BorderBrush="#FFD2D2D2" FontSize="14" TextChanged="recheck" HorizontalAlignment="Left" Panel.ZIndex="1" />
+
+
+                        <Label Content="Title" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="14,322,0,0" Height="24" RenderTransformOrigin="0.5,0.5">
+                            <Label.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleY="1"/>
+                                    <SkewTransform/>
+                                    <RotateTransform/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Label.RenderTransform>
+                            <Label.Foreground>
+                                <SolidColorBrush Color="Black" Opacity="0.8"/>
+                            </Label.Foreground>
+                            <Label.Background>
+                                <SolidColorBrush Opacity="0.445"/>
+                            </Label.Background>
+                        </Label>
+                        <TextBox x:Name="txtBookTitle2" Style="{StaticResource CustomTextBoxStyle}" Margin="14,351,0,0" TextWrapping="Wrap" Tag="" Width="242" Height="40" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" BorderBrush="#FFD2D2D2" FontSize="14" TextChanged="recheck" HorizontalAlignment="Left" Panel.ZIndex="1" />
+                        <Label Content="Year of the Book" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="14,391,0,0" Height="24" RenderTransformOrigin="0.5,0.5">
+                            <Label.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleY="1"/>
+                                    <SkewTransform/>
+                                    <RotateTransform/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Label.RenderTransform>
+                            <Label.Foreground>
+                                <SolidColorBrush Color="Black" Opacity="0.8"/>
+                            </Label.Foreground>
+                            <Label.Background>
+                                <SolidColorBrush Opacity="0.65"/>
+                            </Label.Background>
+                        </Label>
+                        <TextBox x:Name="txtBookYear2" Style="{StaticResource CustomTextBoxStyle}" Margin="14,420,0,0" TextWrapping="Wrap" Tag="" Width="242" Height="40" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" BorderBrush="#FFD2D2D2" FontSize="14" TextChanged="recheck" HorizontalAlignment="Left" Panel.ZIndex="1" />
+                        <Label Content="Author of the book" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="289,391,0,0" Height="24" RenderTransformOrigin="0.5,0.5">
+                            <Label.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleY="1"/>
+                                    <SkewTransform/>
+                                    <RotateTransform/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Label.RenderTransform>
+                            <Label.Foreground>
+                                <SolidColorBrush Color="Black" Opacity="0.8"/>
+                            </Label.Foreground>
+                            <Label.Background>
+                                <SolidColorBrush Opacity="0.445"/>
+                            </Label.Background>
+                        </Label>
+
+
+
+
+
+                    </Grid>
+
+
+                    <Grid x:Name="edit_view_book_2" Grid.ColumnSpan="2" Margin="526,0,0,0" Visibility="Hidden">
+
+
+
+                        <!--item-edit-view-->
+                        <Grid x:Name="item_view_book_2" Margin="0,-1,0,518" >
+                            <Grid.Background>
+                                <SolidColorBrush Color="Black" Opacity="0.4"/>
+                            </Grid.Background>
+
+                            <Label Content="Item info" HorizontalAlignment="Left" Margin="741,0,0,0" VerticalAlignment="Center" Height="64" Width="292" FontSize="20" FontFamily="Bahnschrift Light" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+
+                            <TextBox HorizontalAlignment="Left" Margin="81,53,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                            <TextBox HorizontalAlignment="Left" Margin="81,81,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                            <TextBox HorizontalAlignment="Left" Margin="81,112,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                            <TextBox HorizontalAlignment="Left" Margin="81,112,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                            <TextBox HorizontalAlignment="Left" Margin="81,145,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                            <TextBox HorizontalAlignment="Left" Margin="247,53,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+
+                            <ComboBox 
+x:Name="select_vehicle_manfacture2" 
+FontSize="13"
+Style="{DynamicResource theComboBox}"
+Padding="15,5,15,5"
+HorizontalContentAlignment="Center"
+VerticalAlignment="Top"
+ItemContainerStyle="{DynamicResource theComboBoxItem}" Height="40" VerticalContentAlignment="Center" Margin="0,53,0,0" HorizontalAlignment="Center" Width="242" Foreground="Black" BorderBrush="#FF0C0000" Background="#FFECECEC">
+                                <ComboBoxItem Content="Nugegoda"/>
+                                <ComboBoxItem Content="Kaluthara"/>
+                                <ComboBoxItem Content="Matara"/>
+
+                            </ComboBox>
+                            <ComboBox 
+                x:Name="sect_vehicle_manufacture_Copy2" 
+                FontSize="13"
+                Style="{DynamicResource theComboBox}"
+                Padding="15,5,15,5"
+                HorizontalContentAlignment="Center"
+                VerticalAlignment="Top"
+                ItemContainerStyle="{DynamicResource theComboBoxItem}" Height="40" VerticalContentAlignment="Center" Margin="0,112,416,0" HorizontalAlignment="Right" Width="242" Foreground="Black" BorderBrush="#FF0C0000" Background="#FFECECEC">
+                                <ComboBoxItem Content="Nugegoda"/>
+                                <ComboBoxItem Content="Kaluthara"/>
+                                <ComboBoxItem Content="Matara"/>
+
+                            </ComboBox>
+                        </Grid>
+                        <!--voucher-edit-view-->
+                        <Grid Margin="0,165,0,0">
+                            <Grid.Background>
+                                <SolidColorBrush Color="Black" Opacity="0.2"/>
+                            </Grid.Background>
+
+                            <Label Content="Voucher info" HorizontalAlignment="Left" Margin="741,0,0,0" VerticalAlignment="Center" Height="64" Width="292" FontSize="20" FontFamily="Bahnschrift Light" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+
+
+                            <ComboBox 
+                x:Name="voucher_tpe2" 
+                FontSize="13"
+                Style="{DynamicResource theComboBox}"
+                Padding="15,5,15,5"
+                HorizontalContentAlignment="Center"
+                VerticalAlignment="Top"
+                ItemContainerStyle="{DynamicResource theComboBoxItem}" Height="40" VerticalContentAlignment="Center" Margin="0,138,774,0" HorizontalAlignment="Right" Width="242" Foreground="Black" BorderBrush="#FF0C0000" Background="#FFECECEC">
+                                <ComboBoxItem Content="Nugegoda"/>
+                                <ComboBoxItem Content="Kaluthara"/>
+                                <ComboBoxItem Content="Matara"/>
+
+                            </ComboBox>
+                            <ComboBox 
+                x:Name="staus2" 
+                FontSize="13"
+                Style="{DynamicResource theComboBox}"
+                Padding="15,5,15,5"
+                HorizontalContentAlignment="Center"
+                VerticalAlignment="Top"
+                ItemContainerStyle="{DynamicResource theComboBoxItem}" Height="40" VerticalContentAlignment="Center" Margin="0,62,774,0" HorizontalAlignment="Right" Width="242" Foreground="Black" BorderBrush="#FF0C0000" Background="#FFECECEC">
+                                <ComboBoxItem Content="Nugegoda"/>
+                                <ComboBoxItem Content="Kaluthara"/>
+                                <ComboBoxItem Content="Matara"/>
+
+                            </ComboBox>
+
+                            <TextBox HorizontalAlignment="Left" Margin="396,62,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                            <TextBox HorizontalAlignment="Left" Margin="396,95,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                            <TextBox HorizontalAlignment="Left" Margin="396,128,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+
+                            <TextBox HorizontalAlignment="Left" Margin="396,160,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                            <TextBox HorizontalAlignment="Left" Margin="396,192,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                            <Button Content="Save" HorizontalAlignment="Left" Margin="887,456,0,0" VerticalAlignment="Top" Width="123" Height="32"/>
+
+                        </Grid>
+                    </Grid>
+
+
+                </Grid>
+
+
+                <Grid x:Name="edit_view_voucher" Grid.ColumnSpan="2" Margin="526,0,0,0" Visibility="Visible">
+
+                    <!--item-edit-view-->
+                    <Grid x:Name="item_view_voucher" Margin="-10,56,10,357" Panel.ZIndex="1" >
+
+                        <Label Content="ITEM INFO" HorizontalAlignment="Left" Margin="845,-3,0,0" VerticalAlignment="Top" Height="44" Width="229" FontSize="20" FontFamily="Bahnschrift Light" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+
+
+                        <Label Content="Price" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="27,151,0,0" Height="24" RenderTransformOrigin="0.5,0.5">
+                            <Label.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleY="1"/>
+                                    <SkewTransform/>
+                                    <RotateTransform/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Label.RenderTransform>
+                            <Label.Foreground>
+                                <SolidColorBrush Color="Black" Opacity="0.8"/>
+                            </Label.Foreground>
+                            <Label.Background>
+                                <SolidColorBrush Opacity="0.445"/>
+                            </Label.Background>
+                        </Label>
+                        <TextBox x:Name="Price3" Style="{StaticResource CustomTextBoxStyle}" Margin="24,175,0,0" TextWrapping="Wrap" Tag="" Width="196" Height="40" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" BorderBrush="#FFD2D2D2" FontSize="14" TextChanged="recheck" HorizontalAlignment="Left" Panel.ZIndex="1" />
+                        <Label Content="Cost" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="27,93,0,0" Height="24" RenderTransformOrigin="0.5,0.5">
+                            <Label.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleY="1"/>
+                                    <SkewTransform/>
+                                    <RotateTransform/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Label.RenderTransform>
+                            <Label.Foreground>
+                                <SolidColorBrush Color="Black" Opacity="0.8"/>
+                            </Label.Foreground>
+                            <Label.Background>
+                                <SolidColorBrush Opacity="0.445"/>
+                            </Label.Background>
+                        </Label>
+                        <TextBox x:Name="cost3" Style="{StaticResource CustomTextBoxStyle}" Margin="24,114,0,0" TextWrapping="Wrap" Tag="" Width="196" Height="40" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" BorderBrush="#FFD2D2D2" FontSize="14" TextChanged="recheck" HorizontalAlignment="Left" Panel.ZIndex="1" />
+                        <Label Content="TAX" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30,29,0,0" Height="24" RenderTransformOrigin="0.5,0.5">
+                            <Label.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleY="1"/>
+                                    <SkewTransform/>
+                                    <RotateTransform/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Label.RenderTransform>
+                            <Label.Foreground>
+                                <SolidColorBrush Color="Black" Opacity="0.8"/>
+                            </Label.Foreground>
+                            <Label.Background>
+                                <SolidColorBrush Opacity="0.445"/>
+                            </Label.Background>
+                        </Label>
+                        <TextBox x:Name="tax3" Style="{StaticResource CustomTextBoxStyle}" Margin="24,53,0,0" TextWrapping="Wrap" Tag="" Width="196" Height="40" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" BorderBrush="#FFD2D2D2" FontSize="14" TextChanged="recheck" HorizontalAlignment="Left" Panel.ZIndex="1" />
+
+                        <Label Content="Item type" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="244,33,0,0" Height="30" RenderTransformOrigin="0.5,0.5">
+                            <Label.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleY="1"/>
+                                    <SkewTransform/>
+                                    <RotateTransform/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Label.RenderTransform>
+                            <Label.Foreground>
+                                <SolidColorBrush Color="Black" Opacity="0.8"/>
+                            </Label.Foreground>
+                            <Label.Background>
+                                <SolidColorBrush Opacity="0.445"/>
+                            </Label.Background>
+                        </Label>
+                        <ComboBox 
+                            x:Name="selectItemType3" 
+                            FontSize="13"
+                            Style="{DynamicResource theComboBox}"
+                            Padding="15,5,15,5"
+                            HorizontalContentAlignment="Center"
+                            VerticalAlignment="Top"
+                            ItemContainerStyle="{DynamicResource theComboBoxItem}" Height="33" VerticalContentAlignment="Center" Margin="244,57,0,0" HorizontalAlignment="Left" Width="242" Foreground="Black" BorderBrush="#FF0C0000" Background="#FFECECEC" >
+                        </ComboBox>
+                        <Label Content="Inventory type" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="248,154,0,0" Height="33" RenderTransformOrigin="0.5,0.5">
+                            <Label.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleY="1"/>
+                                    <SkewTransform/>
+                                    <RotateTransform/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Label.RenderTransform>
+                            <Label.Foreground>
+                                <SolidColorBrush Color="Black" Opacity="0.8"/>
+                            </Label.Foreground>
+                            <Label.Background>
+                                <SolidColorBrush Opacity="0.445"/>
+                            </Label.Background>
+                        </Label>
+                        <ComboBox 
+                            x:Name="selectItemType_Copy3" 
+                            FontSize="13"
+                            Style="{DynamicResource theComboBox}"
+                            Padding="15,5,15,5"
+                            HorizontalContentAlignment="Center"
+                            VerticalAlignment="Top"
+                            ItemContainerStyle="{DynamicResource theComboBoxItem}" Height="35" VerticalContentAlignment="Center" Margin="249,235,0,0" HorizontalAlignment="Left" Width="242" Foreground="Black" BorderBrush="#FF0C0000" Background="#FFECECEC"/>
+                        <ComboBox 
+                            x:Name="selectItemType_Copy13" 
+                            FontSize="13"
+                            Style="{DynamicResource theComboBox}"
+                            Padding="15,5,15,5"
+                            HorizontalContentAlignment="Center"
+                            VerticalAlignment="Top"
+                            ItemContainerStyle="{DynamicResource theComboBoxItem}" Height="20" VerticalContentAlignment="Center" Margin="248,179,0,0" HorizontalAlignment="Left" Width="242" Foreground="Black" BorderBrush="#FF0C0000" Background="#FFECECEC"/>
+                        <Label Content="Location" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="249,97,0,0" Height="30" RenderTransformOrigin="0.5,0.5">
+                            <Label.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleY="1"/>
+                                    <SkewTransform/>
+                                    <RotateTransform/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Label.RenderTransform>
+                            <Label.Foreground>
+                                <SolidColorBrush Color="Black" Opacity="0.8"/>
+                            </Label.Foreground>
+                            <Label.Background>
+                                <SolidColorBrush Opacity="0.445"/>
+                            </Label.Background>
+                        </Label>
+                        <ComboBox 
+                            x:Name="selectItemType_Copy23" 
+                            FontSize="13"
+                            Style="{DynamicResource theComboBox}"
+                            Padding="15,5,15,5"
+                            HorizontalContentAlignment="Center"
+                            VerticalAlignment="Top"
+                            ItemContainerStyle="{DynamicResource theComboBoxItem}" Height="33" VerticalContentAlignment="Center" Margin="248,121,0,0" HorizontalAlignment="Left" Width="242" Foreground="Black" BorderBrush="#FF0C0000" Background="#FFECECEC"/>
+                        <Label Content="Discount Amount" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="516,32,0,0" Height="24" RenderTransformOrigin="0.5,0.5">
+                            <Label.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleY="1"/>
+                                    <SkewTransform/>
+                                    <RotateTransform/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Label.RenderTransform>
+                            <Label.Foreground>
+                                <SolidColorBrush Color="Black" Opacity="0.8"/>
+                            </Label.Foreground>
+                            <Label.Background>
+                                <SolidColorBrush Opacity="0.445"/>
+                            </Label.Background>
+                        </Label>
+                        <TextBox x:Name="tax_Copy3" Style="{StaticResource CustomTextBoxStyle}" Margin="516,54,0,0" TextWrapping="Wrap" Tag="" Width="241" Height="40" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" BorderBrush="#FFD2D2D2" FontSize="14" TextChanged="recheck" HorizontalAlignment="Left" Panel.ZIndex="1" />
+                        <Label Content="Qty" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30,209,0,0" Height="31" RenderTransformOrigin="0.5,0.5">
+                            <Label.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleY="1"/>
+                                    <SkewTransform/>
+                                    <RotateTransform/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Label.RenderTransform>
+                            <Label.Foreground>
+                                <SolidColorBrush Color="Black" Opacity="0.8"/>
+                            </Label.Foreground>
+                            <Label.Background>
+                                <SolidColorBrush Opacity="0.445"/>
+                            </Label.Background>
+                        </Label>
+                        <TextBox x:Name="tax_Copy13" Style="{StaticResource CustomTextBoxStyle}" Margin="24,231,0,0" TextWrapping="Wrap" Tag="" Width="196" Height="40" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" BorderBrush="#FFD2D2D2" FontSize="14" TextChanged="recheck" HorizontalAlignment="Left" Panel.ZIndex="1" />
+                        <Label Content="Item type" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="244,214,0,0" Height="31" RenderTransformOrigin="0.5,0.5">
+                            <Label.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleY="1"/>
+                                    <SkewTransform/>
+                                    <RotateTransform/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Label.RenderTransform>
+                            <Label.Foreground>
+                                <SolidColorBrush Color="Black" Opacity="0.8"/>
+                            </Label.Foreground>
+                            <Label.Background>
+                                <SolidColorBrush Opacity="0.445"/>
+                            </Label.Background>
+                        </Label>
+                        <Label Content="Item Name" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="516,103,0,0" Height="24" RenderTransformOrigin="0.5,0.5">
+                            <Label.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleY="1"/>
+                                    <SkewTransform/>
+                                    <RotateTransform/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Label.RenderTransform>
+                            <Label.Foreground>
+                                <SolidColorBrush Color="Black" Opacity="0.8"/>
+                            </Label.Foreground>
+                            <Label.Background>
+                                <SolidColorBrush Opacity="0.445"/>
+                            </Label.Background>
+                        </Label>
+                        <TextBox x:Name="tax_Copy23" Style="{StaticResource CustomTextBoxStyle}" Margin="516,0,0,0" TextWrapping="Wrap" Tag="" Width="241" Height="40" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" BorderBrush="#FFD2D2D2" FontSize="14" TextChanged="recheck" HorizontalAlignment="Left" Panel.ZIndex="1" VerticalAlignment="Center" />
+                        <TextBlock Margin="788,36,44,37" Text="This form allows you to securely and efficiently submit your essential data, ensuring our records are accurate and up-to-date, which supports effective organizational workflows and administrative processes." TextWrapping="Wrap" TextAlignment="Right" >
+                            <TextBlock.Foreground>
+                                <SolidColorBrush Color="Black" Opacity="0.6"/>
+                            </TextBlock.Foreground>
+                        </TextBlock>
+
+                    </Grid>
+                    <!--book-edit-view-->
+                    <Grid Margin="0,165,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="299*"/>
+                            <ColumnDefinition Width="238*"/>
+                        </Grid.ColumnDefinitions>
+                        <Rectangle Height="2" Stroke="Black" Width="866" RenderTransformOrigin="0.5,0.5" Margin="34,250,174,298" Opacity="0.1" Grid.ColumnSpan="2">
+                            <Rectangle.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleY="-1"/>
+                                    <SkewTransform/>
+                                    <RotateTransform/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Rectangle.RenderTransform>
+                        </Rectangle>
+                        <Label Content="VOUCHER INFO" HorizontalAlignment="Left" Margin="243,231,0,0" VerticalAlignment="Top" Height="38" Width="203" FontSize="20" FontFamily="Bahnschrift Light" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Column="1"/>
+
+                        <TextBlock Margin="507,269,66,171" Text="This section is an internal tool designed to manage and distribute vouchers efficiently. This section is dedicated to organizing promotional offers and discounts for various purposes within our system." TextWrapping="Wrap" TextAlignment="Right" Grid.ColumnSpan="2" >
+                            <TextBlock.Foreground>
+                                <SolidColorBrush Color="Black" Opacity="0.6"/>
+                            </TextBlock.Foreground>
+                        </TextBlock>
+
+
+                        <ComboBox 
+                            x:Name="selectBookAuthor3" 
+                            FontSize="13"
+                            Style="{DynamicResource theComboBox}"
+                            Padding="15,5,15,5"
+                            HorizontalContentAlignment="Center"
+                            VerticalAlignment="Top"
+                            ItemContainerStyle="{DynamicResource theComboBoxItem}" Height="40" VerticalContentAlignment="Center" Margin="0,420,67,0" HorizontalAlignment="Right" Width="242" Foreground="Black" BorderBrush="#FF0C0000" Background="#FFECECEC"/>
+
+
+                        <Button x:Name="saveBtn3" Style="{StaticResource btncutsomstyle}" Cursor="Hand" Content="Update stock" HorizontalAlignment="Left" Margin="204,456,0,0" VerticalAlignment="Top" Height="32" Width="102" Background="{x:Null}" BorderBrush="#FF797676" Click="save" Grid.Column="1"/>
+                        <Button x:Name="clearBtn3" Style="{StaticResource btncutsomstyle}" Cursor="Hand" Content="Clear" HorizontalAlignment="Left" Margin="314,456,0,0" VerticalAlignment="Top" Height="32" Width="102" Background="{x:Null}" BorderBrush="#FF797676" Click="save" Grid.Column="1"/>
+
+                        <Label Content="ISBN No." HorizontalAlignment="Left" VerticalAlignment="Top" Margin="283,322,0,0" Height="24" RenderTransformOrigin="0.5,0.5">
+                            <Label.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleY="1"/>
+                                    <SkewTransform/>
+                                    <RotateTransform/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Label.RenderTransform>
+                            <Label.Foreground>
+                                <SolidColorBrush Color="Black" Opacity="0.8"/>
+                            </Label.Foreground>
+                            <Label.Background>
+                                <SolidColorBrush Opacity="0.445"/>
+                            </Label.Background>
+                        </Label>
+                        <TextBox x:Name="txtBookISBN3" Style="{StaticResource CustomTextBoxStyle}" Margin="281,351,0,0" TextWrapping="Wrap" Tag="" Width="242" Height="40" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" BorderBrush="#FFD2D2D2" FontSize="14" TextChanged="recheck" HorizontalAlignment="Left" Panel.ZIndex="1" />
+
+
+                        <Label Content="Title" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="14,322,0,0" Height="24" RenderTransformOrigin="0.5,0.5">
+                            <Label.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleY="1"/>
+                                    <SkewTransform/>
+                                    <RotateTransform/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Label.RenderTransform>
+                            <Label.Foreground>
+                                <SolidColorBrush Color="Black" Opacity="0.8"/>
+                            </Label.Foreground>
+                            <Label.Background>
+                                <SolidColorBrush Opacity="0.445"/>
+                            </Label.Background>
+                        </Label>
+                        <TextBox x:Name="txtBookTitle3" Style="{StaticResource CustomTextBoxStyle}" Margin="14,351,0,0" TextWrapping="Wrap" Tag="" Width="242" Height="40" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" BorderBrush="#FFD2D2D2" FontSize="14" TextChanged="recheck" HorizontalAlignment="Left" Panel.ZIndex="1" />
+                        <Label Content="Year of the Book" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="14,391,0,0" Height="24" RenderTransformOrigin="0.5,0.5">
+                            <Label.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleY="1"/>
+                                    <SkewTransform/>
+                                    <RotateTransform/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Label.RenderTransform>
+                            <Label.Foreground>
+                                <SolidColorBrush Color="Black" Opacity="0.8"/>
+                            </Label.Foreground>
+                            <Label.Background>
+                                <SolidColorBrush Opacity="0.65"/>
+                            </Label.Background>
+                        </Label>
+                        <TextBox x:Name="txtBookYear3" Style="{StaticResource CustomTextBoxStyle}" Margin="14,420,0,0" TextWrapping="Wrap" Tag="" Width="242" Height="40" Background="{x:Null}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" BorderBrush="#FFD2D2D2" FontSize="14" TextChanged="recheck" HorizontalAlignment="Left" Panel.ZIndex="1" />
+                        <Label Content="Author of the book" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="289,391,0,0" Height="24" RenderTransformOrigin="0.5,0.5">
+                            <Label.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleY="1"/>
+                                    <SkewTransform/>
+                                    <RotateTransform/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Label.RenderTransform>
+                            <Label.Foreground>
+                                <SolidColorBrush Color="Black" Opacity="0.8"/>
+                            </Label.Foreground>
+                            <Label.Background>
+                                <SolidColorBrush Opacity="0.445"/>
+                            </Label.Background>
+                        </Label>
+
+
+
+
+
+                    </Grid>
+
+
+                    <Grid x:Name="edit_view_book_3" Grid.ColumnSpan="2" Margin="526,0,0,0" Visibility="Hidden">
+
+
+
+                        <!--item-edit-view-->
+                        <Grid x:Name="item_view_book_3" Margin="0,-1,0,518" >
+                            <Grid.Background>
+                                <SolidColorBrush Color="Black" Opacity="0.4"/>
+                            </Grid.Background>
+
+                            <Label Content="Item info" HorizontalAlignment="Left" Margin="741,0,0,0" VerticalAlignment="Center" Height="64" Width="292" FontSize="20" FontFamily="Bahnschrift Light" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+
+                            <TextBox HorizontalAlignment="Left" Margin="81,53,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                            <TextBox HorizontalAlignment="Left" Margin="81,81,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                            <TextBox HorizontalAlignment="Left" Margin="81,112,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                            <TextBox HorizontalAlignment="Left" Margin="81,112,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                            <TextBox HorizontalAlignment="Left" Margin="81,145,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                            <TextBox HorizontalAlignment="Left" Margin="247,53,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+
+                            <ComboBox 
+x:Name="select_vehicle_manfacture3" 
+FontSize="13"
+Style="{DynamicResource theComboBox}"
+Padding="15,5,15,5"
+HorizontalContentAlignment="Center"
+VerticalAlignment="Top"
+ItemContainerStyle="{DynamicResource theComboBoxItem}" Height="40" VerticalContentAlignment="Center" Margin="0,53,0,0" HorizontalAlignment="Center" Width="242" Foreground="Black" BorderBrush="#FF0C0000" Background="#FFECECEC">
+                                <ComboBoxItem Content="Nugegoda"/>
+                                <ComboBoxItem Content="Kaluthara"/>
+                                <ComboBoxItem Content="Matara"/>
+
+                            </ComboBox>
+                            <ComboBox 
+                x:Name="sect_vehicle_manufacture_Copy3" 
+                FontSize="13"
+                Style="{DynamicResource theComboBox}"
+                Padding="15,5,15,5"
+                HorizontalContentAlignment="Center"
+                VerticalAlignment="Top"
+                ItemContainerStyle="{DynamicResource theComboBoxItem}" Height="40" VerticalContentAlignment="Center" Margin="0,112,416,0" HorizontalAlignment="Right" Width="242" Foreground="Black" BorderBrush="#FF0C0000" Background="#FFECECEC">
+                                <ComboBoxItem Content="Nugegoda"/>
+                                <ComboBoxItem Content="Kaluthara"/>
+                                <ComboBoxItem Content="Matara"/>
+
+                            </ComboBox>
+                        </Grid>
+                        <!--voucher-edit-view-->
+                        <Grid Margin="0,165,0,0">
+                            <Grid.Background>
+                                <SolidColorBrush Color="Black" Opacity="0.2"/>
+                            </Grid.Background>
+
+                            <Label Content="Voucher info" HorizontalAlignment="Left" Margin="741,0,0,0" VerticalAlignment="Center" Height="64" Width="292" FontSize="20" FontFamily="Bahnschrift Light" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+
+
+                            <ComboBox 
+                x:Name="voucher_tpe3" 
+                FontSize="13"
+                Style="{DynamicResource theComboBox}"
+                Padding="15,5,15,5"
+                HorizontalContentAlignment="Center"
+                VerticalAlignment="Top"
+                ItemContainerStyle="{DynamicResource theComboBoxItem}" Height="40" VerticalContentAlignment="Center" Margin="0,138,774,0" HorizontalAlignment="Right" Width="242" Foreground="Black" BorderBrush="#FF0C0000" Background="#FFECECEC">
+                                <ComboBoxItem Content="Nugegoda"/>
+                                <ComboBoxItem Content="Kaluthara"/>
+                                <ComboBoxItem Content="Matara"/>
+
+                            </ComboBox>
+                            <ComboBox 
+                x:Name="staus3" 
+                FontSize="13"
+                Style="{DynamicResource theComboBox}"
+                Padding="15,5,15,5"
+                HorizontalContentAlignment="Center"
+                VerticalAlignment="Top"
+                ItemContainerStyle="{DynamicResource theComboBoxItem}" Height="40" VerticalContentAlignment="Center" Margin="0,62,774,0" HorizontalAlignment="Right" Width="242" Foreground="Black" BorderBrush="#FF0C0000" Background="#FFECECEC">
+                                <ComboBoxItem Content="Nugegoda"/>
+                                <ComboBoxItem Content="Kaluthara"/>
+                                <ComboBoxItem Content="Matara"/>
+
+                            </ComboBox>
+
+                            <TextBox HorizontalAlignment="Left" Margin="396,62,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                            <TextBox HorizontalAlignment="Left" Margin="396,95,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                            <TextBox HorizontalAlignment="Left" Margin="396,128,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+
+                            <TextBox HorizontalAlignment="Left" Margin="396,160,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                            <TextBox HorizontalAlignment="Left" Margin="396,192,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                            <Button Content="Save" HorizontalAlignment="Left" Margin="887,456,0,0" VerticalAlignment="Top" Width="123" Height="32"/>
+
+                        </Grid>
+                    </Grid>
+
+
+                </Grid>
+
+
+
+                <Button x:Name="add_item__Copy" Style="{StaticResource btncutsomstyle}" Cursor="Hand" HorizontalAlignment="Left" Margin="41,527,0,0" VerticalAlignment="Top" Height="92" Width="87" Padding="0,0,0,0" Background="{x:Null}" BorderThickness="1,1,1,1" Foreground="#FFAFAFAF" Click="add_voucher" >
                     <Button.BorderBrush>
                         <SolidColorBrush Color="#FF404040" Opacity="0.5"/>
                     </Button.BorderBrush>
@@ -1434,7 +2117,7 @@ ItemContainerStyle="{DynamicResource theComboBoxItem}" Height="40" VerticalConte
                         <TextBlock Text="Vouchers" FontFamily="Bahnschrift" Padding="0,10,0,0" Foreground="DimGray" Width="94" VerticalAlignment="Center" HorizontalAlignment="Center" TextAlignment="Center"/>
                     </StackPanel>
                 </Button>
-                <Button x:Name="add_item__Copy1" Style="{StaticResource btncutsomstyle}" Cursor="Hand" HorizontalAlignment="Left" Margin="264,551,0,0" VerticalAlignment="Top" Height="92" Width="87" Padding="0,0,0,0" Background="{x:Null}" BorderThickness="1,1,1,1" Foreground="#FFAFAFAF" Click="add_book" >
+                <Button x:Name="add_item__Copy1" Style="{StaticResource btncutsomstyle}" Cursor="Hand" HorizontalAlignment="Left" Margin="264,527,0,0" VerticalAlignment="Top" Height="92" Width="87" Padding="0,0,0,0" Background="{x:Null}" BorderThickness="1,1,1,1" Foreground="#FFAFAFAF" Click="add_book" >
                     <Button.BorderBrush>
                         <SolidColorBrush Color="#FF404040" Opacity="0.5"/>
                     </Button.BorderBrush>
@@ -1443,13 +2126,13 @@ ItemContainerStyle="{DynamicResource theComboBoxItem}" Height="40" VerticalConte
                         <TextBlock Text="Books" FontFamily="Bahnschrift" Padding="0,10,0,0" Foreground="DimGray" Width="94" VerticalAlignment="Center" HorizontalAlignment="Center" TextAlignment="Center"/>
                     </StackPanel>
                 </Button>
-                <Button x:Name="view_item_inv" Style="{StaticResource btncutsomstyle}" Cursor="Hand" HorizontalAlignment="Left" Margin="41,394,0,0" VerticalAlignment="Top" Height="92" Width="310" Padding="0,0,0,0" Background="{x:Null}" BorderThickness="1,1,1,1" Foreground="#FFAFAFAF" Click="view_item" >
+                <Button x:Name="view_item_inv" Style="{StaticResource btncutsomstyle}" Cursor="Hand" HorizontalAlignment="Left" Margin="40,633,0,0" VerticalAlignment="Top" Height="48" Width="310" Padding="0,0,0,0" Background="{x:Null}" BorderThickness="1,1,1,1" Foreground="#FFAFAFAF" Click="view_item" >
                     <Button.BorderBrush>
                         <SolidColorBrush Color="#FF404040" Opacity="0.5"/>
                     </Button.BorderBrush>
                     <StackPanel Orientation="Horizontal" Height="82" Width="253" VerticalAlignment="Center" HorizontalAlignment="Center">
-                        <Image Height="45" Source="/View/add-button.png" Opacity="0.8" Width="45"/>
-                        <TextBlock Text="View Inventory" FontFamily="Bahnschrift" Padding="0,17,0,0" Foreground="DimGray" Width="204" VerticalAlignment="Center" TextAlignment="Center" Height="52" HorizontalAlignment="Center"/>
+                        <Image Height="36" Source="/View/add-button.png" Opacity="0.8" Width="36"/>
+                        <TextBlock Text="View Inventory" FontFamily="Bahnschrift" Padding="0,19,0,0" Foreground="DimGray" Width="204" VerticalAlignment="Center" TextAlignment="Center" Height="52" HorizontalAlignment="Center"/>
                     </StackPanel>
                 </Button>
                 <Button  x:Name="add_itemBtn_Copy" Style="{StaticResource ImageButtonStyle_noborder}" Content="" HorizontalAlignment="Left" Margin="42,196,0,0" Cursor="Hand" VerticalAlignment="Top" BorderBrush="{x:Null}" Foreground="{x:Null}" Width="34" Height="35" Click="add_item" RenderTransformOrigin="0.5,0.5" >
@@ -1462,7 +2145,7 @@ ItemContainerStyle="{DynamicResource theComboBoxItem}" Height="40" VerticalConte
                         </TransformGroup>
                     </Button.RenderTransform>
                     <Button.Background>
-                        <ImageBrush ImageSource="/View/plus-hexagon.png" TileMode="Tile" Stretch="UniformToFill">
+                        <ImageBrush ImageSource="/View/profit-report.png" TileMode="Tile" Stretch="UniformToFill">
                             <ImageBrush.RelativeTransform>
                                 <TransformGroup>
                                     <ScaleTransform CenterY="0.5" CenterX="0.5"/>
@@ -2044,8 +2727,8 @@ ItemContainerStyle="{DynamicResource theComboBoxItem}" Height="40" VerticalConte
                     </TransformGroup>
                 </Image.RenderTransform>
             </Image>
-            <Label Content="Add to inventory" HorizontalAlignment="Left" Margin="81,580,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.526,0.578" FontFamily="Bahnschrift Light"/>
-            <Rectangle HorizontalAlignment="Left" Height="1" Margin="179,592,0,0" Stroke="Black" VerticalAlignment="Top" Width="179" RenderTransformOrigin="0.5,0.5">
+            <Label Content="Add to inventory" HorizontalAlignment="Left" Margin="81,556,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.526,0.578" FontFamily="Bahnschrift Light"/>
+            <Rectangle HorizontalAlignment="Left" Height="1" Margin="179,568,0,0" Stroke="Black" VerticalAlignment="Top" Width="179" RenderTransformOrigin="0.5,0.5">
                 <Rectangle.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform ScaleY="-1"/>
@@ -2068,7 +2751,108 @@ ItemContainerStyle="{DynamicResource theComboBoxItem}" Height="40" VerticalConte
             </Rectangle>
 
 
+            <!--<DatePicker x:Name="DatePicker_Date" Width="151" VerticalAlignment="Top" HorizontalAlignment="Left" BorderBrush="{x:Null}" Margin="42,393,0,0">
+                <DatePicker.Resources>
+                    <Style TargetType="{x:Type DatePickerTextBox}">
+                        <Setter Property="VerticalContentAlignment" Value="Center"/>
+                        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                        <Setter Property="Background" Value="Transparent"/>
+                        <Setter Property="Height" Value="35"/>
+                        <Setter Property="Control.Template">
+                            <Setter.Value>
+                                <ControlTemplate>
+                                    <Border Background="Transparent" 
+                                BorderBrush="Gray" 
+                                BorderThickness="1" 
+                                CornerRadius="10"
+                                Height="35">
+                                        <TextBox x:Name="PART_TextBox"
+                                     Background="Transparent"
+                                     BorderThickness="0"
+                                     VerticalContentAlignment="Center"
+                                     HorizontalContentAlignment="Center"
+                                     Height="35"
+                                     Text="{Binding Path=SelectedDate, 
+                                            RelativeSource={RelativeSource AncestorType={x:Type DatePicker}}, 
+                                            StringFormat='dd.MM.yyyy'}"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </DatePicker.Resources>
+            </DatePicker>
+            <Label Content="From" HorizontalAlignment="Left" Margin="49,373,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.526,0.578" FontFamily="Bahnschrift Light"/>
+            <DatePicker x:Name="DatePicker_Date_Copy" Width="151" VerticalAlignment="Top" HorizontalAlignment="Left" BorderBrush="{x:Null}" Margin="213,393,0,0">
+                <DatePicker.Resources>
+                    <Style TargetType="{x:Type DatePickerTextBox}">
+                        <Setter Property="VerticalContentAlignment" Value="Center"/>
+                        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                        <Setter Property="Background" Value="Transparent"/>
+                        <Setter Property="Height" Value="35"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate>
+                                    <Border Background="Transparent" 
+                                        BorderBrush="Gray" 
+                                        BorderThickness="1" 
+                                        CornerRadius="10"
+                                        Height="35">
+                                        <TextBox x:Name="PART_TextBox"
+                                            Background="Transparent"
+                                            BorderThickness="0"
+                                            VerticalContentAlignment="Center"
+                                            HorizontalContentAlignment="Center"
+                                            Height="35"
+                                            Text="{Binding SelectedDate, RelativeSource={RelativeSource AncestorType={x:Type DatePicker}}, StringFormat=dd.MM.yyyy}"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </DatePicker.Resources>
+            </DatePicker>-->
+            <!--<Label Content="To" HorizontalAlignment="Left" Margin="220,373,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.526,0.578" FontFamily="Bahnschrift Light"/>-->
+            <Label Content="Item Type" HorizontalAlignment="Left" Margin="292,0,0,0" VerticalAlignment="Center" RenderTransformOrigin="0.526,0.578" FontFamily="Bahnschrift Light"/>
+            <ComboBox 
+                            x:Name="filter1" 
+                            FontSize="13"
+                            Style="{DynamicResource theComboBox}"
+                            Padding="15,5,15,5"
+                            HorizontalContentAlignment="Center"
+                            VerticalAlignment="Top"
+                            ItemContainerStyle="{DynamicResource theComboBoxItem}" Height="40" VerticalContentAlignment="Center" Margin="0,328,1232,0" HorizontalAlignment="Right" Width="313" Foreground="Black" BorderBrush="#FF0C0000" Background="#FFACC7EC">
+                <ComboBoxItem Content="All"/>
+                <ComboBoxItem Content="Book"/>
+                <ComboBoxItem Content="Stationary"/>
+                <ComboBoxItem Content="voucher"/>
 
+            </ComboBox>
+
+            <Label Content="Inventory Type" HorizontalAlignment="Left" Margin="269,304,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.526,0.578" FontFamily="Bahnschrift Light"/>
+            <ComboBox 
+                            x:Name="filter2" 
+                            FontSize="13"
+                            Style="{DynamicResource theComboBox}"
+                            Padding="15,5,15,5"
+                            HorizontalContentAlignment="Center"
+                            VerticalAlignment="Top"
+                            ItemContainerStyle="{DynamicResource theComboBoxItem}" Height="40" VerticalContentAlignment="Center" Margin="0,403,1232,0" HorizontalAlignment="Right" Width="313" Foreground="Black" BorderBrush="#FF0C0000" Background="#FFACC7EC">
+                <ComboBoxItem Content="All"/>
+                <ComboBoxItem Content="Warehouse"/>
+                <ComboBoxItem Content="Branch"/>
+
+            </ComboBox>
+
+            <Button x:Name="genRepoBtn" Style="{StaticResource btncutsomstyle}" Cursor="Hand" HorizontalAlignment="Left" Margin="41,466,0,0" VerticalAlignment="Top" Height="48" Width="310" Padding="0,0,0,0" Background="{x:Null}" BorderThickness="1,1,1,1" Foreground="#FFAFAFAF" Click="view_item" >
+                <Button.BorderBrush>
+                    <SolidColorBrush Color="#FF404040" Opacity="0.5"/>
+                </Button.BorderBrush>
+                <StackPanel Orientation="Horizontal" Height="82" Width="253" VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <Image Height="36" Source="/View/add-button.png" Opacity="0.8" Width="36"/>
+                    <TextBlock Text="Generate Report" FontFamily="Bahnschrift" Padding="0,19,0,0" Foreground="DimGray" Width="204" VerticalAlignment="Center" TextAlignment="Center" Height="52" HorizontalAlignment="Center"/>
+                </StackPanel>
+            </Button>
 
         </Grid>
     </Grid>

@@ -18,6 +18,7 @@
     <None Remove="View\bell.png" />
     <None Remove="View\book-cover.png" />
     <None Remove="View\boxes.png" />
+    <None Remove="View\calendar-day %281%29.png" />
     <None Remove="View\caret-square-left.png" />
     <None Remove="View\cart.png" />
     <None Remove="View\cash.png" />
@@ -40,6 +41,7 @@
     <None Remove="View\plus-hexagon.png" />
     <None Remove="View\price-tag.png" />
     <None Remove="View\profile.png" />
+    <None Remove="View\profit-report.png" />
     <None Remove="View\qr-code.png" />
     <None Remove="View\redo.png" />
     <None Remove="View\sarasavi-book-shop-logo-849DCED3EE-seeklogo.com.png" />
@@ -81,6 +83,7 @@
     <Resource Include="View\bell.png" />
     <Resource Include="View\book-cover.png" />
     <Resource Include="View\boxes.png" />
+    <Resource Include="View\calendar-day (1).png" />
     <Resource Include="View\cart.png" />
     <Resource Include="View\cash.png" />
     <Resource Include="View\cashier.png" />
@@ -102,6 +105,7 @@
     <Resource Include="View\plus-hexagon.png" />
     <Resource Include="View\price-tag.png" />
     <Resource Include="View\profile.png" />
+    <Resource Include="View\profit-report.png" />
     <Resource Include="View\qr-code.png" />
     <Resource Include="View\redo.png" />
     <Resource Include="View\sarasavi-book-shop-logo-849DCED3EE-seeklogo.com.png" />
