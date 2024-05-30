@@ -205,8 +205,12 @@ namespace SarasaviLite
     
         private void btnAddBook_Click(object sender, RoutedEventArgs e)
         {
-            inventoryController.CreateBook(txtBookISBN.Text, txtBookTitle.Text, inventoryController.GetAuthors().FirstOrDefault(author => author.Name == selectBookAuthor.SelectedValue), txtBookYear.Text);
-        }
+           var err =  inventoryController.CreateBook(txtBookISBN.Text, txtBookTitle.Text, inventoryController.GetAuthors().FirstOrDefault(author => author.Name == selectBookAuthor.SelectedValue), txtBookYear.Text);
+            if(err != "")
+                Console.WriteLine(err);
+
+            // show error message using your ui
+        }   
         private void view_item(object sender, RoutedEventArgs e)
         {
             edit_view_stationary.Visibility = Visibility.Hidden;
