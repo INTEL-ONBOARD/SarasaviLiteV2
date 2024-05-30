@@ -134,6 +134,7 @@ namespace SarasaviLite
             edit_view_voucher.Visibility = Visibility.Hidden;
             
             inventoryscrollView.Visibility = Visibility.Hidden;
+
         }
 
         private void voucher_type__SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -154,6 +155,9 @@ namespace SarasaviLite
             edit_view_stationary.Visibility = Visibility.Hidden;
             edit_view_book.Visibility = Visibility.Hidden;
             edit_view_voucher.Visibility = Visibility.Hidden;
+
+            filter1.SelectedIndex = 0;
+            filter2.SelectedIndex = 0;
 
         }
 
@@ -210,6 +214,7 @@ namespace SarasaviLite
             edit_view_voucher.Visibility = Visibility.Hidden;
 
             inventoryscrollView.Visibility = Visibility.Visible;
+
         }
 
         private void loadInitData()
@@ -244,5 +249,13 @@ namespace SarasaviLite
                 View.Children.Add(inventory);
             }
         }
+
+        private void save(object sender, RoutedEventArgs e)
+        {
+
+
+        }
+
+
     }
 }

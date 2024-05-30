@@ -157,10 +157,14 @@
         </Label>
         <Label Content="{Binding qty}" HorizontalAlignment="Left" Margin="1026,61,0,0" VerticalAlignment="Top" FontFamily="Bahnschrift" FontSize="24" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" Width="69"/>
         <Label Content="{Binding name}" HorizontalAlignment="Left" Margin="345,65,0,0" VerticalAlignment="Top" FontFamily="Bahnschrift" FontSize="22" Width="588" VerticalContentAlignment="Center"/>
-        <Label Content="{Binding itemType}" HorizontalAlignment="Left" Margin="344,32,0,0" VerticalAlignment="Top" FontFamily="Bahnschrift" FontSize="24" VerticalContentAlignment="Center"/>
-        <Label Content="{Binding itemCost}" HorizontalAlignment="Left" Margin="505,152,0,0" VerticalAlignment="Top" FontFamily="Bahnschrift" FontSize="18" VerticalContentAlignment="Center">
+        <Label Content="{Binding itemType}" HorizontalAlignment="Left" Margin="344,32,0,0" VerticalAlignment="Top" FontFamily="Bahnschrift" FontSize="24" VerticalContentAlignment="Center">
             <Label.Foreground>
                 <SolidColorBrush Color="Black" Opacity="0.6"/>
+            </Label.Foreground>
+        </Label>
+        <Label Content="{Binding itemCost}" HorizontalAlignment="Left" Margin="505,152,0,0" VerticalAlignment="Top" FontFamily="Bahnschrift" FontSize="18" VerticalContentAlignment="Center">
+            <Label.Foreground>
+                <SolidColorBrush Color="Black" Opacity="0.835"/>
             </Label.Foreground>
             <Label.Background>
                 <SolidColorBrush Opacity="0.6"/>
@@ -168,7 +172,7 @@
         </Label>
         <Label Content="{Binding discountAmount}"  HorizontalAlignment="Left" Margin="505,199,0,0" VerticalAlignment="Top" FontFamily="Bahnschrift" FontSize="18" VerticalContentAlignment="Center">
             <Label.Foreground>
-                <SolidColorBrush Color="Black" Opacity="0.6"/>
+                <SolidColorBrush Color="Black" Opacity="0.855"/>
             </Label.Foreground>
             <Label.Background>
                 <SolidColorBrush Opacity="0.6"/>
@@ -176,7 +180,7 @@
         </Label>
         <Label Content="{Binding tax}" HorizontalAlignment="Left" Margin="505,174,0,0" VerticalAlignment="Top" FontFamily="Bahnschrift" FontSize="18" VerticalContentAlignment="Center">
             <Label.Foreground>
-                <SolidColorBrush Color="Black" Opacity="0.6"/>
+                <SolidColorBrush Color="Black" Opacity="0.85"/>
             </Label.Foreground>
             <Label.Background>
                 <SolidColorBrush Opacity="0.6"/>
