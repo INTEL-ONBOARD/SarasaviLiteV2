@@ -2817,18 +2817,18 @@ ItemContainerStyle="{DynamicResource theComboBoxItem}" Height="40" VerticalConte
             </Image>
 
             <!-- Global Error Boxes -->
-            <Border x:Name="error_box_manage" Style="{StaticResource FadeOutLabelStyle}" Visibility="Collapsed" CornerRadius="20"
+            <Border x:Name="error_box_manage" Style="{StaticResource FadeOutLabelStyle}" Visibility="Visible" CornerRadius="20"
                 BorderBrush="#FFEA1010" BorderThickness="1" HorizontalAlignment="Center" Height="40" Margin="0,829,0,0"
-                VerticalAlignment="Top" Width="736">
+                VerticalAlignment="Top" Width="736" Panel.ZIndex="20">
                 <Border.Background>
                     <SolidColorBrush Color="#FFF13E19" Opacity="0.1"/>
                 </Border.Background>
                 <Label x:Name="error_box_manage_content" Content="Error message goes here" VerticalAlignment="Center"
                    HorizontalAlignment="Center"/>
             </Border>
-            <Border x:Name="success_box_manage" Style="{StaticResource FadeOutLabelStyle}" Visibility="Collapsed" CornerRadius="20"
+            <Border x:Name="success_box_manage" Style="{StaticResource FadeOutLabelStyle}" Visibility="Visible" CornerRadius="20"
                 BorderBrush="#FF2BEA10" BorderThickness="1" HorizontalAlignment="Center" Height="40" Margin="0,829,0,0"
-                VerticalAlignment="Top" Width="736">
+                VerticalAlignment="Top" Width="736" Panel.ZIndex="20">
                 <Border.Background>
                     <SolidColorBrush Color="#FF19F126" Opacity="0.1"/>
                 </Border.Background>

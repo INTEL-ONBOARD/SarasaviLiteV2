@@ -20,13 +20,15 @@ namespace SarasaviLite.View
     /// </summary>
     public partial class invItem : UserControl
     {
-        public invItem()
+        MainWindow main;
+        public invItem(MainWindow mainWindow)
         {
             InitializeComponent();
             this.DataContext = this;
+            this.main = mainWindow;
         }
 
-
+        public int Id { get; set; }
         public String itemType { get; set; }
         public String name { get; set; }
         public String price { get; set; }
@@ -37,10 +39,10 @@ namespace SarasaviLite.View
         public String itemCost { get; set; }
         public String tax { get; set; }
         public String discountAmount { get; set; }
-
+        
         private void deleteBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            main.DeleteItem(Id);
         }
         private void selectItem(object sender, RoutedEventArgs e)
         {

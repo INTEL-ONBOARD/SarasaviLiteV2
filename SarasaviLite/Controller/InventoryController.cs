@@ -50,7 +50,14 @@ namespace SarasaviLite.Controller
             return "";
         }
 
+        public bool DeleteItem(int ItemID)
+        {
+            Item item = context.Items.FirstOrDefault(item => item.Id == ItemID);
+            context.Items.Remove(item);
+            context.SaveChanges();
 
+            return true;
+        }
 
         public DbSet<Book>  GetBooks() {
             return context.Books;

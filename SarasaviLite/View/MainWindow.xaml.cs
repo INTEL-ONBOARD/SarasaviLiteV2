@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.Net.WebSockets;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -26,7 +27,7 @@ namespace SarasaviLite
     {
         InventoryController inventoryController;
 
-        int BookID = -1;
+        public int BookID = -1;
 
         public MainWindow()
         {
@@ -253,7 +254,6 @@ namespace SarasaviLite
                 foreach(var voucher in vouchers)
                     select_item_name.Items.Add(voucher.Id);
             }
-
         }
 
         private void loaditemData()
@@ -261,7 +261,8 @@ namespace SarasaviLite
             var items = inventoryController.GetItems();
             foreach (var item_ in items)
             {
-                invItem inventory = new invItem();
+                invItem inventory = new invItem(this);
+                inventory.Id = item_.Id;
                 inventory.name = item_.Name;
                 inventory.itemType = item_.ItemType;
                 inventory.price = item_.Price.ToString();
@@ -291,8 +292,15 @@ namespace SarasaviLite
                 success_box_manage_content.Content = "Successfully creted a book item.";
                 success_box_manage.Visibility = Visibility.Visible;
             }
+            ClearStationaryForm();
+        }
 
-            // show error message using your ui
+        private void ClearBookForm()
+        {
+            txtBookISBN.Text = string.Empty;
+            txtBookTitle.Text = string.Empty;
+            selectBookAuthor.Text = string.Empty;
+            txtBookYear.Text = string.Empty;
         }
 
         private void select_item_type_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -312,6 +320,13 @@ namespace SarasaviLite
                 success_box_manage_content.Content = "Successfully creted a stationary item.";
                 success_box_manage.Visibility= Visibility.Visible;
             }
+            ClearStationaryForm();
+        }
+
+        public void ClearStationaryForm()
+        {
+            select_stationary_distributer.Text = "";
+            txt_stationary_type.Text = "";
         }
 
         private void saveItem(object sender, RoutedEventArgs e)
@@ -328,6 +343,21 @@ namespace SarasaviLite
                 success_box_manage_content.Content = "Successfully added an item to the inventory.";
                 success_box_manage.Visibility = Visibility.Visible;
             }
+            ClearItemForm();
+            loaditemData();
+        }
+
+        private void ClearItemForm()
+        {
+            txt_price.Text = "";
+            txt_cost.Text = "";
+            select_inv_type.Text = "";
+            select_item_location.Text = "";
+            txt_discount.Text = "";
+            txt_tax.Text = "";
+            txt_qty.Text = "";
+            select_item_name.Text = "";
+            select_item_type.Text = "";
         }
 
         private void select_item_type_DropDownClosed(object sender, EventArgs e)
@@ -335,6 +365,22 @@ namespace SarasaviLite
             if(select_item_type.Text != "")
                 loadDataForSelectionBoxes();
 
+        }
+
+        public void DeleteItem(int Id)
+        {
+            var success = inventoryController.DeleteItem(Id);
+            if (!success)
+            {
+                error_box_manage_content.Content = "Failed to delete item.";
+                error_box_manage.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                success_box_manage_content.Content = "Successfully deleted the item.";
+                success_box_manage.Visibility = Visibility.Visible;
+            }
+            loaditemData();
         }
     }
 }
