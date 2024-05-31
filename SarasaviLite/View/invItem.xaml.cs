@@ -46,7 +46,18 @@ namespace SarasaviLite.View
         }
         private void selectItem(object sender, RoutedEventArgs e)
         {
-
+            if (itemType == "Book")
+            {
+                main.showUpdateBookView(Convert.ToInt32(name.Split(" - ")[0]));
+            }
+            else if (itemType == "Stationary")
+            {
+                main.showUpdateStationaryView(Id);
+            }
+            else
+            {
+                main.showUpdateVoucherView(Id);
+            }
         }
 
 

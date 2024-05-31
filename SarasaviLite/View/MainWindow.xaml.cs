@@ -27,7 +27,9 @@ namespace SarasaviLite
     {
         InventoryController inventoryController;
 
-        public int BookID = -1;
+        private int BookID = -1;
+        private int StationaryId = -1;
+        private int VoucherId = -1;
 
         public MainWindow()
         {
@@ -220,6 +222,41 @@ namespace SarasaviLite
 
         }
 
+        public void showUpdateBookView(int ID)
+        {
+            BookID = ID;
+            
+            Book book = inventoryController.GetBooks().FirstOrDefault(item => item.Id == ID);
+            if (book != null) { 
+            txtBookISBN.Text = Convert.ToString(book.ISBN);
+            txtBookTitle.Text = book.Title;
+            txtBookYear.Text = book.Year.ToString();
+            selectBookAuthor.SelectedValue = book.Author.ToString();
+            }
+            add_book(null, null);
+        }
+
+        public void showUpdateVoucherView(int ID)
+        {
+            VoucherId = ID;
+
+            // write code just like above
+
+            add_voucher(null, null);
+        }
+
+        public void showUpdateStationaryView(int ID)
+        {
+            StationaryId = ID;
+            
+            Stationary stationary = inventoryController.GetStationaries().FirstOrDefault(item => item.Id ==ID);
+            if (stationary != null)
+            {
+                
+            }
+            add_stationary(null, null);
+        }
+
         private void loadInitData()
         {
             var authors = inventoryController.GetAuthors();
@@ -284,7 +321,14 @@ namespace SarasaviLite
 
         private void save(object sender, RoutedEventArgs e)
         {
-            var err = inventoryController.CreateBook(txtBookISBN.Text, txtBookTitle.Text, inventoryController.GetAuthors().FirstOrDefault(author => author.Name == selectBookAuthor.SelectedValue), txtBookYear.Text);
+            var err = "";
+            if (BookID >= 0)
+            {
+                err = inventoryController.UpdateBook(BookID, txtBookISBN.Text, txtBookTitle.Text, inventoryController.GetAuthors().FirstOrDefault(author => author.Name == selectBookAuthor.SelectedValue), txtBookYear.Text);
+                BookID = -1;
+            }
+            else
+                err = inventoryController.CreateBook(txtBookISBN.Text, txtBookTitle.Text, inventoryController.GetAuthors().FirstOrDefault(author => author.Name == selectBookAuthor.SelectedValue), txtBookYear.Text);
             if (err != "")
             {
                 error_box_manage_content.Content = err;
@@ -293,7 +337,7 @@ namespace SarasaviLite
                 success_box_manage_content.Content = "Successfully creted a book item.";
                 success_box_manage.Visibility = Visibility.Visible;
             }
-            ClearStationaryForm();
+            ClearBookForm();
         }
 
         private void ClearBookForm()
@@ -310,7 +354,16 @@ namespace SarasaviLite
 
         private void saveStationary(object sender, RoutedEventArgs e)
         {
-            var err = inventoryController.CreateStationary(select_stationary_distributer.Text, txt_stationary_type.Text);
+            var err = "";
+
+            if (StationaryId >= 0)
+            {
+               err = inventoryController.UpdateStationary(StationaryId,select_stationary_distributer.Text, txt_stationary_type.Text);
+                StationaryId = -1;
+            }
+            else
+                err = inventoryController.CreateStationary(select_stationary_distributer.Text, txt_stationary_type.Text);
+
             if (err != "")
             {
                 error_box_manage_content.Content = err;
