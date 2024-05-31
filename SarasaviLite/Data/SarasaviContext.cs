@@ -22,6 +22,7 @@ namespace SarasaviLite.Data
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(@"Data Source=DESKTOP-K0HI58E;Initial Catalog=SarasaviDb;Integrated Security=True;TrustServerCertificate=True");
+            //optionsBuilder.UseSqlServer(@"Data Source=VitaminC\SQLEXPRESS;Initial Catalog=SarasaviDb;Integrated Security=True;TrustServerCertificate=True");
         }
     }
 }

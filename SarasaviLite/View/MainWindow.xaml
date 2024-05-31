@@ -760,6 +760,71 @@
                 </Grid.ColumnDefinitions>
 
 
+                <Label Content="Item Type" HorizontalAlignment="Left" Margin="299,300,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.526,0.578" FontFamily="Bahnschrift Light"/>
+                <ComboBox 
+                            x:Name="filter1" 
+                            FontSize="13"
+                            Style="{DynamicResource theComboBox}"
+                            Padding="15,5,15,5"
+                            HorizontalContentAlignment="Center"
+                            VerticalAlignment="Top"
+                            ItemContainerStyle="{DynamicResource theComboBoxItem}" Height="40" VerticalContentAlignment="Center" Margin="0,255,691,0" HorizontalAlignment="Right" Width="313" Foreground="Black" BorderBrush="#FF0C0000" Background="#FFACC7EC">
+                    <ComboBoxItem Content="All"/>
+                    <ComboBoxItem Content="Book"/>
+                    <ComboBoxItem Content="Stationary"/>
+                    <ComboBoxItem Content="voucher"/>
+
+                </ComboBox>
+
+                <Label Content="Inventory Type" HorizontalAlignment="Left" Margin="269,231,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.526,0.578" FontFamily="Bahnschrift Light"/>
+                <ComboBox 
+                            x:Name="filter2" 
+                            FontSize="13"
+                            Style="{DynamicResource theComboBox}"
+                            Padding="15,5,15,5"
+                            HorizontalContentAlignment="Center"
+                            VerticalAlignment="Top"
+                            ItemContainerStyle="{DynamicResource theComboBoxItem}" Height="40" VerticalContentAlignment="Center" Margin="0,325,689,0" HorizontalAlignment="Right" Width="313" Foreground="Black" BorderBrush="#FF0C0000" Background="#FFACC7EC">
+                    <ComboBoxItem Content="All"/>
+                    <ComboBoxItem Content="Warehouse"/>
+                    <ComboBoxItem Content="Branch"/>
+
+                </ComboBox>
+
+                <Button x:Name="genRepoBtn" Style="{StaticResource btncutsomstyle}" Cursor="Hand" HorizontalAlignment="Left" Margin="42,390,0,0" VerticalAlignment="Top" Height="48" Width="310" Padding="0,0,0,0" Background="{x:Null}" BorderThickness="1,1,1,1" Foreground="#FFAFAFAF" Click="view_item" >
+                    <Button.BorderBrush>
+                        <SolidColorBrush Color="#FF404040" Opacity="0.5"/>
+                    </Button.BorderBrush>
+                    <StackPanel Orientation="Horizontal" Height="82" Width="253" VerticalAlignment="Center" HorizontalAlignment="Left">
+                        <Image Height="30" Source="/View/printer.png" Opacity="0.8" Width="30" Margin="50,0,0,0"/>
+                        <TextBlock Text="Generate Report" FontFamily="Bahnschrift" Padding="0,19,0,0" Foreground="DimGray" Width="146" VerticalAlignment="Center" TextAlignment="Center" Height="52"/>
+                    </StackPanel>
+                </Button>
+
+                <Label Content="Add to inventory" HorizontalAlignment="Left" Margin="81,484,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.526,0.578" FontFamily="Bahnschrift Light"/>
+                <Rectangle HorizontalAlignment="Left" Height="1" Margin="179,496,0,0" Stroke="Black" VerticalAlignment="Top" Width="179" RenderTransformOrigin="0.5,0.5">
+                    <Rectangle.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleY="-1"/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Rectangle.RenderTransform>
+                </Rectangle>
+                <Label Content="Get Reports" HorizontalAlignment="Left" Margin="81,204,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.526,0.578" FontFamily="Bahnschrift Light"/>
+                <Rectangle HorizontalAlignment="Left" Height="1" Margin="158,216,0,0" Stroke="Black" VerticalAlignment="Top" Width="200" RenderTransformOrigin="0.5,0.5">
+                    <Rectangle.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleY="-1"/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Rectangle.RenderTransform>
+                </Rectangle>
+
+
                 <!--Inventory View-->
                 <ScrollViewer x:Name="inventoryscrollView" Grid.Column="0" Margin="420,42,42,42" VerticalScrollBarVisibility="Hidden" Grid.ColumnSpan="2" Visibility="Visible" RenderTransformOrigin="0.499,0.499">
                     <!--<TextBlock TextWrapping="Wrap" Text="TextBlock"/>-->
@@ -1971,7 +2036,7 @@ ItemContainerStyle="{DynamicResource theComboBoxItem}" Height="40" VerticalConte
                             <ComboBoxItem Content="Common"/>
                             <ComboBoxItem Content="Special"/>
                             <ComboBoxItem Content="Custom"/>
-                            
+
                         </ComboBox>
 
 
@@ -2396,18 +2461,30 @@ ItemContainerStyle="{DynamicResource theComboBoxItem}" Height="40" VerticalConte
                 </Grid>-->
 
             </Grid>
-            <Grid x:Name="Home_view" Background="#FFDA9924" Margin="1,72,-1,0" Visibility="Hidden" Panel.ZIndex="1">
+            <Grid x:Name="Home_view" Margin="1,72,-1,0" Visibility="Hidden" Panel.ZIndex="1">
+                <Grid.Background>
+                    <SolidColorBrush Color="#FFDA9924" Opacity="0.1"/>
+                </Grid.Background>
 
                 <Label Content="Home view" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
             </Grid>
-            <Grid x:Name="search_view" Background="#FFDAD324" Margin="1,72,-1,0" Visibility="Hidden" Panel.ZIndex="1">
+            <Grid x:Name="search_view" Margin="1,72,-1,0" Visibility="Hidden" Panel.ZIndex="1">
+                <Grid.Background>
+                    <SolidColorBrush Color="#FFDAD324" Opacity="0.1"/>
+                </Grid.Background>
                 <Label Content="search view" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             </Grid>
-            <Grid x:Name="add_view" Background="#FFD024DA" Margin="1,72,-1,0" Visibility="Hidden" Panel.ZIndex="1">
+            <Grid x:Name="add_view" Margin="1,72,-1,0" Visibility="Hidden" Panel.ZIndex="1">
+                <Grid.Background>
+                    <SolidColorBrush Color="#FFD024DA" Opacity="0.1"/>
+                </Grid.Background>
                 <Label Content="add view" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             </Grid>
-            <Grid x:Name="report_view" Background="#FF75DA24" Margin="1,72,-1,0" Visibility="Hidden" Panel.ZIndex="1">
+            <Grid x:Name="report_view" Margin="1,72,-1,0" Visibility="Hidden" Panel.ZIndex="1">
+                <Grid.Background>
+                    <SolidColorBrush Color="#FF75DA24" Opacity="0.1"/>
+                </Grid.Background>
                 <Label Content="report view" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             </Grid>
 
@@ -2805,28 +2882,7 @@ ItemContainerStyle="{DynamicResource theComboBoxItem}" Height="40" VerticalConte
                     </TransformGroup>
                 </Image.RenderTransform>
             </Image>
-            <Label Content="Add to inventory" HorizontalAlignment="Left" Margin="81,556,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.526,0.578" FontFamily="Bahnschrift Light"/>
-            <Rectangle HorizontalAlignment="Left" Height="1" Margin="179,568,0,0" Stroke="Black" VerticalAlignment="Top" Width="179" RenderTransformOrigin="0.5,0.5">
-                <Rectangle.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform ScaleY="-1"/>
-                        <SkewTransform/>
-                        <RotateTransform/>
-                        <TranslateTransform/>
-                    </TransformGroup>
-                </Rectangle.RenderTransform>
-            </Rectangle>
-            <Label Content="Get Reports" HorizontalAlignment="Left" Margin="81,274,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.526,0.578" FontFamily="Bahnschrift Light"/>
-            <Rectangle HorizontalAlignment="Left" Height="1" Margin="158,286,0,0" Stroke="Black" VerticalAlignment="Top" Width="200" RenderTransformOrigin="0.5,0.5">
-                <Rectangle.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform ScaleY="-1"/>
-                        <SkewTransform/>
-                        <RotateTransform/>
-                        <TranslateTransform/>
-                    </TransformGroup>
-                </Rectangle.RenderTransform>
-            </Rectangle>
+
 
 
             <!--<DatePicker x:Name="DatePicker_Date" Width="151" VerticalAlignment="Top" HorizontalAlignment="Left" BorderBrush="{x:Null}" Margin="42,393,0,0">
@@ -2891,46 +2947,7 @@ ItemContainerStyle="{DynamicResource theComboBoxItem}" Height="40" VerticalConte
                 </DatePicker.Resources>
             </DatePicker>-->
             <!--<Label Content="To" HorizontalAlignment="Left" Margin="220,373,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.526,0.578" FontFamily="Bahnschrift Light"/>-->
-            <Label Content="Item Type" HorizontalAlignment="Left" Margin="292,0,0,0" VerticalAlignment="Center" RenderTransformOrigin="0.526,0.578" FontFamily="Bahnschrift Light"/>
-            <ComboBox 
-                            x:Name="filter1" 
-                            FontSize="13"
-                            Style="{DynamicResource theComboBox}"
-                            Padding="15,5,15,5"
-                            HorizontalContentAlignment="Center"
-                            VerticalAlignment="Top"
-                            ItemContainerStyle="{DynamicResource theComboBoxItem}" Height="40" VerticalContentAlignment="Center" Margin="0,328,1232,0" HorizontalAlignment="Right" Width="313" Foreground="Black" BorderBrush="#FF0C0000" Background="#FFACC7EC">
-                <ComboBoxItem Content="All"/>
-                <ComboBoxItem Content="Book"/>
-                <ComboBoxItem Content="Stationary"/>
-                <ComboBoxItem Content="voucher"/>
 
-            </ComboBox>
-
-            <Label Content="Inventory Type" HorizontalAlignment="Left" Margin="269,304,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.526,0.578" FontFamily="Bahnschrift Light"/>
-            <ComboBox 
-                            x:Name="filter2" 
-                            FontSize="13"
-                            Style="{DynamicResource theComboBox}"
-                            Padding="15,5,15,5"
-                            HorizontalContentAlignment="Center"
-                            VerticalAlignment="Top"
-                            ItemContainerStyle="{DynamicResource theComboBoxItem}" Height="40" VerticalContentAlignment="Center" Margin="0,403,1232,0" HorizontalAlignment="Right" Width="313" Foreground="Black" BorderBrush="#FF0C0000" Background="#FFACC7EC">
-                <ComboBoxItem Content="All"/>
-                <ComboBoxItem Content="Warehouse"/>
-                <ComboBoxItem Content="Branch"/>
-
-            </ComboBox>
-
-            <Button x:Name="genRepoBtn" Style="{StaticResource btncutsomstyle}" Cursor="Hand" HorizontalAlignment="Left" Margin="41,466,0,0" VerticalAlignment="Top" Height="48" Width="310" Padding="0,0,0,0" Background="{x:Null}" BorderThickness="1,1,1,1" Foreground="#FFAFAFAF" Click="view_item" >
-                <Button.BorderBrush>
-                    <SolidColorBrush Color="#FF404040" Opacity="0.5"/>
-                </Button.BorderBrush>
-                <StackPanel Orientation="Horizontal" Height="82" Width="253" VerticalAlignment="Center" HorizontalAlignment="Center">
-                    <Image Height="30" Source="/View/printer.png" Opacity="0.8" Width="30" Margin="50,0,0,0"/>
-                    <TextBlock Text="Generate Report" FontFamily="Bahnschrift" Padding="0,19,0,0" Foreground="DimGray" Width="146" VerticalAlignment="Center" TextAlignment="Center" Height="52"/>
-                </StackPanel>
-            </Button>
 
         </Grid>
     </Grid>
