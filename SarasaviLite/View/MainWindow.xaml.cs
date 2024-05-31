@@ -26,6 +26,8 @@ namespace SarasaviLite
     {
         InventoryController inventoryController;
 
+        int BookID = -1;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -205,11 +207,7 @@ namespace SarasaviLite
     
         private void btnAddBook_Click(object sender, RoutedEventArgs e)
         {
-           var err =  inventoryController.CreateBook(txtBookISBN.Text, txtBookTitle.Text, inventoryController.GetAuthors().FirstOrDefault(author => author.Name == selectBookAuthor.SelectedValue), txtBookYear.Text);
-            if(err != "")
-                Console.WriteLine(err);
-
-            // show error message using your ui
+           
         }   
         private void view_item(object sender, RoutedEventArgs e)
         {
@@ -228,6 +226,34 @@ namespace SarasaviLite
             {
                 selectBookAuthor.Items.Add(author.Name);
             }
+        }
+
+        private void loadDataForSelectionBoxes()
+        {
+            select_item_name.Items.Clear();
+
+            var itemType = select_item_type.Text;
+            if(itemType == "Book")
+            {
+            var books = inventoryController.GetBooks();
+            foreach (var book in books)
+            {
+                select_item_name.Items.Add(book.Id +" - " + book.Title);
+            }
+            }
+            else if(itemType == "Stationary")
+            {
+                var stationaries = inventoryController.GetStationaries();
+                foreach (var stationary in stationaries)
+                    select_item_name.Items.Add(stationary.Id +" - " + stationary.Type);
+            }
+            else
+            {
+            var vouchers = inventoryController.GetVouchers();
+                foreach(var voucher in vouchers)
+                    select_item_name.Items.Add(voucher.Id);
+            }
+
         }
 
         private void loaditemData()
@@ -256,10 +282,59 @@ namespace SarasaviLite
 
         private void save(object sender, RoutedEventArgs e)
         {
+            var err = inventoryController.CreateBook(txtBookISBN.Text, txtBookTitle.Text, inventoryController.GetAuthors().FirstOrDefault(author => author.Name == selectBookAuthor.SelectedValue), txtBookYear.Text);
+            if (err != "")
+            {
+                error_box_manage_content.Content = err;
+                error_box_manage.Visibility = Visibility.Visible;
+            }else{
+                success_box_manage_content.Content = "Successfully creted a book item.";
+                success_box_manage.Visibility = Visibility.Visible;
+            }
 
-
+            // show error message using your ui
         }
 
+        private void select_item_type_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+        }
 
+        private void saveStationary(object sender, RoutedEventArgs e)
+        {
+            var err = inventoryController.CreateStationary(select_stationary_distributer.Text, txt_stationary_type.Text);
+            if (err != "")
+            {
+                error_box_manage_content.Content = err;
+                error_box_manage.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                success_box_manage_content.Content = "Successfully creted a stationary item.";
+                success_box_manage.Visibility= Visibility.Visible;
+            }
+        }
+
+        private void saveItem(object sender, RoutedEventArgs e)
+        {
+            var err = inventoryController.CreateItem(txt_price.Text, txt_cost.Text, select_inv_type.Text, select_item_location.Text, 
+                txt_discount.Text, txt_tax.Text, txt_qty.Text, select_item_name.Text, select_item_type.Text, select_item_name.Text.Split(" - ")[0]);
+            if (err != "")
+            {
+                error_box_manage_content.Content = err;
+                error_box_manage.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                success_box_manage_content.Content = "Successfully added an item to the inventory.";
+                success_box_manage.Visibility = Visibility.Visible;
+            }
+        }
+
+        private void select_item_type_DropDownClosed(object sender, EventArgs e)
+        {
+            if(select_item_type.Text != "")
+                loadDataForSelectionBoxes();
+
+        }
     }
 }

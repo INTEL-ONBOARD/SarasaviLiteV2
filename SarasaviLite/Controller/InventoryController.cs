@@ -17,11 +17,43 @@ namespace SarasaviLite.Controller
             context = new SarasaviContext();
         }
 
+        public DbSet<Item> GetItems()
+        {
+            return context.Items;
+        }
+
+        public string CreateItem(string Price, string Cost, string InventoryType, string Location, string Discount, string Tax, string Qty, string ItemName, string ItemType, string ItemID)
+        {
+            try
+            {
+                Item item = new Item()
+                {
+                    Price = Convert.ToDecimal(Price),
+                    ItemCost = Convert.ToDecimal(Cost),
+                    InventoryType = InventoryType,
+                    Location = Location,
+                    DiscountAmount = Convert.ToDecimal(Discount),
+                    Tax = Convert.ToDecimal(Tax),
+                    Qty = Convert.ToInt32(Qty),
+                    Name = ItemName,
+                    ItemType = ItemType,
+                    ItemId = Convert.ToInt32(ItemID),
+                    Image = "",
+                    Status = "Available"
+                };
+                context.Items.Add(item);
+            }catch (Exception ex)
+            {
+                return "Item Price, Item Cost, Discount Amount, Tax has to be valid decimal numbers and Quantity has to be a valid number.";
+            }
+            context.SaveChanges();
+            return "";
+        }
+
+
+
         public DbSet<Book>  GetBooks() {
             return context.Books;
-        }
-        public DbSet<Item> GetItems() { 
-            return context.Items; 
         } 
 
         public string CreateBook(string ISBN, string Title, Author author, string Year )
