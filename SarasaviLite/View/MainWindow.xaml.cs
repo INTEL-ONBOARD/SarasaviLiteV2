@@ -258,6 +258,7 @@ namespace SarasaviLite
 
         private void loaditemData()
         {
+            View.Children.Clear();
             var items = inventoryController.GetItems();
             foreach (var item_ in items)
             {
